@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c6vfjvuytl240"]
+
+[ext_resource type="Script" uid="uid://5d8c43skijra" path="res://scripts/pinball.gd" id="1_5eq27"]
+[ext_resource type="Script" uid="uid://de3jpss66xjfh" path="res://addons/curved_lines_2d/scalable_vector_shape_2d.gd" id="2_uxavs"]
+[ext_resource type="Script" uid="uid://dlbv4pit17dnu" path="res://addons/curved_lines_2d/scalable_arc.gd" id="3_4xpxx"]
+[ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="4_a3nvg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_px60l"]
+radius = 24.0
+
+[sub_resource type="Curve2D" id="Curve2D_wd8n7"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 13.2552, 24, 0, 13.2552, 0, -13.2552, 0, 0, 24, 0, 13.2552, 0, -13.2552, -24, 0, -13.2552, 0, 13.2552, 0, 0, -24, 0, -13.2552, 0, 0, 24, 0)
+}
+point_count = 5
+
+[sub_resource type="Resource" id="Resource_s81ap"]
+resource_local_to_scene = true
+script = ExtResource("4_a3nvg")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_l8qjn"]
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_ktps7"]
+colors = PackedColorArray(1, 1, 1, 1, 0.1328125, 0.1328125, 0.1328125, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xro5x"]
+gradient = SubResource("Gradient_ktps7")
+width = 48
+height = 48
+fill = 1
+fill_from = Vector2(0.3448836, 0.23413944)
+fill_to = Vector2(0.85857934, 0.85755605)
+
+[node name="pinball" type="RigidBody2D" unique_id=782531317]
+script = ExtResource("1_5eq27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=354175980]
+shape = SubResource("CircleShape2D_px60l")
+
+[node name="Ellipse" type="Node2D" parent="." unique_id=1907405758 node_paths=PackedStringArray("polygon")]
+script = ExtResource("2_uxavs")
+polygon = NodePath("Polygon2D")
+curve = SubResource("Curve2D_wd8n7")
+update_curve_at_runtime = true
+arc_list = SubResource("Resource_s81ap")
+shape_type = 2
+size = Vector2(48, 48)
+rx = 24.0
+ry = 24.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Ellipse" unique_id=2026282465]
+texture = SubResource("NoiseTexture2D_l8qjn")
+texture_offset = Vector2(100, 100)
+texture_scale = Vector2(2, 2)
+polygon = PackedVector2Array(24, 0, 23.876095, 2.453921, 23.51242, 4.836942, 22.92104, 7.137002, 22.114012, 9.342037, 21.103403, 11.439987, 19.901274, 13.418789, 18.519686, 15.26638, 16.9707, 16.9707, 15.26638, 18.519686, 13.418789, 19.901274, 11.439987, 21.103403, 9.342037, 22.114014, 7.137002, 22.92104, 4.836942, 23.51242, 2.453921, 23.876095, 0, 24, -2.453921, 23.876095, -4.836942, 23.51242, -7.137002, 22.92104, -9.342037, 22.114012, -11.439987, 21.103403, -13.418789, 19.901274, -15.26638, 18.519686, -16.9707, 16.9707, -18.519686, 15.26638, -19.901274, 13.418789, -21.103403, 11.439987, -22.114014, 9.342037, -22.92104, 7.137002, -23.51242, 4.836942, -23.876095, 2.453921, -24, 0, -23.876095, -2.453921, -23.51242, -4.836942, -22.92104, -7.137002, -22.114012, -9.342037, -21.103403, -11.439987, -19.901274, -13.418789, -18.519686, -15.26638, -16.9707, -16.9707, -15.26638, -18.519686, -13.418789, -19.901274, -11.439987, -21.103403, -9.342037, -22.114014, -7.137002, -22.92104, -4.836942, -23.51242, -2.453921, -23.876095, 0, -24, 2.453921, -23.876095, 4.836942, -23.51242, 7.137002, -22.92104, 9.342037, -22.114012, 11.439987, -21.103403, 13.418789, -19.901274, 15.26638, -18.519686, 16.9707, -16.9707, 18.519686, -15.26638, 19.901274, -13.418789, 21.103403, -11.439987, 22.114014, -9.342037, 22.92104, -7.137002, 23.51242, -4.836942, 23.876095, -2.453921)
+metadata/_edit_lock_ = true
+
+[node name="gradient" type="Polygon2D" parent="." unique_id=960812436]
+color = Color(1, 1, 1, 0.7490196)
+texture = SubResource("GradientTexture2D_xro5x")
+texture_offset = Vector2(24, 24)
+polygon = PackedVector2Array(24, 0, 23.876095, 2.453921, 23.51242, 4.836942, 22.92104, 7.137002, 22.114012, 9.342037, 21.103403, 11.439987, 19.901274, 13.418789, 18.519686, 15.26638, 16.9707, 16.9707, 15.26638, 18.519686, 13.418789, 19.901274, 11.439987, 21.103403, 9.342037, 22.114014, 7.137002, 22.92104, 4.836942, 23.51242, 2.453921, 23.876095, 0, 24, -2.453921, 23.876095, -4.836942, 23.51242, -7.137002, 22.92104, -9.342037, 22.114012, -11.439987, 21.103403, -13.418789, 19.901274, -15.26638, 18.519686, -16.9707, 16.9707, -18.519686, 15.26638, -19.901274, 13.418789, -21.103403, 11.439987, -22.114014, 9.342037, -22.92104, 7.137002, -23.51242, 4.836942, -23.876095, 2.453921, -24, 0, -23.876095, -2.453921, -23.51242, -4.836942, -22.92104, -7.137002, -22.114012, -9.342037, -21.103403, -11.439987, -19.901274, -13.418789, -18.519686, -15.26638, -16.9707, -16.9707, -15.26638, -18.519686, -13.418789, -19.901274, -11.439987, -21.103403, -9.342037, -22.114014, -7.137002, -22.92104, -4.836942, -23.51242, -2.453921, -23.876095, 0, -24, 2.453921, -23.876095, 4.836942, -23.51242, 7.137002, -22.92104, 9.342037, -22.114012, 11.439987, -21.103403, 13.418789, -19.901274, 15.26638, -18.519686, 16.9707, -16.9707, 18.519686, -15.26638, 19.901274, -13.418789, 21.103403, -11.439987, 22.114014, -9.342037, 22.92104, -7.137002, 23.51242, -4.836942, 23.876095, -2.453921)
+metadata/_edit_lock_ = true
