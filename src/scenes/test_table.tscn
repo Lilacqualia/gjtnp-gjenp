@@ -1,19 +1,11 @@
 [gd_scene format=3 uid="uid://c6bjuucykdcgk"]
 
+[ext_resource type="Script" uid="uid://dk2x0j2uujn1p" path="res://scripts/test_table.gd" id="1_6wydu"]
 [ext_resource type="PackedScene" uid="uid://bkqm7am1p7jmt" path="res://scenes/flipper.tscn" id="1_ar12w"]
 [ext_resource type="PackedScene" uid="uid://c6vfjvuytl240" path="res://scenes/pinball.tscn" id="2_wwlei"]
 [ext_resource type="Script" uid="uid://de3jpss66xjfh" path="res://addons/curved_lines_2d/scalable_vector_shape_2d.gd" id="3_h3v31"]
 [ext_resource type="Script" uid="uid://dlbv4pit17dnu" path="res://addons/curved_lines_2d/scalable_arc.gd" id="4_6wydu"]
 [ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="5_sy0cj"]
-
-[sub_resource type="GDScript" id="GDScript_h3v31"]
-script/source = "extends Node2D
-
-# prototype respawn function. space reloads current scene. sucks but i just wanted to get table walls onto main, i'll fix it later
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed(\"debug respawn\"):
-		get_tree().reload_current_scene
-"
 
 [sub_resource type="GDScript" id="GDScript_sy0cj"]
 script/source = "extends Area2D
@@ -118,7 +110,7 @@ resource_local_to_scene = true
 script = ExtResource("5_sy0cj")
 
 [node name="test_table" type="Node2D" unique_id=219498551]
-script = SubResource("GDScript_h3v31")
+script = ExtResource("1_6wydu")
 
 [node name="L_flipper_1" parent="." unique_id=1506876985 instance=ExtResource("1_ar12w")]
 position = Vector2(-256, 952)
@@ -130,15 +122,6 @@ flipper_direction = 1
 
 [node name="pinball" parent="." unique_id=782531317 instance=ExtResource("2_wwlei")]
 position = Vector2(-312, 608)
-
-[node name="Camera2D" type="Camera2D" parent="pinball" unique_id=1378344781]
-zoom = Vector2(0.75, 0.75)
-limit_left = -904
-limit_top = -1648
-limit_right = 904
-limit_bottom = 1648
-limit_smoothed = true
-position_smoothing_enabled = true
 
 [node name="drain_killbox" type="Area2D" parent="." unique_id=29394999]
 script = SubResource("GDScript_sy0cj")
@@ -177,7 +160,6 @@ arc_list = SubResource("Resource_6wydu")
 clip_paths = [NodePath("CutoutOfRectangle"), NodePath("CutoutOfRectangle2")]
 shape_type = 1
 size = Vector2(1807.9954, 3296.2546)
-metadata/_select_hint_ = true
 
 [node name="Fill" type="Polygon2D" parent="board_outer_walls" unique_id=1065537121]
 polygon = PackedVector2Array(-0.00012207031, -1623.7139, -30.71148, -1623.714, -91.98497, -1619.4293, -152.81032, -1610.8809, -212.89119, -1598.1102, -271.93488, -1581.1798, -329.65372, -1560.1719, -385.76654, -1535.1888, -439.99994, -1506.3524, -492.0897, -1473.8031, -541.78204, -1437.6995, -588.8349, -1398.2175, -633.019, -1355.5494, -674.1191, -1309.9032, -711.93494, -1261.5011, -746.2823, -1210.579, -776.99384, -1157.385, -803.92, -1102.1783, -826.9295, -1045.2278, -845.9103, -986.8109, -860.7699, -927.21234, -871.4359, -866.7224, -877.8564, -805.6358, -880, -744.25006, -880, 920.25, -878.63165, 920.25, -0.00018310547, 1480, -0.00012207031, 1480, -0.00012207031, 1648.1273, -903.9977, 1648.1273, -903.9977, -1648.1273, -0.00012207031, -1648.1273, 0, 1648.1273, -0.00012207031, 1648.1273, -0.00012207031, 1480, 0, 1479.9999, 0, -1623.7139, -0.00012207031, -1623.7139, -0.00012207031, -1648.1273, 0, -1648.1273, 903.9977, 1648.1273, 0, 1648.1273, 0, 1479.9999, 878.6314, 920.25, 880, 920.25, 880, -744.25, 877.8564, -805.6356, 871.4359, -866.7222, 860.7699, -927.2122, 845.91034, -986.8108, 826.9295, -1045.2277, 803.92004, -1102.1782, 776.9939, -1157.3849, 746.28235, -1210.5789, 711.935, -1261.501, 674.11914, -1309.9031, 633.0191, -1355.5493, 588.83496, -1398.2174, 541.78217, -1437.6995, 492.0898, -1473.803, 440.00006, -1506.3523, 385.7667, -1535.1887, 329.65387, -1560.1718, 271.93503, -1581.1797, 212.89134, -1598.1102, 152.81047, -1610.8809, 91.98512, -1619.4292, 30.711632, -1623.7139, 0, -1623.7139, 0, -1648.1273, 903.9977, -1648.1273)
@@ -223,7 +205,6 @@ update_curve_at_runtime = true
 arc_list = SubResource("Resource_aomlx")
 shape_type = 1
 size = Vector2(1760, 1664.5)
-metadata/_select_hint_ = true
 
 [node name="CutoutOfRectangle2" type="Node2D" parent="board_outer_walls" unique_id=1802561133]
 position = Vector2(-9.1552734e-05, 920)
@@ -285,7 +266,6 @@ update_curve_at_runtime = true
 arc_list = SubResource("Resource_sy0cj")
 shape_type = 1
 size = Vector2(826.2871, 338.14752)
-metadata/_select_hint_ = true
 
 [node name="CutoutOfboard_gutter_walls2" type="Node2D" parent="board_gutter_walls" unique_id=946174414]
 position = Vector2(544, -248)
@@ -305,3 +285,5 @@ update_curve_at_runtime = true
 arc_list = SubResource("Resource_mfsic")
 shape_type = 1
 size = Vector2(492.0315, 432)
+
+[connection signal="body_entered" from="drain_killbox" to="." method="_on_drain_killbox_body_entered"]
