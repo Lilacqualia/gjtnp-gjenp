@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bkqm7am1p7jmt" path="res://scenes/flipper.tscn" id="1_ar12w"]
 [ext_resource type="Script" uid="uid://vfe4wa6j1dex" path="res://scenes/test_table.gd" id="1_wwlei"]
 [ext_resource type="PackedScene" uid="uid://c6vfjvuytl240" path="res://scenes/pinball.tscn" id="2_wwlei"]
+[ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="4_h3v31"]
 
 [node name="test_table" type="Node2D" unique_id=219498551]
 script = ExtResource("1_wwlei")

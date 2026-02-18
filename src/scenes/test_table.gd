@@ -11,3 +11,8 @@ func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT):
 		$pinball.translate(get_global_mouse_position() - $pinball.global_position)
 		$pinball.linear_velocity = Vector2.ZERO
+	pass
+
+
+func _on_pinball_hit(hit_object: Node) -> void:
+	print("table thinks you hit %s" % hit_object.name)
