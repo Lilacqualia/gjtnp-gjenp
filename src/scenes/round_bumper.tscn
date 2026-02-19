@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://r4j1t2518dl1"]
+
+[ext_resource type="Script" uid="uid://peb251f5o1p1" path="res://scripts/round_bumper.gd" id="1_g2brh"]
+[ext_resource type="Texture2D" uid="uid://c2xccn2068cm0" path="res://assets/100x100 circle.png" id="2_dn4c7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vejd"]
+radius = 49.0
+
+[node name="round_bumper" type="CharacterBody2D" unique_id=871954055]
+motion_mode = 1
+script = ExtResource("1_g2brh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1677789313]
+shape = SubResource("CircleShape2D_4vejd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=375728765]
+texture = ExtResource("2_dn4c7")
