@@ -1,15 +1,9 @@
 [gd_scene format=3 uid="uid://d2ldm28a03gur"]
 
-[ext_resource type="Script" uid="uid://c3r0lx3qdvn1m" path="res://scenes/drop_target.gd" id="1_hkfpq"]
-[ext_resource type="Script" uid="uid://de3jpss66xjfh" path="res://addons/curved_lines_2d/scalable_vector_shape_2d.gd" id="1_v3ie5"]
-[ext_resource type="Script" uid="uid://dlbv4pit17dnu" path="res://addons/curved_lines_2d/scalable_arc.gd" id="2_4g07d"]
-[ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="3_hkfpq"]
+[ext_resource type="Script" uid="uid://c3r0lx3qdvn1m" path="res://scripts/drop_target.gd" id="1_hkfpq"]
+[ext_resource type="Texture2D" uid="uid://cy5rohihw1nuc" path="res://images/droptarget2.png" id="3_4g07d"]
+[ext_resource type="Script" uid="uid://b7mubgtxoqk11" path="res://scripts/drop_target_body.gd" id="3_v3ie5"]
 [ext_resource type="Texture2D" uid="uid://cgeys3awdxnr8" path="res://images/droptarget1.PNG" id="4_4g07d"]
-
-[sub_resource type="Curve2D" id="Curve2D_rpw5q"]
-
-[sub_resource type="Resource" id="Resource_52m46"]
-script = ExtResource("3_hkfpq")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_52m46"]
 animations = [{
@@ -23,31 +17,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_4g07d")
+"texture": ExtResource("3_4g07d")
 }],
 "loop": true,
 "name": &"inactive",
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=1518252097 groups=["hittable_object"]]
+[node name="DropTarget" type="Node2D" unique_id=1518252097 groups=["hittable_object"]]
+z_index = -1
 script = ExtResource("1_hkfpq")
-
-[node name="ScalableVectorShape2D" type="Node2D" parent="." unique_id=458178046]
-script = ExtResource("1_v3ie5")
-curve = SubResource("Curve2D_rpw5q")
-arc_list = SubResource("Resource_52m46")
-metadata/_custom_type_script = "uid://de3jpss66xjfh"
-metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(-13.395508, -58.116676),"local_point_position":Vector2(-13.395508, -58.116676))
-
-
-[node name="StaticBody2D" type="StaticBody2D" parent="ScalableVectorShape2D" unique_id=105419351]
-metadata/_edit_lock_ = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScalableVectorShape2D/StaticBody2D" unique_id=615597136]
-polygon = PackedVector2Array(36, 0, 35.81414, 3.6808813, 35.26863, 7.255413, 34.381557, 10.7055025, 33.17102, 14.013056, 31.655106, 17.15998, 29.85191, 20.128183, 27.779528, 22.89957, 25.45605, 25.45605, 22.89957, 27.779528, 20.128183, 29.85191, 17.15998, 31.655106, 14.013056, 33.17102, 10.7055025, 34.381557, 7.255413, 35.26863, 3.6808813, 35.81414, 0, 36, -3.6808813, 35.81414, -7.255413, 35.26863, -10.7055025, 34.381557, -14.013056, 33.17102, -17.15998, 31.655106, -20.128183, 29.85191, -22.89957, 27.779528, -25.45605, 25.45605, -27.779528, 22.89957, -29.85191, 20.128183, -31.655106, 17.15998, -33.17102, 14.013056, -34.381557, 10.7055025, -35.26863, 7.255413, -35.81414, 3.6808813, -36, 0, -35.81414, -3.6808813, -35.26863, -7.255413, -34.381557, -10.7055025, -33.17102, -14.013056, -31.655106, -17.15998, -29.85191, -20.128183, -27.779528, -22.89957, -25.45605, -25.45605, -22.89957, -27.779528, -20.128183, -29.85191, -17.15998, -31.655106, -14.013056, -33.17102, -10.7055025, -34.381557, -7.255413, -35.26863, -3.6808813, -35.81414, 0, -36, 3.6808813, -35.81414, 7.255413, -35.26863, 10.7055025, -34.381557, 14.013056, -33.17102, 17.15998, -31.655106, 20.128183, -29.85191, 22.89957, -27.779528, 25.45605, -25.45605, 27.779528, -22.89957, 29.85191, -20.128183, 31.655106, -17.15998, 33.17102, -14.013056, 34.381557, -10.7055025, 35.26863, -7.255413, 35.81414, -3.6808813)
-metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1356116521]
 sprite_frames = SubResource("SpriteFrames_52m46")
 animation = &"active"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=105419351]
+collision_layer = 2
+script = ExtResource("3_v3ie5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=615597136]
+polygon = PackedVector2Array(36, 0, 35.81414, 3.6808813, 35.26863, 7.255413, 34.381557, 10.7055025, 33.17102, 14.013056, 31.655106, 17.15998, 29.85191, 20.128183, 27.779528, 22.89957, 25.45605, 25.45605, 22.89957, 27.779528, 20.128183, 29.85191, 17.15998, 31.655106, 14.013056, 33.17102, 10.7055025, 34.381557, 7.255413, 35.26863, 3.6808813, 35.81414, 0, 36, -3.6808813, 35.81414, -7.255413, 35.26863, -10.7055025, 34.381557, -14.013056, 33.17102, -17.15998, 31.655106, -20.128183, 29.85191, -22.89957, 27.779528, -25.45605, 25.45605, -27.779528, 22.89957, -29.85191, 20.128183, -31.655106, 17.15998, -33.17102, 14.013056, -34.381557, 10.7055025, -35.26863, 7.255413, -35.81414, 3.6808813, -36, 0, -35.81414, -3.6808813, -35.26863, -7.255413, -34.381557, -10.7055025, -33.17102, -14.013056, -31.655106, -17.15998, -29.85191, -20.128183, -27.779528, -22.89957, -25.45605, -25.45605, -22.89957, -27.779528, -20.128183, -29.85191, -17.15998, -31.655106, -14.013056, -33.17102, -10.7055025, -34.381557, -7.255413, -35.26863, -3.6808813, -35.81414, 0, -36, 3.6808813, -35.81414, 7.255413, -35.26863, 10.7055025, -34.381557, 14.013056, -33.17102, 17.15998, -31.655106, 20.128183, -29.85191, 22.89957, -27.779528, 25.45605, -25.45605, 27.779528, -22.89957, 29.85191, -20.128183, 31.655106, -17.15998, 33.17102, -14.013056, 34.381557, -10.7055025, 35.26863, -7.255413, 35.81414, -3.6808813)
+metadata/_edit_lock_ = true

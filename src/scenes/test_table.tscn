@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6bjuucykdcgk"]
 
 [ext_resource type="PackedScene" uid="uid://bkqm7am1p7jmt" path="res://scenes/flipper.tscn" id="1_ar12w"]
-[ext_resource type="Script" uid="uid://vfe4wa6j1dex" path="res://scenes/test_table.gd" id="1_wwlei"]
+[ext_resource type="Script" uid="uid://vfe4wa6j1dex" path="res://scripts/test_table.gd" id="1_wwlei"]
 [ext_resource type="PackedScene" uid="uid://c6vfjvuytl240" path="res://scenes/pinball.tscn" id="2_wwlei"]
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="4_h3v31"]
 
@@ -18,3 +18,15 @@ flipper_direction = 1
 
 [node name="pinball" parent="." unique_id=782531317 instance=ExtResource("2_wwlei")]
 position = Vector2(744, 308)
+
+[node name="DropTargetBig" parent="." unique_id=1518252097 instance=ExtResource("4_h3v31")]
+position = Vector2(600, 102)
+scale = Vector2(1.5, 1.5)
+
+[node name="DropTargetLeft" parent="." unique_id=467004815 instance=ExtResource("4_h3v31")]
+position = Vector2(448, 224)
+
+[node name="DropTargetRight" parent="." unique_id=913689252 instance=ExtResource("4_h3v31")]
+position = Vector2(736, 177)
+
+[connection signal="ball_hit_something" from="pinball" to="." method="_on_pinball_hit"]

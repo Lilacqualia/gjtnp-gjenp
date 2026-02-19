@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT):
 		$pinball.translate(get_global_mouse_position() - $pinball.global_position)
 		$pinball.linear_velocity = Vector2.ZERO
@@ -16,3 +16,5 @@ func _process(delta: float) -> void:
 
 func _on_pinball_hit(hit_object: Node) -> void:
 	print("table thinks you hit %s" % hit_object.name)
+	if hit_object.has_method("receive_hit"):
+		hit_object.receive_hit()

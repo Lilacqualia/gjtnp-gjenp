@@ -44,6 +44,11 @@ hittable_object="Bumpers, targets, etc that the ball may hit."
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Eggs"
+2d_physics/layer_2="DropTargets"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
