@@ -120,14 +120,14 @@ flipper_direction = 1
 position = Vector2(-104, 840)
 
 [node name="DropTargetBig" parent="." unique_id=1518252097 instance=ExtResource("4_h3v31")]
-position = Vector2(600, 102)
+position = Vector2(1, 253)
 scale = Vector2(1.5, 1.5)
 
-[node name="DropTargetLeft" parent="." unique_id=467004815 groups=["droptargets"] instance=ExtResource("4_h3v31")]
-position = Vector2(448, 224)
+[node name="DropTargetLeft" parent="." unique_id=467004815 instance=ExtResource("4_h3v31")]
+position = Vector2(-259, 371)
 
 [node name="DropTargetRight" parent="." unique_id=913689252 instance=ExtResource("4_h3v31")]
-position = Vector2(736, 177)
+position = Vector2(317, 367)
 
 [node name="drain_killbox" type="Area2D" parent="." unique_id=29394999]
 position = Vector2(0, -56)
@@ -280,6 +280,7 @@ update_curve_at_runtime = true
 arc_list = SubResource("Resource_sy0cj")
 shape_type = 1
 size = Vector2(826.2871, 338.14752)
+metadata/_select_hint_ = true
 
 [node name="CutoutOfboard_gutter_walls2" type="Node2D" parent="board_gutter_walls" unique_id=946174414]
 position = Vector2(544, -248)
