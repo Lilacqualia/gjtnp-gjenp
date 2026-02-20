@@ -33,7 +33,7 @@ fill = 1
 fill_from = Vector2(0.3448836, 0.23413944)
 fill_to = Vector2(0.85857934, 0.85755605)
 
-[node name="pinball" type="RigidBody2D" unique_id=782531317]
+[node name="pinball" type="RigidBody2D" unique_id=782531317  groups=["pinballs"]]
 collision_mask = 3
 contact_monitor = true
 max_contacts_reported = 5
@@ -68,3 +68,12 @@ polygon = PackedVector2Array(24, 0, 23.876095, 2.453921, 23.51242, 4.836942, 22.
 metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=308900935]
+zoom = Vector2(0.75, 0.75)
+limit_left = -904
+limit_top = -1648
+limit_right = 904
+limit_bottom = 1648
+limit_smoothed = true
+position_smoothing_enabled = true

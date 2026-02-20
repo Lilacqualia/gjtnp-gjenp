@@ -1,19 +1,18 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var PinballScene : PackedScene = preload("res://scenes/pinball.tscn")
+@onready var pinball_spawn_point : Vector2 = $pinball.position
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT):
-		$pinball.translate(get_global_mouse_position() - $pinball.global_position)
-		$pinball.linear_velocity = Vector2.ZERO
-	pass
-
-
+func _on_drain_killbox_body_entered(body: Node2D) -> void: # cribbed from the sample.
+	if body.is_in_group("pinballs"):
+		body.remove_from_group("pinballs")
+		await get_tree().create_timer(1).timeout
+		body.queue_free()
+		var new_ball : Node2D = PinballScene.instantiate()
+		new_ball.position = pinball_spawn_point
+		add_child.call_deferred(new_ball)
+	
 func _on_pinball_hit(hit_object: Node) -> void:
 	print("table thinks you hit %s" % hit_object.name)
 	if hit_object.has_method("receive_hit"):
