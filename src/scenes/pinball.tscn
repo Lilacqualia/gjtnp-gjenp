@@ -34,6 +34,9 @@ fill_from = Vector2(0.3448836, 0.23413944)
 fill_to = Vector2(0.85857934, 0.85755605)
 
 [node name="pinball" type="RigidBody2D" unique_id=782531317 groups=["pinballs"]]
+collision_mask = 3
+contact_monitor = true
+max_contacts_reported = 5
 script = ExtResource("1_5eq27")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=354175980]
@@ -72,3 +75,5 @@ limit_right = 904
 limit_bottom = 1648
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

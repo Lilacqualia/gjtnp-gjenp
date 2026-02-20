@@ -10,7 +10,7 @@ config_version=5
 
 [addons]
 
-curved_lines_2d/add_collision_type=0
+curved_lines_2d/add_collision_type=1
 curved_lines_2d/add_stroke_enabled=false
 curved_lines_2d/snap_to_pixel=true
 curved_lines_2d/snap_resolution=8.0
@@ -26,6 +26,10 @@ config/icon="res://icon.svg"
 
 enabled=PackedStringArray("res://addons/curved_lines_2d/plugin.cfg")
 
+[global_group]
+
+hittable_object="Bumpers, targets, etc that the ball may hit."
+
 [input]
 
 "Left Flipper"={
@@ -40,6 +44,11 @@ enabled=PackedStringArray("res://addons/curved_lines_2d/plugin.cfg")
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":47,"key_label":0,"unicode":47,"location":0,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Eggs"
+2d_physics/layer_2="DropTargets"
 
 [physics]
 

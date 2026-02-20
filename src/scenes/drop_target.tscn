@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d2ldm28a03gur"]
+
+[ext_resource type="Texture2D" uid="uid://cy5rohihw1nuc" path="res://images/droptarget2.png" id="3_4g07d"]
+[ext_resource type="Script" uid="uid://b7mubgtxoqk11" path="res://scripts/drop_target.gd" id="3_v3ie5"]
+[ext_resource type="Texture2D" uid="uid://cgeys3awdxnr8" path="res://images/droptarget1.PNG" id="4_4g07d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_52m46"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4g07d")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4g07d")
+}],
+"loop": true,
+"name": &"inactive",
+"speed": 5.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=105419351 groups=["hittable_object"]]
+collision_layer = 2
+script = ExtResource("3_v3ie5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=615597136]
+polygon = PackedVector2Array(36, 0, 35.81414, 3.6808813, 35.26863, 7.255413, 34.381557, 10.7055025, 33.17102, 14.013056, 31.655106, 17.15998, 29.85191, 20.128183, 27.779528, 22.89957, 25.45605, 25.45605, 22.89957, 27.779528, 20.128183, 29.85191, 17.15998, 31.655106, 14.013056, 33.17102, 10.7055025, 34.381557, 7.255413, 35.26863, 3.6808813, 35.81414, 0, 36, -3.6808813, 35.81414, -7.255413, 35.26863, -10.7055025, 34.381557, -14.013056, 33.17102, -17.15998, 31.655106, -20.128183, 29.85191, -22.89957, 27.779528, -25.45605, 25.45605, -27.779528, 22.89957, -29.85191, 20.128183, -31.655106, 17.15998, -33.17102, 14.013056, -34.381557, 10.7055025, -35.26863, 7.255413, -35.81414, 3.6808813, -36, 0, -35.81414, -3.6808813, -35.26863, -7.255413, -34.381557, -10.7055025, -33.17102, -14.013056, -31.655106, -17.15998, -29.85191, -20.128183, -27.779528, -22.89957, -25.45605, -25.45605, -22.89957, -27.779528, -20.128183, -29.85191, -17.15998, -31.655106, -14.013056, -33.17102, -10.7055025, -34.381557, -7.255413, -35.26863, -3.6808813, -35.81414, 0, -36, 3.6808813, -35.81414, 7.255413, -35.26863, 10.7055025, -34.381557, 14.013056, -33.17102, 17.15998, -31.655106, 20.128183, -29.85191, 22.89957, -27.779528, 25.45605, -25.45605, 27.779528, -22.89957, 29.85191, -20.128183, 31.655106, -17.15998, 33.17102, -14.013056, 34.381557, -10.7055025, 35.26863, -7.255413, 35.81414, -3.6808813)
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1356116521]
+sprite_frames = SubResource("SpriteFrames_52m46")
+animation = &"active"
