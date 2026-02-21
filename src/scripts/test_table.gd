@@ -2,7 +2,11 @@ extends Node2D
 
 var PinballScene : PackedScene = preload("res://scenes/pinball.tscn")
 @onready var pinball_spawn_point : Vector2 = $pinball.position
+var score: int
+signal update_score_display
 
+func _ready() -> void:
+	score = 0
 
 func _on_drain_killbox_body_entered(body: Node2D) -> void: # cribbed from the sample.
 	if body.is_in_group("pinballs"):
@@ -18,3 +22,7 @@ func _on_drain_killbox_body_entered(body: Node2D) -> void: # cribbed from the sa
 	
 func _on_pinball_hit(hit_object: Node) -> void:
 	hit_object.receive_hit()
+	if hit_object.value:
+		print("add %d points" % hit_object.value)
+		score += hit_object.value
+		emit_signal("update_score_display", score)
