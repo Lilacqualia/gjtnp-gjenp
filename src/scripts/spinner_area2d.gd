@@ -11,4 +11,5 @@ func _on_body_entered(body: Node2D) -> void: # reads the speed of the pinball, d
 	print("speed: " + str(speed) + " mph")
 	var spins: int = speed/300
 	print("spins: " + str(spins))
-	spinner_flipped.emit(value * spins)
+	#spinner_flipped.emit(value * spins)
+	emit_signal("spinner_flipped", value * spins)

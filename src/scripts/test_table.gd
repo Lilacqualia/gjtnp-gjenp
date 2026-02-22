@@ -26,3 +26,10 @@ func _on_pinball_hit(hit_object: Node) -> void:
 		print("add %d points" % hit_object.value)
 		score += hit_object.value
 		emit_signal("update_score_display", score)
+
+
+
+func _on_spinner_spinner_flipped(pointvalue: Variant) -> void:
+	print("add " + str(pointvalue) + " points")
+	score += pointvalue
+	emit_signal("update_score_display", score)
