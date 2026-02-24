@@ -10,6 +10,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func receive_hit() -> void:
+func receive_hit(_speed) -> int: #-> void: # revision 1
 	$AnimatedSprite2D.animation = "inactive"
 	$CollisionPolygon2D.set_deferred("disabled", true)
+	return value # revision 1

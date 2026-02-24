@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_beaw0"]
 
-[node name="spinner" type="Area2D" unique_id=1432479668]
+[node name="spinner" type="Area2D" unique_id=1432479668 groups=["hittable_object"]]
 collision_layer = 4
 script = ExtResource("1_78gc6")
 value = 50

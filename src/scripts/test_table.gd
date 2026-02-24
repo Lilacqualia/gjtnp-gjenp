@@ -21,15 +21,19 @@ func _on_drain_killbox_body_entered(body: Node2D) -> void: # cribbed from the sa
 		add_child.call_deferred(new_ball)
 	
 func _on_pinball_hit(hit_object: Node) -> void:
-	hit_object.receive_hit()
-	if hit_object.value:
-		print("add %d points" % hit_object.value)
-		score += hit_object.value
-		emit_signal("update_score_display", score)
-
-
-
-func _on_spinner_spinner_flipped(pointvalue: Variant) -> void:
-	print("add " + str(pointvalue) + " points")
-	score += pointvalue
+	print("hit sensed") # revision 1
+	var newpoints: int = hit_object.receive_hit($pinball.linear_velocity)
+	print("add %d points" % newpoints)
+	score += newpoints
 	emit_signal("update_score_display", score)
+#	if hit_object.value: # revision 0
+#		print("add %d points" % hit_object.value)
+#		score += hit_object.value
+#		emit_signal("update_score_display", score)
+
+
+
+#func _on_spinner_spinner_flipped(pointvalue: Variant) -> void:
+#	print("add " + str(pointvalue) + " points")
+#	score += pointvalue
+#	emit_signal("update_score_display", score)

@@ -29,6 +29,8 @@ enabled=PackedStringArray("res://addons/curved_lines_2d/plugin.cfg")
 [global_group]
 
 hittable_object="Bumpers, targets, etc that the ball may hit."
+spinner="targets that activate as the ball passes through and check the ball's speed. paired with hittable_object"
+drop_target="targets that take a single hit and disable themselves. paired with hittable_object"
 
 [input]
 
@@ -49,6 +51,7 @@ hittable_object="Bumpers, targets, etc that the ball may hit."
 
 2d_physics/layer_1="Eggs"
 2d_physics/layer_2="DropTargets"
+2d_physics/layer_3="spinners"
 
 [physics]
 
