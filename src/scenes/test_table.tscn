@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="4_h3v31"]
 [ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="5_sy0cj"]
 [ext_resource type="PackedScene" uid="uid://crth4pfd187x3" path="res://scenes/score_display.tscn" id="8_dglsw"]
+[ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="9_aomlx"]
 
 [sub_resource type="GDScript" id="GDScript_sy0cj"]
 script/source = "extends Area2D
@@ -306,6 +307,14 @@ size = Vector2(492.0315, 432)
 
 [node name="ScoreDisplay" parent="HUD" unique_id=1937041961 instance=ExtResource("8_dglsw")]
 position = Vector2(576, 48)
+
+[node name="RightOWPlatform" parent="." unique_id=1415582272 instance=ExtResource("9_aomlx")]
+position = Vector2(183.99995, 484)
+rotation = 0.43633232
+
+[node name="LeftOWPlatform" parent="." unique_id=502280029 instance=ExtResource("9_aomlx")]
+position = Vector2(-187, 490)
+rotation = -0.43633232
 
 [connection signal="update_score_display" from="." to="HUD/ScoreDisplay" method="_on_update_score_display"]
 [connection signal="ball_hit_something" from="pinball" to="." method="_on_pinball_hit"]

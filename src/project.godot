@@ -26,6 +26,9 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=540
 window/size/viewport_height=960
+[audio]
+
+buses/default_bus_layout="uid://cc8i203nnhsjo"
 
 [editor_plugins]
 
@@ -59,6 +62,7 @@ hittable_object="Bumpers, targets, etc that the ball may hit."
 
 2d_physics/layer_1="Eggs"
 2d_physics/layer_2="DropTargets"
+2d_physics/layer_3="OneWayPlatforms"
 
 [physics]
 
