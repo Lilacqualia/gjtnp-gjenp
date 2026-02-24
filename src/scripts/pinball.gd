@@ -1,4 +1,4 @@
-extends RigidBody2D
+class_name Pinball extends RigidBody2D
 
 signal ball_hit_something(hit_object: Node)
 

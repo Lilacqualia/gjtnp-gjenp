@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dvc65kq7ew83u"]
+
+[node name="table_cave" type="Node2D" unique_id=1736824882]
+
+[node name="Label" type="Label" parent="." unique_id=1620509888]
+offset_left = 173.0
+offset_top = 208.0
+offset_right = 347.0
+offset_bottom = 231.0
+text = "CAVE ZONE"

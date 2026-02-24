@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://drb6vfiit5isy"]
+
+[ext_resource type="Script" uid="uid://uvbeinfh5u6c" path="res://scripts/table_forest.gd" id="1_5vocl"]
+[ext_resource type="Script" uid="uid://de3jpss66xjfh" path="res://addons/curved_lines_2d/scalable_vector_shape_2d.gd" id="1_8u5px"]
+[ext_resource type="PackedScene" uid="uid://dvc65kq7ew83u" path="res://scenes/table_cave.tscn" id="2_3pj8s"]
+[ext_resource type="Script" uid="uid://dlbv4pit17dnu" path="res://addons/curved_lines_2d/scalable_arc.gd" id="2_5vocl"]
+[ext_resource type="PackedScene" uid="uid://bkqm7am1p7jmt" path="res://scenes/flipper.tscn" id="2_cwxmj"]
+[ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="3_3pj8s"]
+[ext_resource type="PackedScene" uid="uid://gyyteubkw371" path="res://scenes/default_wall_zones.tscn" id="4_5vocl"]
+[ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="5_3pj8s"]
+
+[sub_resource type="GDScript" id="GDScript_ehd0t"]
+script/source = "extends Area2D
+
+
+"
+
+[sub_resource type="Curve2D" id="Curve2D_r5rc4"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 30.654808, 56, 0, 30.9288, 0, -30.9288, 0, 0, 55.503906, 0, 30.654808, 0, -30.654808, -56, 0, -30.9288, 0, 30.9288, 0, 0, -55.503906, 0, -30.654808, 0, 0, 56, 0)
+}
+point_count = 5
+
+[sub_resource type="Resource" id="Resource_o62vd"]
+resource_local_to_scene = true
+script = ExtResource("3_3pj8s")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6b73"]
+radius = 56.0
+
+[node name="table_forest" type="Node2D" unique_id=480273124]
+script = ExtResource("1_5vocl")
+ResetPosition = Vector2(180, 600)
+NextScene = ExtResource("2_3pj8s")
+
+[node name="hud" type="CanvasLayer" parent="." unique_id=389553760]
+
+[node name="hud_content_bg" type="Polygon2D" parent="hud" unique_id=1069015204]
+position = Vector2(30, 30)
+color = Color(0.13725491, 0.23137255, 1, 1)
+polygon = PackedVector2Array(0, 0, 480, 0, 480, 70, 0, 70)
+
+[node name="background" type="CanvasLayer" parent="." unique_id=827769457]
+layer = -1
+visible = false
+
+[node name="grey_bg" type="Polygon2D" parent="background" unique_id=866892873]
+color = Color(0.5137255, 0.5137255, 0.5137255, 1)
+polygon = PackedVector2Array(0, 0, 540, 0, 540, 960, 0, 960)
+uv = PackedVector2Array(0, 0, 536, 0, 535.99994, 199.99998, 0, 200)
+
+[node name="forest_walls" parent="." unique_id=623261526 instance=ExtResource("4_5vocl")]
+position = Vector2(30, 130)
+metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(-942.53955, 744.26495),"local_point_position":Vector2(-972.53955, 614.26495))
+
+
+[node name="left_flipper" parent="." unique_id=1506876985 instance=ExtResource("2_cwxmj")]
+position = Vector2(120, 720)
+scale = Vector2(0.5, 0.5)
+
+[node name="right_flipper" parent="." unique_id=1473821576 instance=ExtResource("2_cwxmj")]
+position = Vector2(420, 720)
+scale = Vector2(-0.5, 0.5)
+flipper_direction = 1
+
+[node name="target_1" parent="." unique_id=105419351 instance=ExtResource("5_3pj8s")]
+position = Vector2(270, 208)
+value = 50
+
+[node name="target_2" parent="." unique_id=1970509157 instance=ExtResource("5_3pj8s")]
+position = Vector2(170, 308)
+value = 50
+
+[node name="target_3" parent="." unique_id=1486366034 instance=ExtResource("5_3pj8s")]
+position = Vector2(370, 308)
+value = 50
+
+[node name="drain_killbox" type="Area2D" parent="." unique_id=1752527795]
+position = Vector2(270, 880)
+script = SubResource("GDScript_ehd0t")
+
+[node name="Ellipse" type="Node2D" parent="drain_killbox" unique_id=111259258 node_paths=PackedStringArray("polygon")]
+script = ExtResource("1_8u5px")
+polygon = NodePath("Fill")
+curve = SubResource("Curve2D_r5rc4")
+update_curve_at_runtime = true
+arc_list = SubResource("Resource_o62vd")
+shape_type = 2
+size = Vector2(112, 111.00781)
+rx = 56.0
+ry = 55.503906
+
+[node name="Fill" type="Polygon2D" parent="drain_killbox/Ellipse" unique_id=1194721693]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(56, 0, 55.710888, 5.6750917, 54.862312, 11.186216, 53.482426, 16.505478, 51.59936, 21.604982, 49.241276, 26.456833, 46.436306, 31.033134, 43.212597, 35.305992, 39.5983, 39.247505, 35.621555, 42.829784, 31.310507, 46.024933, 26.693304, 48.805058, 21.798088, 51.142254, 16.653004, 53.00863, 11.286199, 54.376297, 5.7258153, 55.217354, 0, 55.503906, -5.7258153, 55.217358, -11.286199, 54.376297, -16.653004, 53.008633, -21.798088, 51.142254, -26.693304, 48.805058, -31.310509, 46.024933, -35.621555, 42.829784, -39.5983, 39.247505, -43.2126, 35.305992, -46.436302, 31.033134, -49.241272, 26.456833, -51.59936, 21.604982, -53.48242, 16.505478, -54.862312, 11.186216, -55.710888, 5.6750917, -56, 0, -55.710888, -5.6750917, -54.862312, -11.186216, -53.482426, -16.505478, -51.59936, -21.604982, -49.241276, -26.456833, -46.436306, -31.033134, -43.212597, -35.305992, -39.5983, -39.247505, -35.621555, -42.829784, -31.310507, -46.024933, -26.693304, -48.805058, -21.798088, -51.142254, -16.653004, -53.00863, -11.286199, -54.376297, -5.7258153, -55.217354, 0, -55.503906, 5.7258153, -55.217358, 11.286199, -54.376297, 16.653004, -53.008633, 21.798088, -51.142254, 26.693304, -48.805058, 31.310509, -46.024933, 35.621555, -42.829784, 39.5983, -39.247505, 43.2126, -35.305992, 46.436302, -31.033134, 49.241272, -26.456833, 51.59936, -21.604982, 53.48242, -16.505478, 54.862312, -11.186216, 55.710888, -5.6750917)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drain_killbox" unique_id=1138517696]
+shape = SubResource("CircleShape2D_g6b73")
+
+[node name="Timer" type="Timer" parent="drain_killbox" unique_id=928828009]
+wait_time = 0.6
+
+[connection signal="body_entered" from="drain_killbox" to="." method="_on_drain_killbox_body_entered"]
