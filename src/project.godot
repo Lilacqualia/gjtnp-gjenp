@@ -49,6 +49,7 @@ hittable_object="Bumpers, targets, etc that the ball may hit."
 
 2d_physics/layer_1="Eggs"
 2d_physics/layer_2="DropTargets"
+2d_physics/layer_3="OneWayPlatforms"
 
 [physics]
 
