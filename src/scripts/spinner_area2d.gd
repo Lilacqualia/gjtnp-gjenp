@@ -3,18 +3,17 @@ extends Area2D
 ## point value per spin
 @export var value: int
 
-#signal spinner_flipped(pointvalue) # revision 0
+var address
 
-# revision 0
-#func _on_body_entered(body: Node2D) -> void: # reads the speed of the pinball, determines how many times to spin, signals the board to add points
-#	var momentum: Vector2 = body.linear_velocity
-#	var speed: float = momentum.length()
-#	print("speed: " + str(speed) + " mph")
-#	var spins: int = speed/300
-#	print("spins: " + str(spins))
-#	emit_signal("spinner_flipped", value * spins)
+func _ready() -> void: # stashes the spinner's own address to send to the ball
+	address = get_node(get_path())
 
-# revision 1
+# rigidbodys like the ball can't detect entering areas, so this prompts the ball to
+# start contact to keep the spinners' behavior consistent with everything else
+func _on_body_entered(body: Node2D) -> void:
+	body._on_body_entered(address)
+
+# scoring logic
 func receive_hit(velocity) -> int:
 	var speed: float = velocity.length()
 	print("speed: " + str(speed) + " mph")
