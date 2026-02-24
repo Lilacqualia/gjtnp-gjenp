@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://de3jpss66xjfh" path="res://addons/curved_lines_2d/scalable_vector_shape_2d.gd" id="2_uxavs"]
 [ext_resource type="Script" uid="uid://dlbv4pit17dnu" path="res://addons/curved_lines_2d/scalable_arc.gd" id="3_4xpxx"]
 [ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="4_a3nvg"]
+[ext_resource type="AudioStream" uid="uid://os2a1rbxssyw" path="res://sfx/wall_impact-r1.wav" id="5_uxavs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_px60l"]
 radius = 24.0
@@ -75,5 +76,9 @@ limit_right = 904
 limit_bottom = 1648
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="Thunk" type="AudioStreamPlayer" parent="." unique_id=2037898806]
+stream = ExtResource("5_uxavs")
+volume_db = -6.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
