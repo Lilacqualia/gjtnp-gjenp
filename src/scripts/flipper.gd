@@ -22,17 +22,27 @@ enum Flipper_Direction {
 var flipping_up := false
 var acceleration = 0.0
 
+func _ready():
+	if flipper_direction == Flipper_Direction.LEFT:
+		$ActivationSound.bus = "LeftChannelOnly"
+	else:
+		$ActivationSound.bus = "RightChannelOnly"
+
 func _physics_process(delta: float) -> void:
 	if flipper_direction == 0: #                           maps flipper to its left/right key. feels a little hacky, redo if it starts losing inputs
 		if Input.is_action_just_pressed("Left Flipper"):
 			flipping_up = true
+			$ActivationSound.play()
 		elif Input.is_action_just_released("Left Flipper"):
 			flipping_up = false
+			$DeactivationSound.play()
 	elif flipper_direction == 1:
 		if Input.is_action_just_pressed("Right Flipper"):
 			flipping_up = true
+			$ActivationSound.play()
 		elif Input.is_action_just_released("Right Flipper"):
 			flipping_up = false
+			$DeactivationSound.play()
 	
 	if flipping_up:
 		if $AnimatableBody2D.rotation > deg_to_rad(min_rotation) + 0.01:

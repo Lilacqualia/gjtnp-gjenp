@@ -26,9 +26,10 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=540
 window/size/viewport_height=960
+
 [audio]
 
-buses/default_bus_layout="uid://cc8i203nnhsjo"
+buses/default_bus_layout="uid://dwq6rk1chemdm"
 
 [editor_plugins]
 
@@ -37,6 +38,7 @@ enabled=PackedStringArray("res://addons/curved_lines_2d/plugin.cfg")
 [global_group]
 
 hittable_object="Bumpers, targets, etc that the ball may hit."
+walls="outer walls and any other solid walls that don't do anything except be in the way"
 
 [input]
 
