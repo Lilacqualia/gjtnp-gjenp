@@ -2,7 +2,7 @@ extends Node2D
 
 signal game_start
 
-var ForestTable : PackedScene = preload("res://scenes/table_forest.tscn")
+var forest_table_path = "res://scenes/table_forest.tscn"
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Start Game"):
@@ -12,4 +12,4 @@ func _input(event: InputEvent) -> void:
 
 func start_the_game():
 	await get_tree().create_timer(1.0).timeout
-	get_tree().change_scene_to_packed(ForestTable)
+	get_tree().change_scene_to_file(forest_table_path)

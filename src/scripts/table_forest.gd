@@ -1,6 +1,7 @@
 extends Node2D
 
 var PinballScene : PackedScene = preload("res://scenes/pinball.tscn")
+var game_over_path = "res://scenes/game_over.tscn"
 var ball: Pinball
 var score: int = 0
 var table_is_done = false
@@ -30,13 +31,23 @@ func _on_drain_killbox_body_entered(_body: Node2D) -> void: # cribbed from the s
 		ball_resetter.start(3.0)
 
 func _reset_the_ball():
+	var set_health_to = null
 	if ball:
-		print("freeing old ball")
-		ball.queue_free()
-		ball = null
+		ball.health -= 1
+		print("health is now %d" % ball.health)
+		if ball.health <= 0:
+			get_tree().change_scene_to_file(game_over_path)
+			return
+		else:
+			print("freeing old ball")
+			ball.queue_free()
+			set_health_to = ball.health
+			ball = null
 	if not ball:
 		print("instantiating new ball")
 		ball = PinballScene.instantiate()
+		if set_health_to != null:
+			ball.health = set_health_to
 		(ball.get_node("Camera2D") as Camera2D).set_deferred("enabled", false)
 		ball.connect("ball_hit_something", _on_pinball_hit)
 		add_child.call_deferred(ball)
@@ -49,7 +60,7 @@ func _reset_the_ball():
 	
 
 func _on_pinball_hit(hit_object: Node) -> void:
-	hit_object.receive_hit()
+	hit_object.receive_hit(ball.linear_velocity)
 	if hit_object.value:
 		print("add %d points" % hit_object.value)
 		score += hit_object.value

@@ -14,7 +14,7 @@ func _on_body_entered(body: Node2D) -> void:
 	body._on_body_entered(address)
 
 # scoring logic
-func receive_hit(velocity) -> int:
+func receive_hit(velocity: Vector2) -> int:
 	var speed: float = velocity.length()
 	print("speed: " + str(speed) + " mph")
 	var spins: int = speed/300
