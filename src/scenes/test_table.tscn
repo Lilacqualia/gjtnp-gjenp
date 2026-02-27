@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="5_sy0cj"]
 [ext_resource type="PackedScene" uid="uid://crth4pfd187x3" path="res://scenes/score_display.tscn" id="8_dglsw"]
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="9_aomlx"]
+[ext_resource type="PackedScene" uid="uid://g7vq3hqit8s6" path="res://scenes/spinner.tscn" id="9_aomlx"]
 
 [sub_resource type="GDScript" id="GDScript_sy0cj"]
 script/source = "extends Area2D
@@ -118,17 +119,18 @@ flipper_direction = 1
 
 [node name="pinball" parent="." unique_id=782531317 instance=ExtResource("2_wwlei")]
 position = Vector2(-104, 840)
+collision_mask = 7
 
-[node name="DropTargetBig" parent="." unique_id=1518252097 instance=ExtResource("4_h3v31")]
+[node name="DropTargetBig" parent="." unique_id=1518252097 groups=["drop_target"] instance=ExtResource("4_h3v31")]
 position = Vector2(1, 253)
 scale = Vector2(1.5, 1.5)
 value = 100
 
-[node name="DropTargetLeft" parent="." unique_id=467004815 instance=ExtResource("4_h3v31")]
+[node name="DropTargetLeft" parent="." unique_id=467004815 groups=["drop_target"] instance=ExtResource("4_h3v31")]
 position = Vector2(-259, 371)
 value = 50
 
-[node name="DropTargetRight" parent="." unique_id=913689252 instance=ExtResource("4_h3v31")]
+[node name="DropTargetRight" parent="." unique_id=913689252 groups=["drop_target"] instance=ExtResource("4_h3v31")]
 position = Vector2(317, 367)
 value = 50
 
@@ -315,6 +317,12 @@ rotation = 0.43633232
 [node name="LeftOWPlatform" parent="." unique_id=502280029 instance=ExtResource("9_aomlx")]
 position = Vector2(-187, 490)
 rotation = -0.43633232
+
+[node name="spinner" parent="." unique_id=1971452721 groups=["spinner"] instance=ExtResource("9_aomlx")]
+position = Vector2(-410, 497)
+
+[node name="spinner2" parent="." unique_id=1432479668 groups=["spinner"] instance=ExtResource("9_aomlx")]
+position = Vector2(416, 505)
 
 [connection signal="update_score_display" from="." to="HUD/ScoreDisplay" method="_on_update_score_display"]
 [connection signal="ball_hit_something" from="pinball" to="." method="_on_pinball_hit"]

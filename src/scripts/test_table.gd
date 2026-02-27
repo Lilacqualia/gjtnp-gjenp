@@ -21,8 +21,12 @@ func _on_drain_killbox_body_entered(body: Node2D) -> void: # cribbed from the sa
 		add_child.call_deferred(new_ball)
 	
 func _on_pinball_hit(hit_object: Node) -> void:
-	hit_object.receive_hit()
-	if hit_object.value:
-		print("add %d points" % hit_object.value)
-		score += hit_object.value
-		emit_signal("update_score_display", score)
+	print("hit sensed") # revision 1
+	var newpoints: int = hit_object.receive_hit($pinball.linear_velocity) # instances of this function that don't need this vector will have to take it in and just not use it
+	print("add %d points" % newpoints)
+	score += newpoints
+	emit_signal("update_score_display", score)
+#	if hit_object.value: # revision 0
+#		print("add %d points" % hit_object.value)
+#		score += hit_object.value
+#		emit_signal("update_score_display", score)
