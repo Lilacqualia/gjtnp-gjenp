@@ -7,13 +7,12 @@
 [ext_resource type="Script" uid="uid://dlbv4pit17dnu" path="res://addons/curved_lines_2d/scalable_arc.gd" id="4_6wydu"]
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="4_h3v31"]
 [ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="5_sy0cj"]
-[ext_resource type="PackedScene" path="res://scenes/score_display.tscn" id="8_dglsw"]
+[ext_resource type="PackedScene" uid="uid://crth4pfd187x3" path="res://scenes/score_display.tscn" id="8_dglsw"]
+[ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="9_aomlx"]
 [ext_resource type="PackedScene" uid="uid://g7vq3hqit8s6" path="res://scenes/spinner.tscn" id="9_aomlx"]
 
 [sub_resource type="GDScript" id="GDScript_sy0cj"]
 script/source = "extends Area2D
-
-
 "
 
 [sub_resource type="Curve2D" id="Curve2D_aomlx"]
@@ -163,7 +162,7 @@ shape = SubResource("CircleShape2D_3g8dd")
 [node name="Timer" type="Timer" parent="drain_killbox" unique_id=389173057]
 wait_time = 0.6
 
-[node name="board_outer_walls" type="Node2D" parent="." unique_id=2074722002 node_paths=PackedStringArray("polygon", "collision_object", "clip_paths")]
+[node name="board_outer_walls" type="Node2D" parent="." unique_id=2074722002 node_paths=PackedStringArray("polygon", "collision_object", "clip_paths") groups=["walls"]]
 position = Vector2(0, 664)
 script = ExtResource("3_h3v31")
 polygon = NodePath("Fill")
@@ -174,14 +173,13 @@ arc_list = SubResource("Resource_6wydu")
 clip_paths = [null, null, NodePath("CutoutOfboard_outer_walls"), NodePath("CutoutOfboard_outer_walls2")]
 shape_type = 1
 size = Vector2(1083.9922, 1519.9374)
-metadata/_select_hint_ = true
 
 [node name="Fill" type="Polygon2D" parent="board_outer_walls" unique_id=1065537121]
 polygon = PackedVector2Array(0, -679.734, -136, -679.734, -168.30994, -678.1026, -199.68637, -673.3142, -229.97046, -665.5277, -259.0034, -654.90186, -286.62637, -641.5955, -312.6806, -625.76746, -337.0072, -607.5766, -359.4474, -587.18164, -379.84235, -564.74146, -398.03323, -540.41486, -413.86127, -514.3606, -427.1676, -486.73764, -437.79343, -457.7047, -445.58, -427.42062, -450.36835, -396.0442, -451.99976, -363.73425, -451.99976, 235.73425, -450.36832, 268.0442, -445.58, 299.42065, -437.79346, 329.7047, -427.1676, 358.73767, -413.86127, 386.3606, -398.0332, 412.4148, -379.84235, 436.74146, -359.4474, 459.18164, -337.00717, 479.57654, -312.6806, 497.76746, -286.62637, 513.59546, -259.0034, 526.90186, -229.97047, 537.5276, -228.1819, 537.9874, 0, 687.875, 0, 759.9687, -541.9961, 759.9687, -541.9961, -759.9687, 0, -759.9687, 541.9961, 759.9687, 0, 759.9687, 0, 687.875, 2.2888184e-05, 687.875, 229.61511, 537.6191, 229.97046, 537.5277, 259.0034, 526.90186, 286.62637, 513.59546, 312.6806, 497.76746, 337.0072, 479.57666, 359.4474, 459.18164, 379.84235, 436.74146, 398.03323, 412.4148, 413.86127, 386.3606, 427.1676, 358.73767, 437.79343, 329.7047, 445.58, 299.42065, 450.36835, 268.0442, 451.99976, 235.73425, 451.99976, -363.73425, 450.36832, -396.0442, 445.58, -427.42062, 437.79346, -457.7047, 427.1676, -486.73764, 413.86127, -514.36066, 398.0332, -540.4148, 379.84235, -564.74146, 359.4474, -587.18164, 337.00717, -607.57654, 312.6806, -625.76746, 286.62637, -641.5955, 259.0034, -654.90186, 229.97047, -665.52765, 199.68636, -673.31415, 168.30994, -678.1026, 136, -679.734, 0, -679.734, 0, -759.9687, 541.9961, -759.9687)
 polygons = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37], [38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76]]
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="board_outer_walls" unique_id=1170294359]
+[node name="StaticBody2D" type="StaticBody2D" parent="board_outer_walls" unique_id=1170294359 groups=["walls"]]
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="board_outer_walls/StaticBody2D" unique_id=1004219121]
@@ -226,7 +224,6 @@ shape_type = 1
 size = Vector2(903.9995, 1231.468)
 rx = 315.99976
 ry = 315.99976
-metadata/_select_hint_ = true
 
 [node name="CutoutOfboard_outer_walls2" type="Node2D" parent="board_outer_walls" unique_id=2055672036]
 position = Vector2(0, 536)
@@ -239,7 +236,7 @@ arc_list = SubResource("Resource_lccem")
 shape_type = 1
 size = Vector2(277.1543, 276.83728)
 
-[node name="board_gutter_walls" type="Node2D" parent="." unique_id=573104787 node_paths=PackedStringArray("polygon", "collision_object", "clip_paths")]
+[node name="board_gutter_walls" type="Node2D" parent="." unique_id=573104787 node_paths=PackedStringArray("polygon", "collision_object", "clip_paths") groups=["walls"]]
 position = Vector2(0, 920)
 script = ExtResource("3_h3v31")
 polygon = NodePath("Fill")
@@ -256,7 +253,7 @@ polygon = PackedVector2Array(-238.01575, 0.61003876, -238.01575, 136.03333, -486
 polygons = [[0, 1, 2, 3], [4, 5, 6, 7]]
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="board_gutter_walls" unique_id=270294445]
+[node name="StaticBody2D" type="StaticBody2D" parent="board_gutter_walls" unique_id=270294445 groups=["walls"]]
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="board_gutter_walls/StaticBody2D" unique_id=1554578557]
@@ -312,6 +309,14 @@ size = Vector2(492.0315, 432)
 
 [node name="ScoreDisplay" parent="HUD" unique_id=1937041961 instance=ExtResource("8_dglsw")]
 position = Vector2(576, 48)
+
+[node name="RightOWPlatform" parent="." unique_id=1415582272 instance=ExtResource("9_aomlx")]
+position = Vector2(183.99995, 484)
+rotation = 0.43633232
+
+[node name="LeftOWPlatform" parent="." unique_id=502280029 instance=ExtResource("9_aomlx")]
+position = Vector2(-187, 490)
+rotation = -0.43633232
 
 [node name="spinner" parent="." unique_id=1971452721 groups=["spinner"] instance=ExtResource("9_aomlx")]
 position = Vector2(-410, 497)

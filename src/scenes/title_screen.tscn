@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dadcruo80254v"]
+
+[ext_resource type="Script" uid="uid://bhv6wv8ndsk8v" path="res://scripts/title_screen.gd" id="1_fgkus"]
+
+[node name="title_screen" type="Node2D" unique_id=1666565836]
+script = ExtResource("1_fgkus")
+
+[node name="title_text" type="Label" parent="." unique_id=1051850392]
+offset_left = 137.0
+offset_top = 156.0
+offset_right = 399.0
+offset_bottom = 293.0
+theme_override_colors/font_color = Color(0.25490198, 0.06666667, 0.31764707, 1)
+theme_override_font_sizes/font_size = 48
+text = "BREAKFAST
+MACHINE"
+horizontal_alignment = 1
+
+[node name="start_text" type="Label" parent="." unique_id=2088783451]
+offset_left = 172.0
+offset_top = 559.0
+offset_right = 375.0
+offset_bottom = 662.0
+theme_override_colors/font_color = Color(0.7411765, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "press space
+to start"
+horizontal_alignment = 1
+
+[connection signal="game_start" from="." to="." method="start_the_game"]
