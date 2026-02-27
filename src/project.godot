@@ -22,14 +22,14 @@ run/main_scene="uid://c6bjuucykdcgk"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dwq6rk1chemdm"
+
 [display]
 
 window/size/viewport_width=540
 window/size/viewport_height=960
-
-[audio]
-
-buses/default_bus_layout="uid://dwq6rk1chemdm"
 
 [editor_plugins]
 

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://rte20287ewc4"]
+
+[ext_resource type="Script" uid="uid://ds6skriho57f5" path="res://scripts/game_over.gd" id="1_xeevv"]
+
+[node name="GameOver" type="Node2D" unique_id=313161322]
+script = ExtResource("1_xeevv")
+
+[node name="GridContainer" type="VBoxContainer" parent="." unique_id=422832907]
+offset_top = 300.0
+offset_right = 540.0
+offset_bottom = 394.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="OhNoText" type="Label" parent="GridContainer" unique_id=956505981]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.04021522, 0.18286687, 0.18286541, 1)
+theme_override_font_sizes/font_size = 32
+text = "oh no all eggs broke :<"
+horizontal_alignment = 1
+
+[node name="ReturnToTitleText" type="Label" parent="GridContainer" unique_id=165855843]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.68235296, 1)
+theme_override_font_sizes/font_size = 32
+text = "pres space to return to title"
+horizontal_alignment = 1
