@@ -53,17 +53,17 @@ uv = PackedVector2Array(0, 0, 536, 0, 535.99994, 199.99998, 0, 200)
 
 [node name="forest_walls" parent="." unique_id=623261526 instance=ExtResource("4_5vocl")]
 position = Vector2(30, 130)
-metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(366.11542, 668.30426),"local_point_position":Vector2(336.11542, 538.30426))
+metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(-137.83801, 851.06696),"local_point_position":Vector2(-167.83801, 721.06696))
 
 
 [node name="left_flipper" parent="." unique_id=1506876985 instance=ExtResource("2_cwxmj")]
-z_index = 1
-position = Vector2(173, 720)
+z_index = 10
+position = Vector2(175, 720)
 rotation = 0.5235988
 
 [node name="right_flipper" parent="." unique_id=1473821576 instance=ExtResource("2_cwxmj")]
-z_index = 1
-position = Vector2(366.99997, 720)
+z_index = 10
+position = Vector2(364.99997, 720)
 rotation = -0.5235988
 scale = Vector2(-1, 1)
 flipper_direction = 1
@@ -107,12 +107,26 @@ shape = SubResource("CircleShape2D_g6b73")
 wait_time = 0.6
 
 [node name="OneWayPlatform" parent="." unique_id=1415582272 instance=ExtResource("9_r5rc4")]
-position = Vector2(373, 708)
+z_index = -10
+position = Vector2(371, 708)
 rotation = -0.5235988
 
+[node name="CollisionPolygon2D" parent="OneWayPlatform" index="0" unique_id=974076052]
+polygon = PackedVector2Array(-108, -66, 28.253174, -66, 22.19101, -56, -108, -56)
+
 [node name="OneWayPlatform2" parent="." unique_id=143067681 instance=ExtResource("9_r5rc4")]
+z_index = -10
 position = Vector2(168.99997, 708)
 rotation = 0.5235988
 scale = Vector2(-1, 1)
 
+[node name="CollisionPolygon2D" parent="OneWayPlatform2" index="0" unique_id=974076052]
+polygon = PackedVector2Array(-108, -66, 26.789032, -66, 20.779419, -56, -108, -56)
+
+[node name="Sprite2D" parent="OneWayPlatform2" index="1" unique_id=965759894]
+region_rect = Rect2(0, 0, 2744, 64)
+
 [connection signal="body_entered" from="drain_killbox" to="." method="_on_drain_killbox_body_entered"]
+
+[editable path="OneWayPlatform"]
+[editable path="OneWayPlatform2"]

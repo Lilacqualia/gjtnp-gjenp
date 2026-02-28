@@ -7,7 +7,7 @@ collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=974076052]
 position = Vector2(108, 66)
-polygon = PackedVector2Array(-108, -66, 573, -66, 573, -53, -108, -56)
+polygon = PackedVector2Array(-108, -66, 573, -66, 573, -56, -108, -56)
 one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=965759894]
