@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwwbdxesng8sh"
-path="res://.godot/imported/roundbumpertemp.PNG-69ad05349eb7f5de85afb35f281c2186.ctex"
+uid="uid://yxbh0pqlm6x4"
+path="res://.godot/imported/bumper-r2.png-ccc8169253dbf033408b7291116b77bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/roundbumpertemp.PNG"
-dest_files=["res://.godot/imported/roundbumpertemp.PNG-69ad05349eb7f5de85afb35f281c2186.ctex"]
+source_file="res://images/bumper-r2.png"
+dest_files=["res://.godot/imported/bumper-r2.png-ccc8169253dbf033408b7291116b77bd.ctex"]
 
 [params]
 
