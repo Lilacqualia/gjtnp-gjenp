@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="5_3pj8s"]
 [ext_resource type="PackedScene" uid="uid://cw0cq4b4yu3jn" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
+[ext_resource type="PackedScene" uid="uid://ii5arflhyl76" path="res://scenes/damage_kicker.tscn" id="11_g6b73"]
 
 [sub_resource type="GDScript" id="GDScript_ehd0t"]
 script/source = "extends Area2D
@@ -55,7 +56,7 @@ uv = PackedVector2Array(0, 0, 536, 0, 535.99994, 199.99998, 0, 200)
 
 [node name="forest_walls" parent="." unique_id=623261526 instance=ExtResource("4_5vocl")]
 position = Vector2(30, 130)
-metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(112.36432, 682.4042),"local_point_position":Vector2(82.36432, 552.4042))
+metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(-120.43689, 387.9145),"local_point_position":Vector2(-150.43689, 257.9145))
 
 
 [node name="left_flipper" parent="." unique_id=1506876985 instance=ExtResource("2_cwxmj")]
@@ -163,6 +164,9 @@ polygon = PackedVector2Array(-108, -66, 10.086853, -66, -0.5197449, -56, -97.393
 
 [node name="Sprite2D" parent="OneWayPlatform4" index="1" unique_id=965759894]
 region_rect = Rect2(2249, 0, 495, 64)
+
+[node name="Kicker" parent="." unique_id=904206852 instance=ExtResource("11_g6b73")]
+position = Vector2(30, 830)
 
 [connection signal="body_entered" from="drain_killbox" to="." method="_on_drain_killbox_body_entered"]
 
