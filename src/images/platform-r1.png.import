@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da6dqktongnf5"
-path="res://.godot/imported/semisolid_wood.png-4a94ec0da38c5d043bda2ea69c08f298.ctex"
+uid="uid://dj86g5esbkj76"
+path="res://.godot/imported/platform-r1.png-bd4c9bf4c987680fe508431001c4e703.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/semisolid_wood.png"
-dest_files=["res://.godot/imported/semisolid_wood.png-4a94ec0da38c5d043bda2ea69c08f298.ctex"]
+source_file="res://images/platform-r1.png"
+dest_files=["res://.godot/imported/platform-r1.png-bd4c9bf4c987680fe508431001c4e703.ctex"]
 
 [params]
 

@@ -41,6 +41,7 @@ hittable_object="Bumpers, targets, etc that the ball may hit."
 spinner="targets that activate as the ball passes through and check the ball's speed. paired with hittable_object"
 drop_target="targets that take a single hit and disable themselves. paired with hittable_object"
 walls="outer walls and any other solid walls that don't do anything except be in the way"
+round_bumper=""
 
 [input]
 
@@ -68,9 +69,11 @@ walls="outer walls and any other solid walls that don't do anything except be in
 2d_physics/layer_2="DropTargets"
 2d_physics/layer_3="spinners"
 2d_physics/layer_4="OneWayPlatforms"
+2d_physics/layer_5="roundBumper"
 
 [physics]
 
+common/physics_ticks_per_second=120
 3d/physics_engine="Jolt Physics"
 
 [rendering]
