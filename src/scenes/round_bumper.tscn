@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bx3o4u770sdqj"]
+
+[ext_resource type="Texture2D" uid="uid://dwwbdxesng8sh" path="res://images/roundbumpertemp.PNG" id="1_3yxfi"]
+[ext_resource type="Script" uid="uid://1rycmillpnym" path="res://scripts/round_bumper.gd" id="1_8woio"]
+[ext_resource type="Script" uid="uid://pm6dhwnef2hu" path="res://scripts/round_bumper_parent.gd" id="1_iy20v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3yxfi"]
+radius = 32.0
+
+[node name="round_bumper" type="Node2D" unique_id=1626577286]
+script = ExtResource("1_iy20v")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=292888075 groups=["hittable_object", "round_bumper"]]
+collision_layer = 16
+script = ExtResource("1_8woio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1359659834]
+shape = SubResource("CircleShape2D_3yxfi")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=154140872]
+texture = ExtResource("1_3yxfi")
+
+[node name="self_location" type="Marker2D" parent="StaticBody2D" unique_id=351035888]
+
+[node name="egg_aimer" type="Marker2D" parent="StaticBody2D" unique_id=146697805]
