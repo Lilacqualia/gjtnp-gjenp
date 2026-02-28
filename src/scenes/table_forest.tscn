@@ -52,16 +52,15 @@ uv = PackedVector2Array(0, 0, 536, 0, 535.99994, 199.99998, 0, 200)
 
 [node name="forest_walls" parent="." unique_id=623261526 instance=ExtResource("4_5vocl")]
 position = Vector2(30, 130)
-metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(-942.53955, 744.26495),"local_point_position":Vector2(-972.53955, 614.26495))
+metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(249.30646, 690.0563),"local_point_position":Vector2(219.30646, 560.0563))
 
 
 [node name="left_flipper" parent="." unique_id=1506876985 instance=ExtResource("2_cwxmj")]
-position = Vector2(120, 720)
-scale = Vector2(0.5, 0.5)
+position = Vector2(160, 720)
 
 [node name="right_flipper" parent="." unique_id=1473821576 instance=ExtResource("2_cwxmj")]
-position = Vector2(420, 720)
-scale = Vector2(-0.5, 0.5)
+position = Vector2(380, 720)
+scale = Vector2(-1, 1)
 flipper_direction = 1
 
 [node name="target_1" parent="." unique_id=105419351 instance=ExtResource("5_3pj8s")]
