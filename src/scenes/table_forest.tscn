@@ -8,7 +8,8 @@
 [ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="3_3pj8s"]
 [ext_resource type="PackedScene" uid="uid://gyyteubkw371" path="res://scenes/default_wall_zones.tscn" id="4_5vocl"]
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="5_3pj8s"]
-[ext_resource type="PackedScene" uid="uid://c6nx4rbfdry6h" path="res://scenes/one_way_platform.tscn" id="9_r5rc4"]
+[ext_resource type="PackedScene" uid="uid://bx3o4u770sdqj" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
+[ext_resource type="PackedScene" uid="uid://c6nx4rbfdry6h" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
 
 [sub_resource type="GDScript" id="GDScript_ehd0t"]
 script/source = "extends Area2D
@@ -106,7 +107,20 @@ shape = SubResource("CircleShape2D_g6b73")
 [node name="Timer" type="Timer" parent="drain_killbox" unique_id=928828009]
 wait_time = 0.6
 
-[node name="OneWayPlatform" parent="." unique_id=1415582272 instance=ExtResource("9_r5rc4")]
+[node name="round_bumper" parent="." unique_id=1626577286 instance=ExtResource("9_r5rc4")]
+position = Vector2(192.00002, 648.00006)
+scale = Vector2(0.65, 0.65)
+value = 20
+
+[node name="round_bumper2" parent="." unique_id=1952794474 instance=ExtResource("9_r5rc4")]
+position = Vector2(136.00002, 560.00006)
+scale = Vector2(0.65, 0.65)
+
+[node name="round_bumper3" parent="." unique_id=1938718026 instance=ExtResource("9_r5rc4")]
+position = Vector2(256, 560.00006)
+scale = Vector2(0.65, 0.65)
+
+[node name="OneWayPlatform" parent="." unique_id=1415582272 instance=ExtResource("10_o62vd")]
 z_index = -10
 position = Vector2(371, 708)
 rotation = -0.5235988
@@ -114,7 +128,7 @@ rotation = -0.5235988
 [node name="CollisionPolygon2D" parent="OneWayPlatform" index="0" unique_id=974076052]
 polygon = PackedVector2Array(-108, -66, 28.253174, -66, 22.19101, -56, -108, -56)
 
-[node name="OneWayPlatform2" parent="." unique_id=143067681 instance=ExtResource("9_r5rc4")]
+[node name="OneWayPlatform2" parent="." unique_id=143067681 instance=ExtResource("10_o62vd")]
 z_index = -10
 position = Vector2(168.99997, 708)
 rotation = 0.5235988
