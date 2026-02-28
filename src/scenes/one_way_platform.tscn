@@ -1,25 +1,17 @@
-[gd_scene format=3 uid="uid://cm6hvch6j73dc"]
+[gd_scene format=3 uid="uid://c6nx4rbfdry6h"]
 
-[ext_resource type="Texture2D" uid="uid://da6dqktongnf5" path="res://images/semisolid_wood.png" id="1_qgauu"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vts3t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_qgauu")
-}],
-"loop": true,
-"name": &"wood",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://dj86g5esbkj76" path="res://images/platform-r1.png" id="2_wt31i"]
 
 [node name="OneWayPlatform" type="StaticBody2D" unique_id=1415582272]
 collision_layer = 4
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=974556958]
-sprite_frames = SubResource("SpriteFrames_vts3t")
-animation = &"wood"
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=974076052]
-polygon = PackedVector2Array(-113, -29, 115, -34, 115, -9, -111, -18)
+position = Vector2(108, 66)
+polygon = PackedVector2Array(-108, -66, 573, -66, 573, -53, -108, -56)
 one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=965759894]
+scale = Vector2(-0.25, 0.25)
+texture = ExtResource("2_wt31i")
+centered = false
+offset = Vector2(-2728, -8)
