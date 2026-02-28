@@ -8,7 +8,8 @@
 [ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="3_3pj8s"]
 [ext_resource type="PackedScene" uid="uid://gyyteubkw371" path="res://scenes/default_wall_zones.tscn" id="4_5vocl"]
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="5_3pj8s"]
-[ext_resource type="PackedScene" uid="uid://bx3o4u770sdqj" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
+[ext_resource type="PackedScene" uid="uid://cw0cq4b4yu3jn" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
+[ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
 
 [sub_resource type="GDScript" id="GDScript_ehd0t"]
 script/source = "extends Area2D
@@ -33,6 +34,7 @@ radius = 56.0
 [node name="table_forest" type="Node2D" unique_id=480273124]
 script = ExtResource("1_5vocl")
 ResetPosition = Vector2(180, 600)
+ScoreToWin = 1000
 NextScene = ExtResource("2_3pj8s")
 
 [node name="hud" type="CanvasLayer" parent="." unique_id=389553760]
@@ -53,27 +55,31 @@ uv = PackedVector2Array(0, 0, 536, 0, 535.99994, 199.99998, 0, 200)
 
 [node name="forest_walls" parent="." unique_id=623261526 instance=ExtResource("4_5vocl")]
 position = Vector2(30, 130)
-metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(249.30646, 690.0563),"local_point_position":Vector2(219.30646, 560.0563))
+metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(112.36432, 682.4042),"local_point_position":Vector2(82.36432, 552.4042))
 
 
 [node name="left_flipper" parent="." unique_id=1506876985 instance=ExtResource("2_cwxmj")]
-position = Vector2(160, 720)
+z_index = 10
+position = Vector2(175, 720)
+rotation = 0.5235988
 
 [node name="right_flipper" parent="." unique_id=1473821576 instance=ExtResource("2_cwxmj")]
-position = Vector2(380, 720)
+z_index = 10
+position = Vector2(364.99997, 720)
+rotation = -0.5235988
 scale = Vector2(-1, 1)
 flipper_direction = 1
 
 [node name="target_1" parent="." unique_id=105419351 instance=ExtResource("5_3pj8s")]
-position = Vector2(270, 208)
+position = Vector2(356, 201)
 value = 50
 
 [node name="target_2" parent="." unique_id=1970509157 instance=ExtResource("5_3pj8s")]
-position = Vector2(170, 308)
+position = Vector2(445, 320)
 value = 50
 
 [node name="target_3" parent="." unique_id=1486366034 instance=ExtResource("5_3pj8s")]
-position = Vector2(370, 308)
+position = Vector2(416, 247)
 value = 50
 
 [node name="drain_killbox" type="Area2D" parent="." unique_id=1752527795]
@@ -103,16 +109,64 @@ shape = SubResource("CircleShape2D_g6b73")
 wait_time = 0.6
 
 [node name="round_bumper" parent="." unique_id=1626577286 instance=ExtResource("9_r5rc4")]
-position = Vector2(192.00002, 648.00006)
+position = Vector2(209.00002, 344.00003)
 scale = Vector2(0.65, 0.65)
 value = 20
 
 [node name="round_bumper2" parent="." unique_id=1952794474 instance=ExtResource("9_r5rc4")]
-position = Vector2(136.00002, 560.00006)
+position = Vector2(124, 370)
 scale = Vector2(0.65, 0.65)
 
 [node name="round_bumper3" parent="." unique_id=1938718026 instance=ExtResource("9_r5rc4")]
-position = Vector2(256, 560.00006)
+position = Vector2(145.00002, 282.00003)
 scale = Vector2(0.65, 0.65)
 
+[node name="OneWayPlatform" parent="." unique_id=1415582272 instance=ExtResource("10_o62vd")]
+z_index = -10
+position = Vector2(371, 708)
+rotation = -0.5235988
+
+[node name="CollisionPolygon2D" parent="OneWayPlatform" index="0" unique_id=974076052]
+polygon = PackedVector2Array(-108, -66, 34.1192, -66, 23.557037, -56, -97.37564, -56)
+
+[node name="Sprite2D" parent="OneWayPlatform" index="1" unique_id=965759894]
+region_rect = Rect2(2171, 0, 573, 64)
+
+[node name="OneWayPlatform2" parent="." unique_id=143067681 instance=ExtResource("10_o62vd")]
+z_index = -10
+position = Vector2(168.99997, 708)
+rotation = 0.5235988
+scale = Vector2(-1, 1)
+
+[node name="CollisionPolygon2D" parent="OneWayPlatform2" index="0" unique_id=974076052]
+polygon = PackedVector2Array(-108, -66, 39.217224, -66, 26.789032, -56, -97.509674, -56)
+
+[node name="Sprite2D" parent="OneWayPlatform2" index="1" unique_id=965759894]
+region_rect = Rect2(2163, 0, 581, 64)
+
+[node name="OneWayPlatform3" parent="." unique_id=1823518251 instance=ExtResource("10_o62vd")]
+position = Vector2(205, 312)
+rotation = -0.7853982
+
+[node name="CollisionPolygon2D" parent="OneWayPlatform3" index="0" unique_id=974076052]
+polygon = PackedVector2Array(-108, -66, 10.086853, -66, 0.18733215, -56, -98.100494, -56)
+
+[node name="Sprite2D" parent="OneWayPlatform3" index="1" unique_id=965759894]
+region_rect = Rect2(2249, 0, 495, 64)
+
+[node name="OneWayPlatform4" parent="." unique_id=1495266515 instance=ExtResource("10_o62vd")]
+position = Vector2(157, 470)
+rotation = -0.7853982
+
+[node name="CollisionPolygon2D" parent="OneWayPlatform4" index="0" unique_id=974076052]
+polygon = PackedVector2Array(-108, -66, 10.086853, -66, -0.5197449, -56, -97.39337, -56)
+
+[node name="Sprite2D" parent="OneWayPlatform4" index="1" unique_id=965759894]
+region_rect = Rect2(2249, 0, 495, 64)
+
 [connection signal="body_entered" from="drain_killbox" to="." method="_on_drain_killbox_body_entered"]
+
+[editable path="OneWayPlatform"]
+[editable path="OneWayPlatform2"]
+[editable path="OneWayPlatform3"]
+[editable path="OneWayPlatform4"]
