@@ -18,7 +18,7 @@ curved_lines_2d/snap_resolution=8.0
 [application]
 
 config/name="pinball draft 1"
-run/main_scene="uid://c6bjuucykdcgk"
+run/main_scene="uid://drb6vfiit5isy"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -38,9 +38,9 @@ enabled=PackedStringArray("res://addons/curved_lines_2d/plugin.cfg")
 [global_group]
 
 hittable_object="Bumpers, targets, etc that the ball may hit."
+walls="outer walls and any other solid walls that don't do anything except be in the way"
 spinner="targets that activate as the ball passes through and check the ball's speed. paired with hittable_object"
 drop_target="targets that take a single hit and disable themselves. paired with hittable_object"
-walls="outer walls and any other solid walls that don't do anything except be in the way"
 
 [input]
 
