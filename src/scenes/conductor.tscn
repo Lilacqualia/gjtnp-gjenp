@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dsqf3abs40vat"]
+
+[ext_resource type="Script" uid="uid://d0bi6o8k7w6fx" path="res://scripts/conductor.gd" id="1_dqjak"]
+
+[node name="Conductor" type="Node2D" unique_id=233716317]
+script = ExtResource("1_dqjak")

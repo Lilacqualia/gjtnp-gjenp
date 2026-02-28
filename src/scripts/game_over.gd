@@ -1,5 +1,6 @@
 extends Node2D
 
+signal go_to_scene(scene: Globals.SceneName)
 signal go_home
 
 var title_screen_path = "res://scenes/title_screen.tscn"
@@ -17,4 +18,4 @@ func _input(event: InputEvent) -> void:
 		
 func go_back_home():
 	print("let's go back home.")
-	get_tree().change_scene_to_file(title_screen_path)
+	emit_signal("go_to_scene", Globals.SceneName.TITLE)

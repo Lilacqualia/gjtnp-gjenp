@@ -1,17 +1,17 @@
 extends Node2D
 
 var PinballScene : PackedScene = preload("res://scenes/pinball.tscn")
-var game_over_path = "res://scenes/game_over.tscn"
 var ball: Pinball
 var score: int = 0
 var table_is_done = false
 var ball_resetter: Timer
 
 signal update_score_display
+signal go_to_scene(scene: Globals.SceneName)
 
 @export var ResetPosition: Vector2 = Vector2(0.0, 0.0)
 @export var ScoreToWin: int = 150
-@export var NextScene : PackedScene
+@export var NextTable : Globals.SceneName
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,7 +36,7 @@ func _reset_the_ball():
 		ball.health -= 1
 		print("health is now %d" % ball.health)
 		if ball.health <= 0:
-			get_tree().change_scene_to_file(game_over_path)
+			emit_signal("go_to_scene", Globals.SceneName.GAMEOVER)
 			return
 		else:
 			print("freeing old ball")
@@ -69,11 +69,11 @@ func _on_pinball_hit(hit_object: Node) -> void:
 		print("you win forest table, time for cave table")
 		if not table_is_done:
 			table_is_done = true
-			go_to_next_table()
-			
-func go_to_next_table():
+			ask_conductor_for_next_table()
+	
+func ask_conductor_for_next_table():
 	print("go to next table")
 	ball.set_deferred("freeze", true)
 	ball.set_deferred("linear_velocity", Vector2.ZERO)
 	await get_tree().create_timer(3.0).timeout
-	get_tree().change_scene_to_packed(NextScene)
+	emit_signal("go_to_scene", NextTable)

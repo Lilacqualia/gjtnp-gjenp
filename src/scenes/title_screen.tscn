@@ -26,5 +26,3 @@ theme_override_font_sizes/font_size = 36
 text = "press space
 to start"
 horizontal_alignment = 1
-
-[connection signal="game_start" from="." to="." method="start_the_game"]

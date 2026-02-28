@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://uvbeinfh5u6c" path="res://scripts/table_forest.gd" id="1_5vocl"]
 [ext_resource type="Script" uid="uid://de3jpss66xjfh" path="res://addons/curved_lines_2d/scalable_vector_shape_2d.gd" id="1_8u5px"]
-[ext_resource type="PackedScene" uid="uid://dvc65kq7ew83u" path="res://scenes/table_cave.tscn" id="2_3pj8s"]
 [ext_resource type="Script" uid="uid://dlbv4pit17dnu" path="res://addons/curved_lines_2d/scalable_arc.gd" id="2_5vocl"]
 [ext_resource type="PackedScene" uid="uid://bkqm7am1p7jmt" path="res://scenes/flipper.tscn" id="2_cwxmj"]
 [ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="3_3pj8s"]
@@ -32,7 +31,7 @@ radius = 56.0
 [node name="table_forest" type="Node2D" unique_id=480273124]
 script = ExtResource("1_5vocl")
 ResetPosition = Vector2(180, 600)
-NextScene = ExtResource("2_3pj8s")
+NextTable = 3
 
 [node name="hud" type="CanvasLayer" parent="." unique_id=389553760]
 
