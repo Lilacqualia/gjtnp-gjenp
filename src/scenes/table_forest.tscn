@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="3_3pj8s"]
 [ext_resource type="PackedScene" uid="uid://gyyteubkw371" path="res://scenes/default_wall_zones.tscn" id="4_5vocl"]
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="5_3pj8s"]
+[ext_resource type="PackedScene" uid="uid://bx3o4u770sdqj" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
 
 [sub_resource type="GDScript" id="GDScript_ehd0t"]
 script/source = "extends Area2D
@@ -100,5 +101,18 @@ shape = SubResource("CircleShape2D_g6b73")
 
 [node name="Timer" type="Timer" parent="drain_killbox" unique_id=928828009]
 wait_time = 0.6
+
+[node name="round_bumper" parent="." unique_id=1626577286 instance=ExtResource("9_r5rc4")]
+position = Vector2(192.00002, 648.00006)
+scale = Vector2(0.65, 0.65)
+value = 20
+
+[node name="round_bumper2" parent="." unique_id=1952794474 instance=ExtResource("9_r5rc4")]
+position = Vector2(136.00002, 560.00006)
+scale = Vector2(0.65, 0.65)
+
+[node name="round_bumper3" parent="." unique_id=1938718026 instance=ExtResource("9_r5rc4")]
+position = Vector2(256, 560.00006)
+scale = Vector2(0.65, 0.65)
 
 [connection signal="body_entered" from="drain_killbox" to="." method="_on_drain_killbox_body_entered"]
