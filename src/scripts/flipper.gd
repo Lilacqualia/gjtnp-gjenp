@@ -7,56 +7,37 @@ enum Flipper_Direction {
 	RIGHT 
 }
 
-## resting state while untriggered. default value is 0. be aware that flipper appears at 45 degrees, not 0, in the editor
-@export var min_rotation := 0.0
+## Resting swing angle when activated, in degrees.
+@export var swing_angle := 60.0
 
-## resting state while triggered. default value is 45. be aware that flipper seems to overshoot this angle slightly and snap back, presumably to emulate a physical object
-@export var max_rotation := 45.0
-
-## speed at which flipper moves between states. default value is 3
-@export var base_acceleration := 3.0
+## Flip rotation speed, in degrees/s.
+@export var flip_speed := 1200.0
 
 ## changes the triggering input *only*. use inspector -> node2d -> transform -> scale and set x to -1 to flip the actual object
 @export var flipper_direction : Flipper_Direction
 
-var flipping_up := false
-var acceleration = 0.0
+var input_action := ""
 
 func _ready():
 	if flipper_direction == Flipper_Direction.LEFT:
 		$ActivationSound.bus = "LeftChannelOnly"
+		input_action = "Left Flipper"
 	else:
 		$ActivationSound.bus = "RightChannelOnly"
+		input_action = "Right Flipper"
+
+func _process(delta):
+	if Input.is_action_just_pressed(input_action):
+		$ActivationSound.play()
+	if Input.is_action_just_released(input_action):
+		$DeactivationSound.play()
 
 func _physics_process(delta: float) -> void:
-	if flipper_direction == 0: #                           maps flipper to its left/right key. feels a little hacky, redo if it starts losing inputs
-		if Input.is_action_just_pressed("Left Flipper"):
-			flipping_up = true
-			$ActivationSound.play()
-		elif Input.is_action_just_released("Left Flipper"):
-			flipping_up = false
-			$DeactivationSound.play()
-	elif flipper_direction == 1:
-		if Input.is_action_just_pressed("Right Flipper"):
-			flipping_up = true
-			$ActivationSound.play()
-		elif Input.is_action_just_released("Right Flipper"):
-			flipping_up = false
-			$DeactivationSound.play()
+	var flipping_up := Input.is_action_pressed(input_action);
+	var velocity = -flip_speed if flipping_up else flip_speed
+	$AnimatableBody2D.rotation_degrees = clampf(
+		$AnimatableBody2D.rotation_degrees + velocity * delta,
+		-swing_angle,
+		0
+	)
 	
-	if flipping_up:
-		if $AnimatableBody2D.rotation > deg_to_rad(min_rotation) + 0.01:
-			if acceleration == 0:
-				acceleration = 2 * base_acceleration
-			$AnimatableBody2D.rotation -= acceleration * delta
-			acceleration += base_acceleration
-		else:
-			$AnimatableBody2D.rotation = deg_to_rad(min_rotation)
-			acceleration = 0.0
-	else:
-		if $AnimatableBody2D.rotation < deg_to_rad(max_rotation) - 0.01:
-			$AnimatableBody2D.rotation += acceleration * delta
-			acceleration = base_acceleration * 4
-		else:
-			$AnimatableBody2D.rotation = deg_to_rad(max_rotation)
-			acceleration = 0.0

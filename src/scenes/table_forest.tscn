@@ -53,14 +53,18 @@ uv = PackedVector2Array(0, 0, 536, 0, 535.99994, 199.99998, 0, 200)
 
 [node name="forest_walls" parent="." unique_id=623261526 instance=ExtResource("4_5vocl")]
 position = Vector2(30, 130)
-metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(1013, 755),"local_point_position":Vector2(983, 625))
+metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(366.11542, 668.30426),"local_point_position":Vector2(336.11542, 538.30426))
 
 
 [node name="left_flipper" parent="." unique_id=1506876985 instance=ExtResource("2_cwxmj")]
-position = Vector2(160, 720)
+z_index = 1
+position = Vector2(173, 720)
+rotation = 0.5235988
 
 [node name="right_flipper" parent="." unique_id=1473821576 instance=ExtResource("2_cwxmj")]
-position = Vector2(380, 720)
+z_index = 1
+position = Vector2(366.99997, 720)
+rotation = -0.5235988
 scale = Vector2(-1, 1)
 flipper_direction = 1
 
@@ -103,12 +107,12 @@ shape = SubResource("CircleShape2D_g6b73")
 wait_time = 0.6
 
 [node name="OneWayPlatform" parent="." unique_id=1415582272 instance=ExtResource("9_r5rc4")]
-position = Vector2(386, 708)
-rotation = -0.58119464
+position = Vector2(373, 708)
+rotation = -0.5235988
 
 [node name="OneWayPlatform2" parent="." unique_id=143067681 instance=ExtResource("9_r5rc4")]
-position = Vector2(154.99997, 708)
-rotation = 0.58119464
+position = Vector2(168.99997, 708)
+rotation = 0.5235988
 scale = Vector2(-1, 1)
 
 [connection signal="body_entered" from="drain_killbox" to="." method="_on_drain_killbox_body_entered"]
