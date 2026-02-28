@@ -3,5 +3,6 @@ enum SceneName  {
 	TITLE,
 	GAMEOVER,
 	FOREST,
-	CAVE
+	CAVE,
+	VICTORY
 }

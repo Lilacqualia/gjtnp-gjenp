@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://de3jpss66xjfh" path="res://addons/curved_lines_2d/scalable_vector_shape_2d.gd" id="1_8u5px"]
 [ext_resource type="Script" uid="uid://dlbv4pit17dnu" path="res://addons/curved_lines_2d/scalable_arc.gd" id="2_5vocl"]
 [ext_resource type="PackedScene" uid="uid://bkqm7am1p7jmt" path="res://scenes/flipper.tscn" id="2_cwxmj"]
+[ext_resource type="Texture2D" uid="uid://jh3i5axmy10m" path="res://images/background-r1.png" id="2_ehd0t"]
 [ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="3_3pj8s"]
 [ext_resource type="PackedScene" uid="uid://gyyteubkw371" path="res://scenes/default_wall_zones.tscn" id="4_5vocl"]
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="5_3pj8s"]
@@ -30,52 +31,39 @@ radius = 56.0
 
 [node name="table_forest" type="Node2D" unique_id=480273124]
 script = ExtResource("1_5vocl")
-ResetPosition = Vector2(180, 600)
-NextTable = 3
-
-[node name="hud" type="CanvasLayer" parent="." unique_id=389553760]
-
-[node name="hud_content_bg" type="Polygon2D" parent="hud" unique_id=1069015204]
-position = Vector2(30, 30)
-color = Color(0.13725491, 0.23137255, 1, 1)
-polygon = PackedVector2Array(0, 0, 480, 0, 480, 70, 0, 70)
+ResetPosition = Vector2(150, 470)
+NextTable = 4
 
 [node name="background" type="CanvasLayer" parent="." unique_id=827769457]
 layer = -1
 visible = false
 
-[node name="grey_bg" type="Polygon2D" parent="background" unique_id=866892873]
-color = Color(0.5137255, 0.5137255, 0.5137255, 1)
-polygon = PackedVector2Array(0, 0, 540, 0, 540, 960, 0, 960)
-uv = PackedVector2Array(0, 0, 536, 0, 535.99994, 199.99998, 0, 200)
-
 [node name="forest_walls" parent="." unique_id=623261526 instance=ExtResource("4_5vocl")]
-position = Vector2(30, 130)
-metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(249.30646, 690.0563),"local_point_position":Vector2(219.30646, 560.0563))
+metadata/_hover_closest_point_on_curve_ = Object(Object,"script":Resource("res://addons/curved_lines_2d/closest_point_on_curve_meta.gd"),"before_segment":1,"point_position":Vector2(-691.7588, 41.358307),"local_point_position":Vector2(-691.7588, 41.358307))
 
 
 [node name="left_flipper" parent="." unique_id=1506876985 instance=ExtResource("2_cwxmj")]
-position = Vector2(160, 720)
+position = Vector2(130, 590)
 
 [node name="right_flipper" parent="." unique_id=1473821576 instance=ExtResource("2_cwxmj")]
-position = Vector2(380, 720)
+position = Vector2(350, 590)
 scale = Vector2(-1, 1)
 flipper_direction = 1
 
 [node name="target_1" parent="." unique_id=105419351 instance=ExtResource("5_3pj8s")]
-position = Vector2(270, 208)
+position = Vector2(240, 78)
 value = 50
 
 [node name="target_2" parent="." unique_id=1970509157 instance=ExtResource("5_3pj8s")]
-position = Vector2(170, 308)
+position = Vector2(140, 178)
 value = 50
 
 [node name="target_3" parent="." unique_id=1486366034 instance=ExtResource("5_3pj8s")]
-position = Vector2(370, 308)
+position = Vector2(340, 178)
 value = 50
 
 [node name="drain_killbox" type="Area2D" parent="." unique_id=1752527795]
-position = Vector2(270, 880)
+position = Vector2(240, 750)
 script = SubResource("GDScript_ehd0t")
 
 [node name="Ellipse" type="Node2D" parent="drain_killbox" unique_id=111259258 node_paths=PackedStringArray("polygon")]
@@ -99,5 +87,12 @@ shape = SubResource("CircleShape2D_g6b73")
 
 [node name="Timer" type="Timer" parent="drain_killbox" unique_id=928828009]
 wait_time = 0.6
+
+[node name="ForestTexture" type="TextureRect" parent="." unique_id=1978545029]
+z_index = -1
+offset_right = 480.0
+offset_bottom = 800.0
+texture = ExtResource("2_ehd0t")
+expand_mode = 5
 
 [connection signal="body_entered" from="drain_killbox" to="." method="_on_drain_killbox_body_entered"]

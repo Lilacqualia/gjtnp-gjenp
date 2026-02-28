@@ -6,8 +6,9 @@ var score: int = 0
 var table_is_done = false
 var ball_resetter: Timer
 
-signal update_score_display
+#signal update_score_display
 signal go_to_scene(scene: Globals.SceneName)
+signal update_message(message: String)
 
 @export var ResetPosition: Vector2 = Vector2(0.0, 0.0)
 @export var ScoreToWin: int = 150
@@ -64,7 +65,8 @@ func _on_pinball_hit(hit_object: Node) -> void:
 	if hit_object.value:
 		print("add %d points" % hit_object.value)
 		score += hit_object.value
-		emit_signal("update_score_display", score)
+		#emit_signal("update_score_display", score)
+		emit_signal("update_message", str(score))
 	if score >= ScoreToWin:
 		print("you win forest table, time for cave table")
 		if not table_is_done:
