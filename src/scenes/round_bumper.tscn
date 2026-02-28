@@ -19,7 +19,3 @@ shape = SubResource("CircleShape2D_3yxfi")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=154140872]
 texture = ExtResource("1_3yxfi")
-
-[node name="self_location" type="Marker2D" parent="StaticBody2D" unique_id=351035888]
-
-[node name="egg_aimer" type="Marker2D" parent="StaticBody2D" unique_id=146697805]
