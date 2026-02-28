@@ -26,7 +26,7 @@ func _ready():
 		$ActivationSound.bus = "RightChannelOnly"
 		input_action = "Right Flipper"
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed(input_action):
 		$ActivationSound.play()
 	if Input.is_action_just_released(input_action):

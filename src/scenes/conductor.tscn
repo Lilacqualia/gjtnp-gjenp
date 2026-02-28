@@ -24,7 +24,10 @@ offset_top = 130.0
 offset_right = 510.0
 offset_bottom = 930.0
 
-[node name="BGTexture" type="TextureRect" parent="." unique_id=98617676]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=693779695]
+layer = -11
+
+[node name="BGTexture" type="TextureRect" parent="CanvasLayer" unique_id=98617676]
 z_index = -3
 z_as_relative = false
 offset_left = -240.0
