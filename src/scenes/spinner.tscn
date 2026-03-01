@@ -14,7 +14,9 @@ value = 50
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=146161982]
 shape = SubResource("CircleShape2D_beaw0")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1389622355]
+[node name="RotatingItems" type="Node2D" parent="." unique_id=933549496]
+
+[node name="Sprite2D" type="Sprite2D" parent="RotatingItems" unique_id=1389622355]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_78gc6")
 
