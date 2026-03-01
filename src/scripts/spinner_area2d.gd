@@ -11,7 +11,7 @@ func _ready() -> void: # stashes the spinner's own address to send to the ball
 # rigidbodys like the ball can't detect entering areas, so this prompts the ball to
 # start contact to keep the spinners' behavior consistent with everything else
 func _on_body_entered(body: Node2D) -> void:
-	body._on_body_entered(address)
+	if body is Pinball: body._on_body_entered(address)
 
 # scoring logic
 func receive_hit(velocity: Vector2) -> int:
