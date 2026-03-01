@@ -15,8 +15,7 @@
 
 [node name="table_forest" type="Node2D" unique_id=480273124]
 script = ExtResource("1_5vocl")
-ResetPosition = Vector2(150, 470)
-ScoreToWin = 1000
+ResetPosition = Vector2(300, 50)
 NextTable = 4
 
 [node name="ScrollableElements" type="Node2D" parent="." unique_id=336700636]
@@ -120,6 +119,17 @@ polygon = PackedVector2Array(-108, -66, 10.086853, -66, -0.5197449, -56, -97.393
 [node name="Sprite2D" parent="ScrollableElements/OneWayPlatform4" index="1" unique_id=965759894]
 region_rect = Rect2(2249, 0, 495, 64)
 
+[node name="OneWayPlatform5" parent="ScrollableElements" unique_id=203355209 instance=ExtResource("10_o62vd")]
+position = Vector2(361.00003, 258.00003)
+rotation = -2.3561945
+scale = Vector2(1, -1)
+
+[node name="CollisionPolygon2D" parent="ScrollableElements/OneWayPlatform5" index="0" unique_id=974076052]
+polygon = PackedVector2Array(-108, -66, 10.086853, -66, -0.5197449, -56, -97.39337, -56)
+
+[node name="Sprite2D" parent="ScrollableElements/OneWayPlatform5" index="1" unique_id=965759894]
+region_rect = Rect2(2249, 0, 495, 64)
+
 [node name="ScrollStop" type="Marker2D" parent="ScrollableElements" unique_id=323768861]
 position = Vector2(0, -1000)
 
@@ -177,3 +187,4 @@ shape = SubResource("WorldBoundaryShape2D_bafsl")
 [editable path="ScrollableElements/LeftGuardPlatform"]
 [editable path="ScrollableElements/OneWayPlatform3"]
 [editable path="ScrollableElements/OneWayPlatform4"]
+[editable path="ScrollableElements/OneWayPlatform5"]
