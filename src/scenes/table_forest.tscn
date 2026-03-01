@@ -102,12 +102,18 @@ polygon = PackedVector2Array(-108, -66, 10.086853, -66, -0.5197449, -56, -97.393
 region_rect = Rect2(2249, 0, 495, 64)
 
 [node name="ForestTexture" type="TextureRect" parent="ScrollableElements" unique_id=1978545029]
-visible = false
 z_index = -11
-offset_right = 480.0
-offset_bottom = 800.0
+offset_top = -1000.0
+offset_right = 1920.0
+offset_bottom = 6200.0
+scale = Vector2(0.25, 0.25)
+size_flags_stretch_ratio = 0.0
 texture = ExtResource("2_ehd0t")
-expand_mode = 5
+expand_mode = 1
+stretch_mode = 1
+
+[node name="ScrollStop" type="Marker2D" parent="ScrollableElements" unique_id=323768861]
+position = Vector2(0, -1000)
 
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
 

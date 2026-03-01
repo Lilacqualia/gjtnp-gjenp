@@ -6,6 +6,7 @@ var score: int = 0
 var table_is_done = false
 var ball_resetter: Timer
 var scroll_amount = 0.0
+var okay_to_scroll = true
 
 signal go_to_scene(scene: Globals.SceneName)
 signal update_message(message: String)
@@ -24,12 +25,12 @@ func _ready() -> void:
 	ball_resetter.start.call_deferred(3.0)
 	
 func _process(delta: float):
-	if scroll_amount > 0.0:
-		var amount_to_scroll = minf(delta * ScrollRate, scroll_amount)
-		print("scrollin %f" % amount_to_scroll)
+	if okay_to_scroll and scroll_amount > 0.0:
+		var amount_to_scroll = minf(delta * ScrollRate, scroll_amount) 
 		$ScrollableElements.position.y += amount_to_scroll
 		scroll_amount -= amount_to_scroll
-	pass
+		if to_local($ScrollableElements/ScrollStop.global_position).y >= 0.0:
+			okay_to_scroll = false
 
 func _reset_the_ball():
 	var set_health_to = null
