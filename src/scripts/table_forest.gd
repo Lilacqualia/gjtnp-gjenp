@@ -20,12 +20,6 @@ func _ready() -> void:
 	ball_resetter.timeout.connect(_reset_the_ball)
 	add_child.call_deferred(ball_resetter)
 	ball_resetter.start.call_deferred(3.0)
-	
-	
-func _on_drain_killbox_body_entered(_body: Node2D) -> void: # cribbed from the sample.
-	if ball_resetter.is_stopped():
-		print("resetting ball")
-		ball_resetter.start(3.0)
 
 func _reset_the_ball():
 	var set_health_to = null

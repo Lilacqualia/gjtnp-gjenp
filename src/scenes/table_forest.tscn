@@ -1,36 +1,13 @@
 [gd_scene format=3 uid="uid://drb6vfiit5isy"]
 
 [ext_resource type="Script" uid="uid://uvbeinfh5u6c" path="res://scripts/table_forest.gd" id="1_5vocl"]
-[ext_resource type="Script" uid="uid://de3jpss66xjfh" path="res://addons/curved_lines_2d/scalable_vector_shape_2d.gd" id="1_8u5px"]
-[ext_resource type="Script" uid="uid://dlbv4pit17dnu" path="res://addons/curved_lines_2d/scalable_arc.gd" id="2_5vocl"]
 [ext_resource type="PackedScene" uid="uid://bkqm7am1p7jmt" path="res://scenes/flipper.tscn" id="2_cwxmj"]
 [ext_resource type="Texture2D" uid="uid://jh3i5axmy10m" path="res://images/background-r1.png" id="2_ehd0t"]
-[ext_resource type="Script" uid="uid://dl1t88tthmwts" path="res://addons/curved_lines_2d/scalable_arc_list.gd" id="3_3pj8s"]
 [ext_resource type="PackedScene" uid="uid://gyyteubkw371" path="res://scenes/default_wall_zones.tscn" id="4_5vocl"]
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="5_3pj8s"]
 [ext_resource type="PackedScene" uid="uid://cw0cq4b4yu3jn" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
 [ext_resource type="PackedScene" uid="uid://ii5arflhyl76" path="res://scenes/damage_kicker.tscn" id="11_g6b73"]
-
-[sub_resource type="GDScript" id="GDScript_ehd0t"]
-script/source = "extends Area2D
-
-
-"
-
-[sub_resource type="Curve2D" id="Curve2D_r5rc4"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 30.654808, 56, 0, 30.9288, 0, -30.9288, 0, 0, 55.503906, 0, 30.654808, 0, -30.654808, -56, 0, -30.9288, 0, 30.9288, 0, 0, -55.503906, 0, -30.654808, 0, 0, 56, 0)
-}
-point_count = 5
-
-[sub_resource type="Resource" id="Resource_o62vd"]
-resource_local_to_scene = true
-script = ExtResource("3_3pj8s")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_g6b73"]
-radius = 56.0
 
 [node name="table_forest" type="Node2D" unique_id=480273124]
 script = ExtResource("1_5vocl")
@@ -75,32 +52,6 @@ value = 50
 [node name="target_3" parent="." unique_id=1486366034 instance=ExtResource("5_3pj8s")]
 position = Vector2(386, 117)
 value = 50
-
-[node name="drain_killbox" type="Area2D" parent="." unique_id=1752527795]
-position = Vector2(240, 750)
-script = SubResource("GDScript_ehd0t")
-
-[node name="Ellipse" type="Node2D" parent="drain_killbox" unique_id=111259258 node_paths=PackedStringArray("polygon")]
-script = ExtResource("1_8u5px")
-polygon = NodePath("Fill")
-curve = SubResource("Curve2D_r5rc4")
-update_curve_at_runtime = true
-arc_list = SubResource("Resource_o62vd")
-shape_type = 2
-size = Vector2(112, 111.00781)
-rx = 56.0
-ry = 55.503906
-
-[node name="Fill" type="Polygon2D" parent="drain_killbox/Ellipse" unique_id=1194721693]
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(56, 0, 55.710888, 5.6750917, 54.862312, 11.186216, 53.482426, 16.505478, 51.59936, 21.604982, 49.241276, 26.456833, 46.436306, 31.033134, 43.212597, 35.305992, 39.5983, 39.247505, 35.621555, 42.829784, 31.310507, 46.024933, 26.693304, 48.805058, 21.798088, 51.142254, 16.653004, 53.00863, 11.286199, 54.376297, 5.7258153, 55.217354, 0, 55.503906, -5.7258153, 55.217358, -11.286199, 54.376297, -16.653004, 53.008633, -21.798088, 51.142254, -26.693304, 48.805058, -31.310509, 46.024933, -35.621555, 42.829784, -39.5983, 39.247505, -43.2126, 35.305992, -46.436302, 31.033134, -49.241272, 26.456833, -51.59936, 21.604982, -53.48242, 16.505478, -54.862312, 11.186216, -55.710888, 5.6750917, -56, 0, -55.710888, -5.6750917, -54.862312, -11.186216, -53.482426, -16.505478, -51.59936, -21.604982, -49.241276, -26.456833, -46.436306, -31.033134, -43.212597, -35.305992, -39.5983, -39.247505, -35.621555, -42.829784, -31.310507, -46.024933, -26.693304, -48.805058, -21.798088, -51.142254, -16.653004, -53.00863, -11.286199, -54.376297, -5.7258153, -55.217354, 0, -55.503906, 5.7258153, -55.217358, 11.286199, -54.376297, 16.653004, -53.008633, 21.798088, -51.142254, 26.693304, -48.805058, 31.310509, -46.024933, 35.621555, -42.829784, 39.5983, -39.247505, 43.2126, -35.305992, 46.436302, -31.033134, 49.241272, -26.456833, 51.59936, -21.604982, 53.48242, -16.505478, 54.862312, -11.186216, 55.710888, -5.6750917)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="drain_killbox" unique_id=1138517696]
-shape = SubResource("CircleShape2D_g6b73")
-
-[node name="Timer" type="Timer" parent="drain_killbox" unique_id=928828009]
-wait_time = 0.6
 
 [node name="round_bumper" parent="." unique_id=1626577286 instance=ExtResource("9_r5rc4")]
 position = Vector2(189, 214)
@@ -160,8 +111,6 @@ region_rect = Rect2(2249, 0, 495, 64)
 
 [node name="Kicker" parent="." unique_id=904206852 instance=ExtResource("11_g6b73")]
 position = Vector2(0, 700)
-
-[connection signal="body_entered" from="drain_killbox" to="." method="_on_drain_killbox_body_entered"]
 
 [editable path="OneWayPlatform"]
 [editable path="OneWayPlatform2"]
