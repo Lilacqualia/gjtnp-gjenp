@@ -42,7 +42,9 @@ func _process(delta: float) -> void:
 	var old_rotation = fmod(_axis_rotation, 2 * PI)
 	var rotation_amount = speed * delta
 	_axis_rotation += rotation_amount
-	if rotation_amount > 0.0 and old_rotation < _resting_axis_rotation and old_rotation + rotation_amount >= _resting_axis_rotation:
+	if rotation_amount > 0.0 and \
+	   old_rotation < _resting_axis_rotation and \
+	   old_rotation + rotation_amount >= _resting_axis_rotation:
 		emit_signal("generate_points", value)
 
 	# Simulate vertical spinning with scaling.
