@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c1cyr6lkjjkbe"]
+
+[ext_resource type="Script" uid="uid://cwc8gettcu2ey" path="res://scripts/drop_target_group.gd" id="1_od745"]
+
+[node name="DropTargetGroup" type="Node2D" unique_id=1705027023]
+script = ExtResource("1_od745")
+
+[node name="ResetTimer" type="Timer" parent="." unique_id=130144666]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

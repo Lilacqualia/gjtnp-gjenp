@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://b6lgvv518a66f" path="res://scripts/kicker.gd" id="1_72hfc"]
 
 [node name="DamageKicker" type="StaticBody2D" unique_id=1505821569 groups=["damage_kicker"]]
-z_index = -10
-z_as_relative = false
 script = ExtResource("1_72hfc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=447951925]

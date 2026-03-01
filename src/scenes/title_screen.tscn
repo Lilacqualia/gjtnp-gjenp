@@ -1,41 +1,22 @@
 [gd_scene format=3 uid="uid://dadcruo80254v"]
 
 [ext_resource type="Script" uid="uid://bhv6wv8ndsk8v" path="res://scripts/title_screen.gd" id="1_fgkus"]
+[ext_resource type="Texture2D" uid="uid://cw80mxrpwc6wk" path="res://images/menu-r1.png" id="2_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://bt7tpjftyhy7x" path="res://images/menusign-r1.png" id="3_s4lrb"]
 
 [node name="title_screen" type="Node2D" unique_id=1666565836]
 script = ExtResource("1_fgkus")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=333352021]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 470.0
-offset_bottom = 790.0
-color = Color(0.35686275, 0.27058825, 0.105882354, 1)
+[node name="Base" type="TextureRect" parent="." unique_id=1172214766]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_sa3yf")
+stretch_mode = 2
 
-[node name="Control" type="Control" parent="." unique_id=1002276997]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 480.0
-offset_bottom = 800.0
-
-[node name="title_text" type="Label" parent="Control" unique_id=1051850392]
-layout_mode = 0
-offset_top = 156.0
-offset_right = 480.0
-offset_bottom = 293.0
-theme_override_colors/font_color = Color(0.25490198, 0.06666667, 0.31764707, 1)
-theme_override_font_sizes/font_size = 48
-text = "BREAKFAST
-MACHINE"
-horizontal_alignment = 1
-
-[node name="start_text" type="Label" parent="Control" unique_id=2088783451]
-layout_mode = 0
-offset_top = 559.0
-offset_right = 480.0
-offset_bottom = 662.0
-theme_override_colors/font_color = Color(0.7411765, 1, 1, 1)
-theme_override_font_sizes/font_size = 36
-text = "press space
-to start"
-horizontal_alignment = 1
+[node name="Sign" type="TextureRect" parent="." unique_id=1833710312]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_s4lrb")
+stretch_mode = 2

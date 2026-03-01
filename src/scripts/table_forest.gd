@@ -12,9 +12,9 @@ signal go_to_scene(scene: Globals.SceneName)
 signal update_message(message: String)
 
 @export var ResetPosition: Vector2 = Vector2(0.0, 0.0)
-@export var ScoreToWin: int = 150
 @export var NextTable : Globals.SceneName
-@export var ScrollRate: float = 25.0
+@export var ScrollRate: float = 50.0
+@export var ScrollRatio: float = 0.05
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -61,13 +61,11 @@ func _on_pinball_hit(hit_object: Node) -> void:
 	if hit_object.value:
 		print("add %d points" % hit_object.value)
 		score += hit_object.value
-		scroll_amount += float(hit_object.value)
+		scroll_amount += float(hit_object.value) * ScrollRatio
 		emit_signal("update_message", str(score))
-	if score >= ScoreToWin:
-		print("you win forest table, time for cave table")
-		if not table_is_done:
-			table_is_done = true
-			ask_conductor_for_next_table()
+	if table_is_done:
+		print("you win forest table")
+		ask_conductor_for_next_table()
 	
 func ask_conductor_for_next_table():
 	print("go to next table")

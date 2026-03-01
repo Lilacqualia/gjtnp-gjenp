@@ -1,6 +1,12 @@
 extends StaticBody2D
 
+class_name DropTarget
+
+signal target_dropped
+
 @export var value: int
+
+var _down := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,7 +17,21 @@ func _process(_delta: float) -> void:
 	pass
 
 func receive_hit(_speed: Vector2) -> int: #-> void: # revision 1
-	$AnimatedSprite2D.animation = "inactive"
-	$HitSound.play()
-	$CollisionPolygon2D.set_deferred("disabled", true)
+	drop()
+	target_dropped.emit();
 	return value # revision 1
+
+func drop() -> void:
+	$Sprite2D.set_deferred("visible", false)
+	$CollisionShape2D.set_deferred("disabled", true)
+	$HitSound.play()
+	_down = true
+
+func raise() -> void:
+	$Sprite2D.set_deferred("visible", true)
+	$CollisionShape2D.set_deferred("disabled", false)
+	_down = false
+	
+# Returns true if target has been dropped.
+func is_down() -> bool:
+	return _down

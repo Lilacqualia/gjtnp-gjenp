@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cnifj1cn6gkee"]
+
+[ext_resource type="Texture2D" uid="uid://b7t4gr82lngct" path="res://images/bark-r4.png" id="1_wykyb"]
+[ext_resource type="Script" uid="uid://ocxalff1qakm" path="res://scripts/wall.gd" id="2_2ktk7"]
+
+[node name="Wall" type="Polygon2D" unique_id=55546858]
+z_as_relative = false
+texture_repeat = 2
+antialiased = true
+texture = ExtResource("1_wykyb")
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+script = ExtResource("2_2ktk7")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1750977535]
+points = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+closed = true
+width = 4.0
+default_color = Color(0.3019608, 0.101960786, 0.050980393, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1648733315]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2020659564]
+z_index = -10
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)

@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://g7vq3hqit8s6"]
+[gd_scene format=3 uid="uid://di4kjbwd6stcp"]
 
 [ext_resource type="Script" uid="uid://ckpo3565xett3" path="res://scripts/spinner_area2d.gd" id="1_78gc6"]
-[ext_resource type="Texture2D" uid="uid://cgeys3awdxnr8" path="res://images/droptarget1.PNG" id="2_kry60"]
+[ext_resource type="Texture2D" uid="uid://detmw5b01a5tv" path="res://images/spinner-r1.png" id="2_78gc6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_beaw0"]
+radius = 15.0
 
 [node name="spinner" type="Area2D" unique_id=1432479668 groups=["hittable_object"]]
 collision_layer = 4
@@ -13,8 +14,10 @@ value = 50
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=146161982]
 shape = SubResource("CircleShape2D_beaw0")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1389622355]
-scale = Vector2(0.325, 0.341)
-texture = ExtResource("2_kry60")
+[node name="RotatingItems" type="Node2D" parent="." unique_id=933549496]
+
+[node name="Sprite2D" type="Sprite2D" parent="RotatingItems" unique_id=1389622355]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_78gc6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
