@@ -18,7 +18,7 @@ curved_lines_2d/snap_resolution=8.0
 [application]
 
 config/name="Breakfast Machine"
-run/main_scene="uid://drb6vfiit5isy"
+run/main_scene="uid://dsqf3abs40vat"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

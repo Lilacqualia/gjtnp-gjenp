@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dsqf3abs40vat"]
+
+[ext_resource type="Script" uid="uid://d0bi6o8k7w6fx" path="res://scripts/conductor.gd" id="1_dqjak"]
+[ext_resource type="Texture2D" uid="uid://re7q1owo31ow" path="res://images/table-r2.png" id="3_q7w51"]
+
+[node name="Conductor" type="Node2D" unique_id=233716317]
+script = ExtResource("1_dqjak")
+
+[node name="HudContainer" type="Control" parent="." unique_id=1620154408]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 510.0
+offset_bottom = 100.0
+
+[node name="TableContainer" type="Control" parent="." unique_id=69108803]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 130.0
+offset_right = 510.0
+offset_bottom = 930.0
+
+[node name="ForegroundFrame" type="CanvasLayer" parent="." unique_id=353744352]
+layer = 20
+
+[node name="TextureRect" type="TextureRect" parent="ForegroundFrame" unique_id=537093609]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_q7w51")
+expand_mode = 3
