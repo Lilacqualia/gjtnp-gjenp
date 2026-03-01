@@ -32,19 +32,17 @@ expand_mode = 1
 stretch_mode = 1
 
 [node name="left_flipper" parent="ScrollableElements" unique_id=1506876985 instance=ExtResource("2_cwxmj")]
-z_index = 10
 position = Vector2(145, 590)
 rotation = 0.5235988
 
 [node name="right_flipper" parent="ScrollableElements" unique_id=1473821576 instance=ExtResource("2_cwxmj")]
-z_index = 10
 position = Vector2(335, 590)
 rotation = 2.6179938
 scale = Vector2(1, -1)
 flipper_direction = 1
 
 [node name="DropTargetGroup" parent="ScrollableElements" unique_id=1705027023 instance=ExtResource("5_r5rc4")]
-position = Vector2(367, 219)
+position = Vector2(365, 219)
 
 [node name="target_1" parent="ScrollableElements/DropTargetGroup" unique_id=105419351 instance=ExtResource("5_3pj8s")]
 position = Vector2(-11, -43)
@@ -127,7 +125,7 @@ position = Vector2(0, -1000)
 [node name="Wall" parent="ScrollableElements" unique_id=55546858 instance=ExtResource("7_ehd0t")]
 position = Vector2(374, 129)
 texture_rotation = -0.7557276
-polygon = PackedVector2Array(-46, 12, -13, -10, 19, -36, 50, -63, 80, -90, 113, -124, 111, 0, 111, 258, 100, 236, 86, 223, 81, 213, 59, 145, 57, 133, 59, 122, 59, 103, -22, 27, -41.367264, 26.999996, -45, 26, -46, 22.18586)
+polygon = PackedVector2Array(-46, 12, -13, -10, 19, -36, 50, -63, 80, -90, 113, -124, 111, 0, 109, 187, 96, 167, 82, 161, 69, 156, 60, 146, 57, 133, 59, 122, 59, 103, -20, 27, -41.367264, 26.999996, -45, 26, -46, 22.18586)
 
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
 
