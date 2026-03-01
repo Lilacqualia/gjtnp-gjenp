@@ -7,6 +7,7 @@ var table_is_done = false
 var ball_resetter: Timer
 var scroll_amount = 0.0
 var okay_to_scroll = true
+var spinners: Array[Node]
 
 signal go_to_scene(scene: Globals.SceneName)
 signal update_message(message: String)
@@ -23,6 +24,10 @@ func _ready() -> void:
 	ball_resetter.timeout.connect(_reset_the_ball)
 	add_child.call_deferred(ball_resetter)
 	ball_resetter.start.call_deferred(3.0)
+	spinners = find_children("*", "Spinner")
+	for spinner in spinners:
+		if spinner is Spinner:
+			spinner.connect("generate_points", _on_generate_points)
 	
 func _process(delta: float):
 	if okay_to_scroll and scroll_amount > 0.0:
@@ -57,16 +62,23 @@ func _reset_the_ball():
 		ball.set_deferred("linear_velocity", Vector2.ZERO)
 
 func _on_pinball_hit(hit_object: Node) -> void:
-	hit_object.receive_hit(ball.linear_velocity)
-	if hit_object.value:
-		print("add %d points" % hit_object.value)
-		score += hit_object.value
-		scroll_amount += float(hit_object.value) * ScrollRatio
+	var value = hit_object.receive_hit(ball.linear_velocity)
+	if value is int and value > 0:
+		print("add %d points" % value)
+		score += value
+		scroll_amount += float(value) * ScrollRatio
 		emit_signal("update_message", str(score))
 	if table_is_done:
 		print("you win forest table")
 		ask_conductor_for_next_table()
 	
+func _on_generate_points(value: int):
+	if value > 0:
+		print("generated %d points" % value)
+		score += value
+		scroll_amount += float(value) * ScrollRatio
+		emit_signal("update_message", str(score))
+		
 func ask_conductor_for_next_table():
 	print("go to next table")
 	ball.set_deferred("freeze", true)

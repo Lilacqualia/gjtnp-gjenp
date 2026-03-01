@@ -1,7 +1,9 @@
-extends Area2D
+class_name Spinner extends Area2D
 
 ## point value per spin
 @export var value: int
+
+signal generate_points(points: int)
 
 var address
 
@@ -35,7 +37,15 @@ func _process(delta: float) -> void:
 		else:
 			speed = _rest_speed_threshold
 
-	_axis_rotation += speed * delta 
+	# if we were previously less than the rest point, and are now >= rest point, we completed a spin
+	# when we complete a spin, emit Points
+	var old_rotation = fmod(_axis_rotation, 2 * PI)
+	var rotation_amount = speed * delta
+	_axis_rotation += rotation_amount
+	if rotation_amount > 0.0 and \
+	   old_rotation < _resting_axis_rotation and \
+	   old_rotation + rotation_amount >= _resting_axis_rotation:
+		emit_signal("generate_points", value)
 
 	# Simulate vertical spinning with scaling.
 	$RotatingItems.set_scale(Vector2(1, sin(_axis_rotation)))
@@ -49,6 +59,4 @@ func _on_body_entered(body: Node2D) -> void:
 func receive_hit(velocity: Vector2) -> int:
 	speed = velocity.length() / 20
 	print("speed: " + str(speed) + " mph")
-	var spins: int = speed / 20
-	print("spins: " + str(spins))
-	return value * spins
+	return 0
