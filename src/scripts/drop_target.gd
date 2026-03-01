@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func receive_hit(_speed: Vector2) -> int: #-> void: # revision 1
-	$AnimatedSprite2D.animation = "inactive"
+	$Sprite2D.set_deferred("visible", false)
+	$CollisionShape2D.set_deferred("disabled", true)
 	$HitSound.play()
-	$CollisionPolygon2D.set_deferred("disabled", true)
 	return value # revision 1

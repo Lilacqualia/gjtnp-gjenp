@@ -118,7 +118,7 @@ position = Vector2(0, -1000)
 
 [node name="Wall" parent="ScrollableElements" unique_id=55546858 instance=ExtResource("7_ehd0t")]
 position = Vector2(374, 6)
-polygon = PackedVector2Array(-46, 12, -17, -18, 11, -46, 49, -66, 80, -90, 113, -124, 111, 0, 111, 258, 100, 236, 86, 223, 81, 213, 71, 160, 66, 134, 60, 106, 52, 88, 35, 68, 19, 52, 1, 41, -20, 29, -46, 19)
+polygon = PackedVector2Array(-46, 12, -13, -10, 19, -36, 50, -63, 80, -90, 113, -124, 111, 0, 111, 258, 100, 236, 86, 223, 81, 213, 71, 160, 66, 134, 59, 106, 52, 88, 35, 68, 19, 53, 1, 40, -20, 29, -46, 19)
 
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
 
