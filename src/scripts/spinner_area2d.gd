@@ -57,6 +57,4 @@ func _on_body_entered(body: Node2D) -> void:
 func receive_hit(velocity: Vector2) -> int:
 	speed = velocity.length() / 20
 	print("speed: " + str(speed) + " mph")
-	var spins: int = floor(speed / 20)
-	print("spins: " + str(spins))
 	return 0
