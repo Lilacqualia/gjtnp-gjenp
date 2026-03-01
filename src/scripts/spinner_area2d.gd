@@ -39,6 +39,14 @@ func _process(delta: float) -> void:
 
 	# Simulate vertical spinning with scaling.
 	$RotatingItems.set_scale(Vector2(1, sin(_axis_rotation)))
+	
+	# in progress - trying to get it to play faster the faster the target is flipping. it's doing the opposite atm
+	# shouldn't actually be hard, i just wasn't working fast this morning lmao.
+	# play spinner flick audio while the target is animating
+	if _axis_rotation > _resting_axis_rotation:
+		if $spinnerflick.playing == false:
+			$spinnerflick.pitch_scale = clampf(2.0 - 1/_axis_rotation, 1.0, 2.0) # speed up playback as target spins faster
+			$spinnerflick.play()
 
 # rigidbodys like the ball can't detect entering areas, so this prompts the ball to
 # start contact to keep the spinners' behavior consistent with everything else

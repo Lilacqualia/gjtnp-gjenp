@@ -8,6 +8,7 @@ var kick_strength: int = 20
 
 # receive_hit is called by the table any time the ball strikes something to handle scoring and table-wide mechanics
 func receive_hit(_speed: Vector2) -> int:
+	$HitSound.play()
 	return value
 
 func aim(ballpos: Vector2) -> Vector2:
