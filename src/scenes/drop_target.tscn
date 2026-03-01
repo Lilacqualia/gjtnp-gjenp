@@ -15,13 +15,13 @@ stereo = true
 collision_layer = 2
 script = ExtResource("3_v3ie5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1944042824]
-shape = SubResource("RectangleShape2D_7fcwm")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1480355114]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_7fcwm")
 flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1944042824]
+shape = SubResource("RectangleShape2D_7fcwm")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=713977156]
 stream = SubResource("AudioStreamWAV_v3ie5")

@@ -32,15 +32,18 @@ scale = Vector2(1, -1)
 flipper_direction = 1
 
 [node name="target_1" parent="ScrollableElements" unique_id=105419351 instance=ExtResource("5_3pj8s")]
-position = Vector2(326, 71)
+position = Vector2(356, 176)
+rotation = 0.7853982
 value = 50
 
 [node name="target_2" parent="ScrollableElements" unique_id=1970509157 instance=ExtResource("5_3pj8s")]
-position = Vector2(415, 190)
+position = Vector2(415, 232)
+rotation = 0.7853982
 value = 50
 
 [node name="target_3" parent="ScrollableElements" unique_id=1486366034 instance=ExtResource("5_3pj8s")]
-position = Vector2(386, 117)
+position = Vector2(385.00003, 204.00003)
+rotation = 0.7853982
 value = 50
 
 [node name="round_bumper" parent="ScrollableElements" unique_id=1626577286 instance=ExtResource("9_r5rc4")]
@@ -117,8 +120,8 @@ stretch_mode = 1
 position = Vector2(0, -1000)
 
 [node name="Wall" parent="ScrollableElements" unique_id=55546858 instance=ExtResource("7_ehd0t")]
-position = Vector2(374, 6)
-polygon = PackedVector2Array(-46, 12, -13, -10, 19, -36, 50, -63, 80, -90, 113, -124, 111, 0, 111, 258, 100, 236, 86, 223, 81, 213, 71, 160, 66, 134, 59, 106, 52, 88, 35, 68, 19, 53, 1, 40, -20, 29, -46, 19)
+position = Vector2(374, 129)
+polygon = PackedVector2Array(-46, 12, -13, -10, 19, -36, 50, -63, 80, -90, 113, -124, 111, 0, 111, 258, 100, 236, 86, 223, 81, 213, 59, 145, 57, 133, 59, 122, 59, 103, -22, 27, -46, 27)
 
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
 
@@ -141,7 +144,7 @@ shape = SubResource("WorldBoundaryShape2D_bafsl")
 [node name="TopWall" type="StaticBody2D" parent="NonScrollableElements" unique_id=1628831232]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NonScrollableElements/TopWall" unique_id=1289416659]
-rotation = 3.1415927
+rotation = -3.1415925
 shape = SubResource("WorldBoundaryShape2D_bafsl")
 
 [node name="BottomWall" type="StaticBody2D" parent="NonScrollableElements" unique_id=666037544]
@@ -149,7 +152,7 @@ position = Vector2(0, 750)
 rotation = -3.1415925
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NonScrollableElements/BottomWall" unique_id=360639053]
-rotation = 3.1415927
+rotation = -3.1415925
 shape = SubResource("WorldBoundaryShape2D_bafsl")
 
 [editable path="ScrollableElements/RightGuardPlatform"]
