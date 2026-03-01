@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bkqm7am1p7jmt" path="res://scenes/flipper.tscn" id="2_cwxmj"]
 [ext_resource type="Texture2D" uid="uid://jh3i5axmy10m" path="res://images/background-r1.png" id="2_ehd0t"]
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="5_3pj8s"]
+[ext_resource type="PackedScene" uid="uid://c1cyr6lkjjkbe" path="res://scenes/drop_target_group.tscn" id="5_r5rc4"]
 [ext_resource type="PackedScene" uid="uid://cnifj1cn6gkee" path="res://scenes/wall.tscn" id="7_ehd0t"]
 [ext_resource type="PackedScene" uid="uid://cw0cq4b4yu3jn" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
@@ -19,6 +20,17 @@ NextTable = 4
 
 [node name="ScrollableElements" type="Node2D" parent="." unique_id=336700636]
 
+[node name="ForestTexture" type="TextureRect" parent="ScrollableElements" unique_id=1978545029]
+z_as_relative = false
+offset_top = -1000.0
+offset_right = 1920.0
+offset_bottom = 6200.0
+scale = Vector2(0.25, 0.25)
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("2_ehd0t")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="left_flipper" parent="ScrollableElements" unique_id=1506876985 instance=ExtResource("2_cwxmj")]
 z_index = 10
 position = Vector2(145, 590)
@@ -31,19 +43,25 @@ rotation = 2.6179938
 scale = Vector2(1, -1)
 flipper_direction = 1
 
-[node name="target_1" parent="ScrollableElements" unique_id=105419351 instance=ExtResource("5_3pj8s")]
-position = Vector2(356, 176)
+[node name="DropTargetGroup" parent="ScrollableElements" unique_id=1705027023 instance=ExtResource("5_r5rc4")]
+position = Vector2(367, 219)
+
+[node name="target_1" parent="ScrollableElements/DropTargetGroup" unique_id=105419351 instance=ExtResource("5_3pj8s")]
+position = Vector2(-11, -43)
 rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
 value = 50
 
-[node name="target_2" parent="ScrollableElements" unique_id=1970509157 instance=ExtResource("5_3pj8s")]
-position = Vector2(415, 232)
+[node name="target_2" parent="ScrollableElements/DropTargetGroup" unique_id=1970509157 instance=ExtResource("5_3pj8s")]
+position = Vector2(47, 13)
 rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
 value = 50
 
-[node name="target_3" parent="ScrollableElements" unique_id=1486366034 instance=ExtResource("5_3pj8s")]
-position = Vector2(385.00003, 204.00003)
+[node name="target_3" parent="ScrollableElements/DropTargetGroup" unique_id=1486366034 instance=ExtResource("5_3pj8s")]
+position = Vector2(18.00003, -14.9999695)
 rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
 value = 50
 
 [node name="round_bumper" parent="ScrollableElements" unique_id=1626577286 instance=ExtResource("9_r5rc4")]
@@ -61,7 +79,6 @@ position = Vector2(242.00002, -51)
 value = 20
 
 [node name="RightGuardPlatform" parent="ScrollableElements" unique_id=1415582272 instance=ExtResource("10_o62vd")]
-z_index = -10
 position = Vector2(341, 578)
 rotation = -0.5235988
 
@@ -72,7 +89,6 @@ polygon = PackedVector2Array(-108, -66, 59.805725, -66, 54.03778, -56, -97.37564
 region_rect = Rect2(2060.5, 0, 683.5, 64)
 
 [node name="LeftGuardPlatform" parent="ScrollableElements" unique_id=143067681 instance=ExtResource("10_o62vd")]
-z_index = -10
 position = Vector2(139, 578)
 rotation = -2.6179938
 scale = Vector2(1, -1)
@@ -105,23 +121,13 @@ polygon = PackedVector2Array(-108, -66, 10.086853, -66, -0.5197449, -56, -97.393
 [node name="Sprite2D" parent="ScrollableElements/OneWayPlatform4" index="1" unique_id=965759894]
 region_rect = Rect2(2249, 0, 495, 64)
 
-[node name="ForestTexture" type="TextureRect" parent="ScrollableElements" unique_id=1978545029]
-z_index = -11
-offset_top = -1000.0
-offset_right = 1920.0
-offset_bottom = 6200.0
-scale = Vector2(0.25, 0.25)
-size_flags_stretch_ratio = 0.0
-texture = ExtResource("2_ehd0t")
-expand_mode = 1
-stretch_mode = 1
-
 [node name="ScrollStop" type="Marker2D" parent="ScrollableElements" unique_id=323768861]
 position = Vector2(0, -1000)
 
 [node name="Wall" parent="ScrollableElements" unique_id=55546858 instance=ExtResource("7_ehd0t")]
 position = Vector2(374, 129)
-polygon = PackedVector2Array(-46, 12, -13, -10, 19, -36, 50, -63, 80, -90, 113, -124, 111, 0, 111, 258, 100, 236, 86, 223, 81, 213, 59, 145, 57, 133, 59, 122, 59, 103, -22, 27, -46, 27)
+texture_rotation = -0.7557276
+polygon = PackedVector2Array(-46, 12, -13, -10, 19, -36, 50, -63, 80, -90, 113, -124, 111, 0, 111, 258, 100, 236, 86, 223, 81, 213, 59, 145, 57, 133, 59, 122, 59, 103, -22, 27, -41.367264, 26.999996, -45, 26, -46, 22.18586)
 
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
 
