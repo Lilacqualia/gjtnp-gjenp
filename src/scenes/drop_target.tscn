@@ -11,7 +11,7 @@ data = PackedByteArray("cW9hZgAANboCAKxEFAAQKAAAAAAAAAAAAAAAAOAAQAAAAAAAAAAAAAAA
 format = 3
 stereo = true
 
-[node name="StaticBody2D" type="StaticBody2D" unique_id=105419351 groups=["hittable_object"]]
+[node name="DropTarget" type="StaticBody2D" unique_id=105419351 groups=["hittable_object"]]
 collision_layer = 2
 script = ExtResource("3_v3ie5")
 
