@@ -7,10 +7,12 @@ var min_velocity_for_thunk = 200000.0
 var max_velocity_for_thunk = 3000000.0
 
 @export var roll_sound_upper_speed = 3000.0
-@export var roll_pitch_multiplier = 1.5
+@export var roll_pitch_multiplier = 2.5
 
 @export var starting_health = 3
 var health = starting_health
+
+var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	$RollSound.play()
@@ -39,3 +41,8 @@ func _on_body_entered(body: Node) -> void:
 		if velocity_shift >= min_velocity_for_thunk:
 			$Thunk.volume_linear = (minf(velocity_shift, max_velocity_for_thunk) / max_velocity_for_thunk) * 0.85
 			$Thunk.play()
+			
+	if(body.is_in_group("damage_kicker")):
+		health -= 1
+		set_linear_velocity(Vector2(rng.randf_range(-500.0, 500.0), -1000))
+		
