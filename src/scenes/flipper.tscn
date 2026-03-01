@@ -9,10 +9,11 @@
 script = ExtResource("1_cdoxy")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1926957834]
+sync_to_physics = false
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=361820559]
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(0.25, -0.25)
 texture = ExtResource("4_cdoxy")
 centered = false

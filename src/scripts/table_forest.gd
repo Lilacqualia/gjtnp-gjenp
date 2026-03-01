@@ -5,6 +5,8 @@ var ball: Pinball
 var score: int = 0
 var table_is_done = false
 var ball_resetter: Timer
+var scroll_amount = 0.0
+var okay_to_scroll = true
 
 signal go_to_scene(scene: Globals.SceneName)
 signal update_message(message: String)
@@ -12,6 +14,7 @@ signal update_message(message: String)
 @export var ResetPosition: Vector2 = Vector2(0.0, 0.0)
 @export var ScoreToWin: int = 150
 @export var NextTable : Globals.SceneName
+@export var ScrollRate: float = 25.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +23,14 @@ func _ready() -> void:
 	ball_resetter.timeout.connect(_reset_the_ball)
 	add_child.call_deferred(ball_resetter)
 	ball_resetter.start.call_deferred(3.0)
+	
+func _process(delta: float):
+	if okay_to_scroll and scroll_amount > 0.0:
+		var amount_to_scroll = minf(delta * ScrollRate, scroll_amount) 
+		$ScrollableElements.position.y += amount_to_scroll
+		scroll_amount -= amount_to_scroll
+		if to_local($ScrollableElements/ScrollStop.global_position).y >= 0.0:
+			okay_to_scroll = false
 
 func _reset_the_ball():
 	var set_health_to = null
@@ -50,6 +61,7 @@ func _on_pinball_hit(hit_object: Node) -> void:
 	if hit_object.value:
 		print("add %d points" % hit_object.value)
 		score += hit_object.value
+		scroll_amount += float(hit_object.value)
 		emit_signal("update_message", str(score))
 	if score >= ScoreToWin:
 		print("you win forest table, time for cave table")
