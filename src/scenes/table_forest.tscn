@@ -15,7 +15,7 @@
 
 [node name="table_forest" type="Node2D" unique_id=480273124]
 script = ExtResource("1_5vocl")
-ResetPosition = Vector2(240, 700)
+ResetPosition = Vector2(100, 450)
 NextTable = 4
 
 [node name="ScrollableElements" type="Node2D" parent="." unique_id=336700636]

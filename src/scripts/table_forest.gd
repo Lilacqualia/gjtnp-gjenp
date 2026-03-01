@@ -52,6 +52,7 @@ func _reset_the_ball():
 			ball.health = set_health_to
 		(ball.get_node("Camera2D") as Camera2D).set_deferred("enabled", false)
 		ball.connect("ball_hit_something", _on_pinball_hit)
+		ball.connect("egg_is_broken", _on_egg_is_broken)
 		add_child.call_deferred(ball)
 		ball.set_deferred("position", ResetPosition)
 		ball.set_deferred("linear_velocity", Vector2.ZERO)
@@ -66,6 +67,12 @@ func _on_pinball_hit(hit_object: Node) -> void:
 	if table_is_done:
 		print("you win forest table")
 		ask_conductor_for_next_table()
+	
+func _on_egg_is_broken():
+	ball.set_deferred("freeze", true)
+	ball.set_deferred("linear_velocity", Vector2.ZERO)
+	await get_tree().create_timer(3.0).timeout
+	emit_signal("go_to_scene", Globals.SceneName.GAMEOVER)
 	
 func ask_conductor_for_next_table():
 	print("go to next table")
