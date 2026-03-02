@@ -4,6 +4,8 @@ class_name DropTarget extends StaticBody2D
 
 signal target_dropped
 
+const solo_shader = preload("res://scenes/drop_target_blue.gdshader")
+
 @export var value: int
 
 var _down := false

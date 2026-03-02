@@ -21,6 +21,7 @@ joint_mode = 2
 antialiased = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1648733315]
+collision_layer = 32
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2020659564]
 z_index = -10
