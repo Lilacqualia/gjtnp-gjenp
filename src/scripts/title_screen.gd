@@ -9,7 +9,7 @@ func _ready() -> void:
 	emit_signal("update_message", "WELCOME BREAKFAST")
 	if $TitleBGM.stream is AudioStreamWAV:
 		($TitleBGM.stream as AudioStreamWAV).loop_mode = AudioStreamWAV.LOOP_FORWARD
-		($TitleBGM.stream as AudioStreamWAV).loop_end = 5002756
+		($TitleBGM.stream as AudioStreamWAV).loop_end = 4980706
 		$TitleBGM.play()
 
 func _input(event: InputEvent) -> void:
