@@ -9,6 +9,7 @@
 script = ExtResource("1_cdoxy")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1926957834]
+collision_layer = 64
 sync_to_physics = false
 metadata/_edit_lock_ = true
 

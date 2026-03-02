@@ -72,6 +72,7 @@ damage_kicker=""
 2d_physics/layer_4="OneWayPlatforms"
 2d_physics/layer_5="roundBumper"
 2d_physics/layer_6="walls"
+2d_physics/layer_7="flippers"
 
 [physics]
 

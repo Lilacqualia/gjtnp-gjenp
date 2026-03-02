@@ -3,7 +3,7 @@ class_name Pinball extends RigidBody2D
 signal ball_hit_something(hit_object: Node)
 signal egg_is_broken
 
-const rebound_nocollide_layers := [2, 3, 4, 5, 6]
+const rebound_nocollide_layers := [2, 3, 4, 5, 6, 7]
 const default_sprite_scale := Vector2(0.25, 0.25)
 
 var old_velocity: Vector2
@@ -51,7 +51,7 @@ func _physics_process(_delta: float) -> void:
 		end_rebound()
    
 func _on_body_entered(body: Node) -> void:
-	if(body.is_in_group("hittable_object")):
+	if(body.is_in_group("hittable_object")) and rebounding == false:
 		emit_signal("ball_hit_something", body)
 		if(body.is_in_group("round_bumper")): # rbumper revision
 			var kickaim: Vector2 = body.aim(self.global_position) # rbumper revision end
