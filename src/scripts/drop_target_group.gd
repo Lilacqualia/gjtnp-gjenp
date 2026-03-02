@@ -1,4 +1,6 @@
-extends Node2D
+class_name DropTargetGroup extends Node2D
+
+signal generate_points(points: int)
 
 ## Points awarded upon dropping all targets in the group.
 @export var bonus := 100
@@ -22,7 +24,9 @@ func _on_reset_timer_timeout() -> void:
 
 # Called when a child target is dropped.
 func _on_target_dropped() -> void:
-	if is_all_targets_down(): reset_timer.start()
+	if is_all_targets_down():
+		reset_timer.start()
+		emit_signal("generate_points", bonus)
 
 # Returns true if all child targets are down.
 func is_all_targets_down() -> bool:
