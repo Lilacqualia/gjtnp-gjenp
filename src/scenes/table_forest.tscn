@@ -86,6 +86,7 @@ position = Vector2(380, 482)
 rotation = -0.5235988
 scale = Vector2(-1, 1)
 flipper_direction = 1
+
 [node name="DropTarget7" parent="ScrollableElements/Stage1/DrainGuard" unique_id=105419351 instance=ExtResource("5_3pj8s")]
 position = Vector2(240, 149)
 value = 5
@@ -262,6 +263,12 @@ polygon = PackedVector2Array(60, -53, 102, 40, 105, 125, 148, 238, 232, 283, 231
 [node name="spinner" parent="ScrollableElements/Stage2/Group2" unique_id=62389701 instance=ExtResource("9_o62vd")]
 position = Vector2(66, -209)
 
+[node name="Flipper" parent="ScrollableElements/Stage2/Group2" unique_id=1005937722 instance=ExtResource("2_cwxmj")]
+position = Vector2(476.99997, -91)
+rotation = 2.6179938
+scale = Vector2(1, -1)
+flipper_direction = 1
+
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
 metadata/_edit_lock_ = true
 
@@ -287,12 +294,6 @@ shape = SubResource("WorldBoundaryShape2D_bafsl")
 [node name="Bottom" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=360639053]
 position = Vector2(0, 750)
 shape = SubResource("WorldBoundaryShape2D_bafsl")
-
-[node name="Flipper" parent="." unique_id=1005937722 instance=ExtResource("2_cwxmj")]
-position = Vector2(476.99997, -134)
-rotation = -0.5235988
-scale = Vector2(-1, 1)
-flipper_direction = 1
 
 [editable path="ScrollableElements/Stage1/DrainGuard/RightGuardPlatform"]
 [editable path="ScrollableElements/Stage1/DrainGuard/LeftGuardPlatform"]
