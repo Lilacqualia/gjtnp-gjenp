@@ -4,16 +4,18 @@ class_name DropTarget extends StaticBody2D
 
 signal target_dropped
 
-const solo_shader = preload("res://scenes/drop_target_blue.gdshader")
-
 @export var value: int
 
 var _down := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Remove blue color shift if part of a group.
-	if get_parent() is DropTargetGroup: $Sprite2D.set_material(null)
+	# Show only appropriate sprite for grouped/solo.
+	if get_parent() is DropTargetGroup:
+		$Sprites/SoloSprite.visible = false
+	else:
+		$Sprites/GroupSprite.visible = false
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -25,13 +27,13 @@ func receive_hit(_speed: Vector2) -> int: #-> void: # revision 1
 	return value # revision 1
 
 func drop() -> void:
-	$Sprite2D.set_deferred("visible", false)
+	$Sprites.set_deferred("visible", false)
 	$CollisionShape2D.set_deferred("disabled", true)
 	$HitSound.play()
 	_down = true
 
 func raise() -> void:
-	$Sprite2D.set_deferred("visible", true)
+	$Sprites.set_deferred("visible", true)
 	$CollisionShape2D.set_deferred("disabled", false)
 	_down = false
 	
