@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://c6vfjvuytl240"]
 
 [ext_resource type="Script" uid="uid://5d8c43skijra" path="res://scripts/pinball.gd" id="1_5eq27"]
-[ext_resource type="Texture2D" uid="uid://bbgr67ktfe2s2" path="res://images/egg-r1.png" id="3_7us4m"]
+[ext_resource type="Texture2D" uid="uid://8dq2wab68t8n" path="res://images/egg-r1-sheet.png" id="2_7us4m"]
 [ext_resource type="AudioStream" uid="uid://os2a1rbxssyw" path="res://sfx/wall_impact-r1.wav" id="5_uxavs"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_5eq27"]
@@ -30,7 +30,8 @@ polygon = PackedVector2Array(3.4395833, 0.5291667, 3.4218252, 0.8808441, 3.36970
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2141157048]
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_7us4m")
+texture = ExtResource("2_7us4m")
+hframes = 3
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=308900935]
 zoom = Vector2(0.75, 0.75)
