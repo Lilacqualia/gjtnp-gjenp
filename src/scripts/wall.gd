@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Walls do not change in gameplay, no need to update after _ready().
 	if Engine.is_editor_hint(): updateChildren()
 
