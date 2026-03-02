@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://ocxalff1qakm" path="res://scripts/wall.gd" id="2_2ktk7"]
 
 [node name="Wall" type="Polygon2D" unique_id=55546858]
-z_as_relative = false
 texture_repeat = 2
 antialiased = true
 texture = ExtResource("1_wykyb")
@@ -24,5 +23,4 @@ antialiased = true
 collision_layer = 32
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2020659564]
-z_index = -10
 polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)

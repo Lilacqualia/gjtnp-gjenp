@@ -65,7 +65,7 @@ func _reset_the_ball():
 		ball.connect("egg_is_broken", _on_egg_is_broken)
 		add_child.call_deferred(ball)
 		ball.set_deferred("position", ResetPosition)
-		ball.set_deferred("linear_velocity", Vector2.ZERO)
+		ball.call_deferred("rebound")
 
 func _on_pinball_hit(hit_object: Node) -> void:
 	var value = hit_object.receive_hit(ball.linear_velocity)
