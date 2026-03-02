@@ -20,6 +20,12 @@ signal update_message(message: String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# start the bgm
+	if $ForestBGM.stream is AudioStreamWAV:
+		($ForestBGM.stream as AudioStreamWAV).loop_mode = AudioStreamWAV.LOOP_FORWARD
+		($ForestBGM.stream as AudioStreamWAV).loop_end = 2565818
+		$ForestBGM.play()
+	# set up the ball
 	ball_resetter = Timer.new()
 	ball_resetter.one_shot = true
 	ball_resetter.timeout.connect(_reset_the_ball)
