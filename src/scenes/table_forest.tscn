@@ -298,6 +298,7 @@ flipper_direction = 1
 
 [node name="ForestBGM" type="AudioStreamPlayer" parent="." unique_id=1713255460]
 stream = ExtResource("11_kfj14")
+volume_db = -8.0
 
 [editable path="ScrollableElements/Stage1/DrainGuard/RightGuardPlatform"]
 [editable path="ScrollableElements/Stage1/DrainGuard/LeftGuardPlatform"]

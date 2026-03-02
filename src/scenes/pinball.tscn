@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://5d8c43skijra" path="res://scripts/pinball.gd" id="1_5eq27"]
 [ext_resource type="Texture2D" uid="uid://8dq2wab68t8n" path="res://images/egg-r1-sheet.png" id="2_7us4m"]
+[ext_resource type="AudioStream" uid="uid://osw2x6qvk4x6" path="res://sfx/platform_impact-r1.wav" id="4_crkxl"]
 [ext_resource type="AudioStream" uid="uid://daqad1ttfrws7" path="res://sfx/egg_crack1-r1.wav" id="4_ktps7"]
 [ext_resource type="AudioStream" uid="uid://c7y3jiyqt50cx" path="res://sfx/egg_break-r1.wav" id="4_xro5x"]
 [ext_resource type="AudioStream" uid="uid://os2a1rbxssyw" path="res://sfx/wall_impact-r1.wav" id="5_uxavs"]
@@ -59,6 +60,9 @@ playback_type = 1
 [node name="Thunk" type="AudioStreamPlayer" parent="." unique_id=2037898806]
 stream = ExtResource("5_uxavs")
 volume_db = -6.0
+
+[node name="GentleThunk" type="AudioStreamPlayer" parent="." unique_id=51427988]
+stream = ExtResource("4_crkxl")
 
 [node name="EggBreak" type="AudioStreamPlayer" parent="." unique_id=1563701358]
 stream = ExtResource("4_xro5x")

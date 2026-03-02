@@ -43,6 +43,7 @@ drop_target="targets that take a single hit and disable themselves. paired with 
 walls="outer walls and any other solid walls that don't do anything except be in the way"
 round_bumper=""
 damage_kicker=""
+thin_walls="thin, one-way walls and platforms"
 
 [input]
 

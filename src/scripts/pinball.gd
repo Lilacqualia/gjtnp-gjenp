@@ -52,6 +52,10 @@ func _on_body_entered(body: Node) -> void:
 		if velocity_shift >= min_velocity_for_thunk:
 			$Thunk.volume_linear = (minf(velocity_shift, max_velocity_for_thunk) / max_velocity_for_thunk) * 0.85
 			$Thunk.play()
+	elif body.is_in_group("thin_walls"):
+		var velocity_shift = old_velocity.distance_squared_to(linear_velocity)
+		if velocity_shift >= min_velocity_for_thunk:
+			$GentleThunk.play()
 			
 	if(body.is_in_group("damage_kicker")):
 		health -= 1
