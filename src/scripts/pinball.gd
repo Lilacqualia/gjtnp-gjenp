@@ -1,6 +1,7 @@
 class_name Pinball extends RigidBody2D
 
 signal ball_hit_something(hit_object: Node)
+signal egg_is_broken
 
 var old_velocity: Vector2
 var min_velocity_for_thunk = 200000.0
@@ -14,9 +15,18 @@ var health = starting_health
 
 var rng = RandomNumberGenerator.new()
 
+var egg_crack_streams: Array[AudioStreamWAV]
+var egg_break_stream: AudioStreamWAV
+
+func _init() -> void:
+	for egg_idx in range(1, 10):
+		var egg_sound = AudioStreamWAV.load_from_file("res://sfx/egg_crack%d-r1.wav" % egg_idx)
+		egg_crack_streams.append(egg_sound)
+	egg_break_stream = AudioStreamWAV.load_from_file("res://sfx/egg_break-r1.wav")
+
 func _ready() -> void:
 	$RollSound.play()
-	
+
 func _exit_tree() -> void:
 	$RollSound.stop()
 
@@ -44,5 +54,19 @@ func _on_body_entered(body: Node) -> void:
 			
 	if(body.is_in_group("damage_kicker")):
 		health -= 1
+		if health > 0:
+			play_egg_crack_sound()
+		else:
+			play_egg_break_sound()
+			emit_signal("egg_is_broken")
+			return
 		set_linear_velocity(Vector2(rng.randf_range(-500.0, 500.0), -1000))
 		
+func play_egg_crack_sound():
+	var egg_stream = egg_crack_streams.pick_random()
+	$EggCrack.stream = egg_stream
+	$EggCrack.play()
+
+func play_egg_break_sound():
+	$EggCrack.stream = egg_break_stream
+	$EggCrack.play()

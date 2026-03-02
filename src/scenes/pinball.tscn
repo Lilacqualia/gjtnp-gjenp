@@ -42,4 +42,6 @@ playback_type = 1
 stream = ExtResource("5_uxavs")
 volume_db = -6.0
 
+[node name="EggCrack" type="AudioStreamPlayer" parent="." unique_id=925637123]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
