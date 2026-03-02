@@ -20,11 +20,13 @@ func _ready() -> void:
 
 # Raise targets when reset timer expires.
 func _on_reset_timer_timeout() -> void:
+	$ResetSound.play()
 	for target in targets: target.raise()
 
 # Called when a child target is dropped.
 func _on_target_dropped() -> void:
 	if is_all_targets_down():
+		$AllTargetsDown.play()
 		reset_timer.start()
 		emit_signal("generate_points", bonus)
 

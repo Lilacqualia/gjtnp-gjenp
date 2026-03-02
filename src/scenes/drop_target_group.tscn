@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c1cyr6lkjjkbe"]
 
 [ext_resource type="Script" uid="uid://cwc8gettcu2ey" path="res://scripts/drop_target_group.gd" id="1_od745"]
+[ext_resource type="AudioStream" uid="uid://bb2n034cmaoj" path="res://sfx/target_raise-r1.wav" id="2_pgkjc"]
+[ext_resource type="AudioStream" uid="uid://qovg2r81pdvx" path="res://sfx/sfx_target_group-r1.wav" id="3_e8ox2"]
 
 [node name="DropTargetGroup" type="Node2D" unique_id=1705027023]
 script = ExtResource("1_od745")
@@ -8,5 +10,11 @@ script = ExtResource("1_od745")
 [node name="ResetTimer" type="Timer" parent="." unique_id=130144666]
 wait_time = 1.5
 one_shot = true
+
+[node name="ResetSound" type="AudioStreamPlayer" parent="." unique_id=1784160378]
+stream = ExtResource("2_pgkjc")
+
+[node name="AllTargetsDown" type="AudioStreamPlayer" parent="." unique_id=2096408413]
+stream = ExtResource("3_e8ox2")
 
 [connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
