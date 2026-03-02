@@ -71,11 +71,13 @@ damage_kicker=""
 2d_physics/layer_3="spinners"
 2d_physics/layer_4="OneWayPlatforms"
 2d_physics/layer_5="roundBumper"
+2d_physics/layer_6="walls"
 
 [physics]
 
 common/physics_ticks_per_second=120
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=1470.0
 
 [rendering]
 

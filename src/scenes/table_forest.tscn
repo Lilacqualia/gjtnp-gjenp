@@ -67,7 +67,6 @@ value = 15
 
 [node name="Wall" parent="ScrollableElements/Stage1/DrainGuard" unique_id=55546858 instance=ExtResource("7_ehd0t")]
 position = Vector2(331, 354)
-texture_rotation = -0.9442231
 polygon = PackedVector2Array(73, 64, 78, 57, 86, 54, 96, 57, 101, 70, 100, 100, 99, 126, 92, 132, 70, 142, 53, 138, 45, 126, 49, 117, 65, 104, 73, 95)
 
 [node name="left_flipper" parent="ScrollableElements/Stage1/DrainGuard" unique_id=1506876985 instance=ExtResource("2_cwxmj")]
@@ -82,12 +81,26 @@ scale = Vector2(1, -1)
 flipper_direction = 1
 metadata/_edit_lock_ = true
 
+[node name="Flipper" parent="ScrollableElements/Stage1/DrainGuard" unique_id=48363323 instance=ExtResource("2_cwxmj")]
+position = Vector2(380, 482)
+rotation = -0.5235988
+scale = Vector2(-1, 1)
+flipper_direction = 1
+[node name="DropTarget7" parent="ScrollableElements/Stage1/DrainGuard" unique_id=105419351 instance=ExtResource("5_3pj8s")]
+position = Vector2(240, 149)
+value = 5
+
+[node name="DropTarget8" parent="ScrollableElements/Stage1/DrainGuard" unique_id=840696379 instance=ExtResource("5_3pj8s")]
+position = Vector2(432.00003, 390.00003)
+rotation = 2.3561945
+value = 5
+
 [node name="SideLog" type="Node2D" parent="ScrollableElements/Stage1" unique_id=469660202]
 
 [node name="DropTargetGroup" parent="ScrollableElements/Stage1/SideLog" unique_id=1705027023 instance=ExtResource("5_r5rc4")]
 position = Vector2(365, 219)
 
-[node name="target_1" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup" unique_id=105419351 instance=ExtResource("5_3pj8s")]
+[node name="target_1" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup" unique_id=1507910277 instance=ExtResource("5_3pj8s")]
 position = Vector2(-11, -43)
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
@@ -129,12 +142,11 @@ region_rect = Rect2(2271, 0, 473, 67)
 
 [node name="Wall" parent="ScrollableElements/Stage1/SideLog" unique_id=1426760361 instance=ExtResource("7_ehd0t")]
 position = Vector2(374, 129)
-texture_rotation = -0.7557276
 polygon = PackedVector2Array(-44, -22, -34, -32, -10, -39, 25, -50, 80, -90, 113, -124, 111, 0, 109, 187, 96, 167, 82, 161, 69, 156, 60, 146, 57, 133, 59, 122, 59, 103, -20, 27, -41.367264, 26.999996, -45, 26, -46, 22.18586)
 
 [node name="Wall2" parent="ScrollableElements/Stage1/SideLog" unique_id=357906592 instance=ExtResource("7_ehd0t")]
 position = Vector2(216, 61)
-texture_rotation = 2.0786872
+texture_offset = Vector2(23.535, 10.71)
 polygon = PackedVector2Array(51, 81, 50, 63, 52, 40, 54, 25, 57, 12, 60, 5, 63, 1, 66, 0, 70, 1, 72, 5, 73, 10, 73, 28, 69, 54, 68, 79, 66, 89, 61, 97, 54, 99, 50, 95)
 
 [node name="spinner" parent="ScrollableElements/Stage1/SideLog" unique_id=1531310458 instance=ExtResource("9_o62vd")]
@@ -151,6 +163,15 @@ polygon = PackedVector2Array(-108, -66, 5.236496, -66, -1.554924, -56, -98.10049
 
 [node name="Sprite2D" parent="ScrollableElements/Stage1/SideLog/OneWayPlatform4" index="1" unique_id=965759894]
 region_rect = Rect2(2271, 0, 473, 67)
+
+[node name="DropTarget6" parent="ScrollableElements/Stage1/SideLog" unique_id=1692251351 instance=ExtResource("5_3pj8s")]
+position = Vector2(307, 149)
+value = 5
+
+[node name="DropTarget7" parent="ScrollableElements/Stage1/SideLog" unique_id=713690145 instance=ExtResource("5_3pj8s")]
+position = Vector2(463.00003, 359.00003)
+rotation = 2.3561945
+value = 5
 
 [node name="BumperCluster" type="Node2D" parent="ScrollableElements/Stage1" unique_id=1672020467]
 
@@ -181,10 +202,65 @@ rotation = 0.8726646
 
 [node name="Wall" parent="ScrollableElements/Stage1/BumperCluster" unique_id=539350452 instance=ExtResource("7_ehd0t")]
 position = Vector2(23, 17)
-texture_rotation = 1.0384709
+texture_offset = Vector2(0, -39.265)
 polygon = PackedVector2Array(-29, 43, -31, -78, 51, -16, 55, -11, 54, -2, 43, 10, 37, 24, 38, 39, 42, 50, 43, 60, 13, 118, 5, 124, -7, 129, -19, 145, -24, 174, -20, 205, -12, 233, -18, 250, -27, 266, -30, 244)
 
+[node name="DropTarget" parent="ScrollableElements/Stage1/BumperCluster" unique_id=513314503 instance=ExtResource("5_3pj8s")]
+position = Vector2(131, 205)
+rotation = -0.2617994
+value = 5
+
+[node name="DropTarget2" parent="ScrollableElements/Stage1/BumperCluster" unique_id=1927431590 instance=ExtResource("5_3pj8s")]
+position = Vector2(85, 210)
+value = 5
+
+[node name="DropTarget3" parent="ScrollableElements/Stage1/BumperCluster" unique_id=173629061 instance=ExtResource("5_3pj8s")]
+position = Vector2(154, 76)
+rotation = -2.3561945
+value = 5
+
+[node name="DropTarget4" parent="ScrollableElements/Stage1/BumperCluster" unique_id=1155096017 instance=ExtResource("5_3pj8s")]
+position = Vector2(180, 111.99999)
+rotation = -2.0943952
+value = 5
+
 [node name="GoalBox" type="Node2D" parent="ScrollableElements/Stage1" unique_id=1483445530]
+
+[node name="Stage2" type="Node2D" parent="ScrollableElements" unique_id=794293070]
+
+[node name="Group1" type="Node2D" parent="ScrollableElements/Stage2" unique_id=1035553819]
+
+[node name="Flipper" parent="ScrollableElements/Stage2/Group1" unique_id=792689300 instance=ExtResource("2_cwxmj")]
+position = Vector2(285.00003, 71.000015)
+rotation = 0.31415927
+
+[node name="OneWayPlatform" parent="ScrollableElements/Stage2/Group1" unique_id=266733659 instance=ExtResource("10_o62vd")]
+position = Vector2(252, -11.999996)
+rotation = 0.5235988
+scale = Vector2(-1, 1)
+
+[node name="round_bumper" parent="ScrollableElements/Stage2/Group1" unique_id=400834405 instance=ExtResource("9_r5rc4")]
+position = Vector2(350, -434)
+value = 20
+
+[node name="round_bumper2" parent="ScrollableElements/Stage2/Group1" unique_id=779606738 instance=ExtResource("9_r5rc4")]
+position = Vector2(276, -315)
+
+[node name="round_bumper3" parent="ScrollableElements/Stage2/Group1" unique_id=100560816 instance=ExtResource("9_r5rc4")]
+position = Vector2(426, -308)
+
+[node name="Wall" parent="ScrollableElements/Stage2/Group1" unique_id=672624556 instance=ExtResource("7_ehd0t")]
+position = Vector2(467, -453)
+polygon = PackedVector2Array(-131, -70, 17, -192, 19, 291, -2, 199, -2, 151, -9, 113, -45, 103, -78, 42, -78, -4, -120, -27)
+
+[node name="Group2" type="Node2D" parent="ScrollableElements/Stage2" unique_id=1982035145]
+
+[node name="Wall" parent="ScrollableElements/Stage2/Group2" unique_id=453815465 instance=ExtResource("7_ehd0t")]
+position = Vector2(-82, -504)
+polygon = PackedVector2Array(60, -53, 102, 40, 105, 125, 148, 238, 232, 283, 231, 302, 194, 330, 177, 314, 177, 274, 148, 260, 123, 276, 123, 343, 137.55597, 375.75095, 173, 398, 186, 412, 182, 419, 63, 361, 42, 199, 0, 100)
+
+[node name="spinner" parent="ScrollableElements/Stage2/Group2" unique_id=62389701 instance=ExtResource("9_o62vd")]
+position = Vector2(66, -209)
 
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
 metadata/_edit_lock_ = true
@@ -192,36 +268,31 @@ metadata/_edit_lock_ = true
 [node name="Kicker" parent="NonScrollableElements" unique_id=904206852 instance=ExtResource("11_g6b73")]
 position = Vector2(0, 730)
 
-[node name="LeftWall" type="StaticBody2D" parent="NonScrollableElements" unique_id=207949395]
+[node name="GameBoundaries" type="StaticBody2D" parent="NonScrollableElements" unique_id=207949395]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NonScrollableElements/LeftWall" unique_id=1649108349]
+[node name="Top" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=1289416659]
+rotation = -3.1415925
+shape = SubResource("WorldBoundaryShape2D_bafsl")
+
+[node name="Left" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=1649108349]
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_bafsl")
 
-[node name="RightWall" type="StaticBody2D" parent="NonScrollableElements" unique_id=1226517960]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NonScrollableElements/RightWall" unique_id=874322823]
+[node name="Right" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=874322823]
 position = Vector2(480, 0)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_bafsl")
 
-[node name="TopWall" type="StaticBody2D" parent="NonScrollableElements" unique_id=1628831232]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NonScrollableElements/TopWall" unique_id=1289416659]
-rotation = -3.1415925
-shape = SubResource("WorldBoundaryShape2D_bafsl")
-
-[node name="BottomWall" type="StaticBody2D" parent="NonScrollableElements" unique_id=666037544]
-visible = false
+[node name="Bottom" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=360639053]
 position = Vector2(0, 750)
-rotation = -3.1415925
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NonScrollableElements/BottomWall" unique_id=360639053]
-rotation = -3.1415925
 shape = SubResource("WorldBoundaryShape2D_bafsl")
+
+[node name="Flipper" parent="." unique_id=1005937722 instance=ExtResource("2_cwxmj")]
+position = Vector2(476.99997, -134)
+rotation = -0.5235988
+scale = Vector2(-1, 1)
+flipper_direction = 1
 
 [editable path="ScrollableElements/Stage1/DrainGuard/RightGuardPlatform"]
 [editable path="ScrollableElements/Stage1/DrainGuard/LeftGuardPlatform"]
