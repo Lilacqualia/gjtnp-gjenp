@@ -76,6 +76,7 @@ damage_kicker=""
 
 common/physics_ticks_per_second=120
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=1470.0
 
 [rendering]
 

@@ -1,6 +1,6 @@
-extends StaticBody2D
+@tool
 
-class_name DropTarget
+class_name DropTarget extends StaticBody2D
 
 signal target_dropped
 
@@ -10,7 +10,8 @@ var _down := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# Remove blue color shift if part of a group.
+	if get_parent() is DropTargetGroup: $Sprite2D.set_material(null)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

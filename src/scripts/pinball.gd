@@ -10,7 +10,7 @@ var max_velocity_for_thunk = 3000000.0
 @export var roll_sound_upper_speed = 3000.0
 @export var roll_pitch_multiplier = 2.5
 
-@export var starting_health = 3
+@export var starting_health = 9
 var health = starting_health
 
 var rng = RandomNumberGenerator.new()
