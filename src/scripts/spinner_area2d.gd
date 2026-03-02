@@ -46,9 +46,13 @@ func _process(delta: float) -> void:
 	   old_rotation < _resting_axis_rotation and \
 	   old_rotation + rotation_amount >= _resting_axis_rotation:
 		emit_signal("generate_points", value)
+		# play the flick sound each time, pitched up based on how fast the spinner is going
+		$spinnerflick.pitch_scale = clampf(rotation_amount, 1.0, 2.0)
+		$spinnerflick.play()
 
 	# Simulate vertical spinning with scaling.
 	$RotatingItems.set_scale(Vector2(1, sin(_axis_rotation)))
+	
 
 # rigidbodys like the ball can't detect entering areas, so this prompts the ball to
 # start contact to keep the spinners' behavior consistent with everything else

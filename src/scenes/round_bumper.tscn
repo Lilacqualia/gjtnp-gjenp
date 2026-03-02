@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://1rycmillpnym" path="res://scripts/round_bumper.gd" id="1_8woio"]
 [ext_resource type="Script" uid="uid://pm6dhwnef2hu" path="res://scripts/round_bumper_parent.gd" id="1_iy20v"]
 [ext_resource type="Texture2D" uid="uid://yxbh0pqlm6x4" path="res://images/bumper-r2.png" id="3_iy20v"]
+[ext_resource type="AudioStream" uid="uid://c83nb2j12iae6" path="res://sfx/sfx_bumper_hit-r2.wav" id="4_p22yd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yxfi"]
 radius = 32.0
@@ -20,3 +21,6 @@ shape = SubResource("CircleShape2D_3yxfi")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=154140872]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_iy20v")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="StaticBody2D" unique_id=87807206]
+stream = ExtResource("4_p22yd")
