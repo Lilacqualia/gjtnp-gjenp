@@ -19,7 +19,7 @@ ResetPosition = Vector2(240, 700)
 NextTable = 4
 
 [node name="ScrollableElements" type="Node2D" parent="." unique_id=336700636]
-position = Vector2(-150, 1200)
+position = Vector2(-150, 800)
 
 [node name="ScrollStop" type="Marker2D" parent="ScrollableElements" unique_id=323768861]
 position = Vector2(389, -2887)
@@ -292,7 +292,6 @@ scale = Vector2(1, -1)
 flipper_direction = 1
 
 [node name="Wall2" parent="ScrollableElements/Stage2/Group2" unique_id=1597588539 instance=ExtResource("7_ehd0t")]
-z_as_relative = true
 position = Vector2(142, 7)
 polygon = PackedVector2Array(13, -11, 58, 18, 53, 48, 13, 45)
 
