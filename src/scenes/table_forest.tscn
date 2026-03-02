@@ -86,6 +86,7 @@ position = Vector2(380, 482)
 rotation = -0.5235988
 scale = Vector2(-1, 1)
 flipper_direction = 1
+
 [node name="DropTarget7" parent="ScrollableElements/Stage1/DrainGuard" unique_id=105419351 instance=ExtResource("5_3pj8s")]
 position = Vector2(240, 149)
 value = 5

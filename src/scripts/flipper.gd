@@ -1,4 +1,4 @@
-extends Node2D
+class_name Flipper extends Node2D
 
 enum Flipper_Direction { 
 	## left flipper activated by a and z
@@ -17,6 +17,7 @@ enum Flipper_Direction {
 @export var flipper_direction : Flipper_Direction
 
 var input_action := ""
+var sound_on = false
 
 func _ready():
 	if flipper_direction == Flipper_Direction.LEFT:
@@ -27,10 +28,11 @@ func _ready():
 		input_action = "Right Flipper"
 
 func _process(_delta):
-	if Input.is_action_just_pressed(input_action):
-		$ActivationSound.play()
-	if Input.is_action_just_released(input_action):
-		$DeactivationSound.play()
+	if sound_on:
+		if Input.is_action_just_pressed(input_action):
+			$ActivationSound.play()
+		if Input.is_action_just_released(input_action):
+			$DeactivationSound.play()
 
 func _physics_process(delta: float) -> void:
 	var flipping_up := Input.is_action_pressed(input_action);
@@ -40,4 +42,3 @@ func _physics_process(delta: float) -> void:
 		-swing_angle,
 		0
 	)
-	
