@@ -269,7 +269,7 @@ metadata/_edit_lock_ = true
 [node name="Kicker" parent="NonScrollableElements" unique_id=904206852 instance=ExtResource("11_g6b73")]
 position = Vector2(0, 730)
 
-[node name="GameBoundaries" type="StaticBody2D" parent="NonScrollableElements" unique_id=207949395]
+[node name="GameBoundaries" type="StaticBody2D" parent="NonScrollableElements" unique_id=207949395 groups=["walls"]]
 visible = false
 
 [node name="Top" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=1289416659]

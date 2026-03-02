@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dj86g5esbkj76" path="res://images/platform-r1.png" id="2_wt31i"]
 
-[node name="OneWayPlatform" type="StaticBody2D" unique_id=1415582272]
+[node name="OneWayPlatform" type="StaticBody2D" unique_id=1415582272 groups=["walls"]]
 collision_layer = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=974076052]
