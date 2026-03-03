@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hidtjns8vjog"
-path="res://.godot/imported/damage-kickerframe1-r1.png-845051fa3524066215945eaf790d2ebd.ctex"
+uid="uid://b2e3e0h6xgcpl"
+path="res://.godot/imported/damage-kickerframe2-1.png-cdb7a18378cb22ed4d908f73d12713c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/damage-kickerframe1-r1.png"
-dest_files=["res://.godot/imported/damage-kickerframe1-r1.png-845051fa3524066215945eaf790d2ebd.ctex"]
+source_file="res://images/damage-kickerframe2-1.png"
+dest_files=["res://.godot/imported/damage-kickerframe2-1.png-cdb7a18378cb22ed4d908f73d12713c6.ctex"]
 
 [params]
 

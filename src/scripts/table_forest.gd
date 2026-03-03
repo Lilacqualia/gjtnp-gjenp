@@ -97,9 +97,6 @@ func _on_pinball_hit(hit_object: Node) -> void:
 		score += value
 		scroll_amount += float(value) * ScrollRatio
 		emit_signal("update_message", str(score))
-	if table_is_done:
-		print("you win forest table")
-		ask_conductor_for_next_table()
 	
 func _on_egg_is_broken():
 	ball.set_deferred("freeze", true)
