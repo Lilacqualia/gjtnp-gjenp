@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cnifj1cn6gkee" path="res://scenes/wall.tscn" id="7_ehd0t"]
 [ext_resource type="PackedScene" uid="uid://di4kjbwd6stcp" path="res://scenes/spinner.tscn" id="9_o62vd"]
 [ext_resource type="PackedScene" uid="uid://cw0cq4b4yu3jn" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
-[ext_resource type="Script" path="res://scripts/goal_area.gd" id="10_kfj14"]
+[ext_resource type="Script" uid="uid://cygppix3bywqj" path="res://scripts/goal_area.gd" id="10_kfj14"]
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
 [ext_resource type="PackedScene" uid="uid://ii5arflhyl76" path="res://scenes/damage_kicker.tscn" id="11_g6b73"]
 [ext_resource type="AudioStream" uid="uid://cdguae702k2sf" path="res://bgm/ost_rat_grove-r1.wav" id="11_kfj14"]
@@ -269,7 +269,7 @@ position = Vector2(475, 30)
 [node name="Wall" parent="ScrollableElements/Stage2/Group1" unique_id=672624556 instance=ExtResource("7_ehd0t")]
 z_as_relative = false
 position = Vector2(517, -114)
-polygon = PackedVector2Array(-75, -30, -62, -47, -53, -58, -36, -66, -36, -108, -26, -122, -10, -128, -10, -172, -2, -182, 17, -192, 19, 291, -2, 199, -2, 151, -9, 113, -34, 103, -35, 83, -61, 47, -79, 20, -89, -6, -85, -13)
+polygon = PackedVector2Array(-131, -70, 17, -192, 19, 291, -2, 199, -2, 151, -9, 113, -45, 103, -78, 42, -78, -4, -120, -27)
 
 [node name="Group2" type="Node2D" parent="ScrollableElements/Stage2" unique_id=1982035145]
 position = Vector2(50, -245)
@@ -337,6 +337,17 @@ polygon = PackedVector2Array(-108, -66, 59, -66, 48, -56, -98, -56)
 z_as_relative = false
 polygon = PackedVector2Array(-24, 0, 54.36432, 0, 154, 0, 153, 102, 126, 102, 90, 51, 42, 51, 6, 100, -26, 100)
 
+[node name="Area2D" type="Area2D" parent="ScrollableElements/GoalBox" unique_id=106774589 groups=["goal_zones"]]
+position = Vector2(45, 59)
+collision_layer = 128
+script = ExtResource("10_kfj14")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ScrollableElements/GoalBox/Area2D" unique_id=1060254475 groups=["goal_zones"]]
+polygon = PackedVector2Array(43, -1, 62, 25, -21, 26, 0, -1)
+
+[node name="Countdown" type="Timer" parent="ScrollableElements/GoalBox/Area2D" unique_id=929281641]
+wait_time = 3.0
+
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
 metadata/_edit_lock_ = true
 
@@ -366,6 +377,10 @@ shape = SubResource("WorldBoundaryShape2D_bafsl")
 [node name="ForestBGM" type="AudioStreamPlayer" parent="." unique_id=1713255460]
 stream = ExtResource("11_kfj14")
 volume_db = -8.0
+
+[connection signal="body_entered" from="ScrollableElements/GoalBox/Area2D" to="ScrollableElements/GoalBox/Area2D" method="_on_goal_area_entered"]
+[connection signal="body_exited" from="ScrollableElements/GoalBox/Area2D" to="ScrollableElements/GoalBox/Area2D" method="_on_goal_area_exited"]
+[connection signal="timeout" from="ScrollableElements/GoalBox/Area2D/Countdown" to="ScrollableElements/GoalBox/Area2D" method="_on_countdown_timeout"]
 
 [editable path="ScrollableElements/Stage1/DrainGuard/RightGuardPlatform"]
 [editable path="ScrollableElements/Stage1/DrainGuard/LeftGuardPlatform"]
