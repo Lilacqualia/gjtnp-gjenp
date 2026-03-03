@@ -1,31 +1,22 @@
 [gd_scene format=3 uid="uid://crth4pfd187x3"]
 
-[ext_resource type="Texture2D" uid="uid://dm5h6ybf6hv5b" path="res://images/scorebg.png" id="1_uxkum"]
 [ext_resource type="Script" uid="uid://xnycwm4uhji1" path="res://scripts/score_display.gd" id="1_v1kem"]
-
-[sub_resource type="SystemFont" id="SystemFont_uxkum"]
-subpixel_positioning = 0
+[ext_resource type="FontFile" uid="uid://4lgrtbqatc2n" path="res://fonts/Doto_Rounded-SemiBold.ttf" id="2_v1kem"]
 
 [node name="ScoreDisplay" type="Node2D" unique_id=1937041961]
 script = ExtResource("1_v1kem")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1460380895]
-visible = false
-texture = ExtResource("1_uxkum")
-
-[node name="BG" type="TextureRect" parent="." unique_id=2089851954]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1404312977]
 offset_right = 480.0
 offset_bottom = 80.0
-texture = ExtResource("1_uxkum")
+color = Color(0.05815725, 0.07078167, 0.11423168, 1)
 
-[node name="Numbers" type="Label" parent="BG" unique_id=1959181398]
-layout_mode = 0
+[node name="Numbers" type="Label" parent="." unique_id=1959181398]
 offset_right = 480.0
-offset_bottom = 70.0
-theme_override_colors/font_color = Color(0.40392157, 0.26666668, 0.14117648, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_uxkum")
-theme_override_font_sizes/font_size = 38
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0.7764706, 0.5058824, 0.05490196, 1)
+theme_override_fonts/font = ExtResource("2_v1kem")
+theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
