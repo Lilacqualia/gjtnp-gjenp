@@ -58,6 +58,8 @@ func _on_body_entered(body: Node) -> void:
 			$GentleThunk.play()
 			
 	if(body.is_in_group("damage_kicker")):
+		if body.has_method("release_the_rats"):
+			body.release_the_rats()
 		health -= 1
 		if health > 0:
 			play_egg_crack_sound()

@@ -347,6 +347,7 @@ polygon = PackedVector2Array(43, -1, 62, 25, -21, 26, 0, -1)
 
 [node name="Countdown" type="Timer" parent="ScrollableElements/GoalBox/Area2D" unique_id=929281641]
 wait_time = 3.0
+one_shot = true
 
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
 metadata/_edit_lock_ = true
