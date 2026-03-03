@@ -32,7 +32,6 @@ window/size/viewport_width=540
 window/size/viewport_height=960
 window/stretch/mode="canvas_items"
 
-
 [global_group]
 
 hittable_object="Bumpers, targets, etc that the ball may hit."

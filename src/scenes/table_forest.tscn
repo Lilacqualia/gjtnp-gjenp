@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="5_3pj8s"]
 [ext_resource type="PackedScene" uid="uid://c1cyr6lkjjkbe" path="res://scenes/drop_target_group.tscn" id="5_r5rc4"]
 [ext_resource type="PackedScene" uid="uid://cnifj1cn6gkee" path="res://scenes/wall.tscn" id="7_ehd0t"]
-[ext_resource type="Script" uid="uid://cwc8gettcu2ey" path="res://scripts/drop_target_group.gd" id="9_ijlaf"]
 [ext_resource type="PackedScene" uid="uid://di4kjbwd6stcp" path="res://scenes/spinner.tscn" id="9_o62vd"]
 [ext_resource type="PackedScene" uid="uid://cw0cq4b4yu3jn" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
 [ext_resource type="Script" uid="uid://cygppix3bywqj" path="res://scripts/goal_area.gd" id="10_kfj14"]
@@ -192,27 +191,24 @@ rotation = 0.31415927
 position = Vector2(290, 51)
 value = 5
 
-[node name="DropTargetGroup2" type="Node2D" parent="ScrollableElements/Stage1/SideLog" unique_id=640150116]
-position = Vector2(-50, 702)
-script = ExtResource("9_ijlaf")
-metadata/_custom_type_script = "uid://cwc8gettcu2ey"
+[node name="DropTargetGroup3" parent="ScrollableElements/Stage1/SideLog" unique_id=1780319321 instance=ExtResource("5_r5rc4")]
 
-[node name="DropTarget10" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup2" unique_id=910012220 instance=ExtResource("5_3pj8s")]
-position = Vector2(553.00006, -777.00006)
+[node name="DropTarget10" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup3" unique_id=910012220 instance=ExtResource("5_3pj8s")]
+position = Vector2(503.00006, -75.00006)
 rotation = 2.3561945
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999999, 0.9999999)
 value = 5
 
-[node name="DropTarget11" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup2" unique_id=146894196 instance=ExtResource("5_3pj8s")]
-position = Vector2(485, -731.00006)
+[node name="DropTarget11" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup3" unique_id=146894196 instance=ExtResource("5_3pj8s")]
+position = Vector2(435, -29.000061)
 rotation = 2.8064895
 scale = Vector2(0.99999994, 0.99999994)
 value = 5
 
-[node name="DropTarget12" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup2" unique_id=960655139 instance=ExtResource("5_3pj8s")]
-position = Vector2(521, -751)
+[node name="DropTarget12" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup3" unique_id=960655139 instance=ExtResource("5_3pj8s")]
+position = Vector2(471, -49)
 rotation = 2.5446901
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999999, 0.9999999)
 value = 5
 
 [node name="BumperCluster" type="Node2D" parent="ScrollableElements/Stage1" unique_id=1672020467]
@@ -389,7 +385,7 @@ position = Vector2(-32, -259)
 polygon = PackedVector2Array(60, -53, 102, 40, 99, 117, 83, 195, 85, 229, 100, 252, 136, 270, 136, 317, 154, 346, 137.55597, 375.75095, 163, 384, 173, 391, 186, 412, 182, 419, 63, 361)
 
 [node name="spinner" parent="ScrollableElements/Stage2/Group2" unique_id=401330997 instance=ExtResource("9_o62vd")]
-position = Vector2(131, 18)
+position = Vector2(321, 228)
 
 [node name="Flipper" parent="ScrollableElements/Stage2/Group2" unique_id=1271591218 instance=ExtResource("2_cwxmj")]
 position = Vector2(527, 154)
@@ -441,13 +437,25 @@ value = 20
 position = Vector2(232, -46)
 value = 5
 
-[node name="DropTarget8" parent="ScrollableElements/Stage2/Group2/DropTarget8" unique_id=532851316 instance=ExtResource("5_3pj8s")]
-position = Vector2(-142, -81)
-rotation = -2.6179938
-value = 5
-
 [node name="DropTarget9" parent="ScrollableElements/Stage2/Group2" unique_id=1089681692 instance=ExtResource("5_3pj8s")]
 position = Vector2(275, -47)
+value = 5
+
+[node name="DropTarget10" parent="ScrollableElements/Stage2/Group2" unique_id=1465285313 instance=ExtResource("5_3pj8s")]
+position = Vector2(360, 234)
+value = 5
+
+[node name="DropTarget11" parent="ScrollableElements/Stage2/Group2" unique_id=1961369025 instance=ExtResource("5_3pj8s")]
+position = Vector2(405, 232)
+value = 5
+
+[node name="DropTarget13" parent="ScrollableElements/Stage2/Group2" unique_id=1275900764 instance=ExtResource("5_3pj8s")]
+position = Vector2(449, 215)
+value = 5
+
+[node name="DropTarget12" parent="ScrollableElements/Stage2/Group2" unique_id=532851316 instance=ExtResource("5_3pj8s")]
+position = Vector2(90, -127)
+rotation = -2.6179938
 value = 5
 
 [node name="Group3" type="Node2D" parent="ScrollableElements/Stage2" unique_id=1902964560]
