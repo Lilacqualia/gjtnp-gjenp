@@ -16,7 +16,7 @@ var rebounding = false;
 @export var roll_sound_upper_speed = 3000.0
 @export var roll_pitch_multiplier = 2.5
 
-@export var starting_health = 9
+@export var starting_health = 12
 var health = starting_health
 
 var rng = RandomNumberGenerator.new()
