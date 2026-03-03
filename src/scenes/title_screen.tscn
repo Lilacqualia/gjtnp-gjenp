@@ -24,3 +24,4 @@ stretch_mode = 2
 
 [node name="TitleBGM" type="AudioStreamPlayer" parent="." unique_id=1891273058]
 stream = ExtResource("4_mgrm8")
+volume_db = -8.0

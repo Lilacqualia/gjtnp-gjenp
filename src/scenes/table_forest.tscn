@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cw0cq4b4yu3jn" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
 [ext_resource type="PackedScene" uid="uid://ii5arflhyl76" path="res://scenes/damage_kicker.tscn" id="11_g6b73"]
+[ext_resource type="AudioStream" uid="uid://cdguae702k2sf" path="res://bgm/ost_rat_grove-r1.wav" id="11_kfj14"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bafsl"]
 
@@ -86,6 +87,7 @@ position = Vector2(380, 482)
 rotation = -0.5235988
 scale = Vector2(-1, 1)
 flipper_direction = 1
+
 [node name="DropTarget7" parent="ScrollableElements/Stage1/DrainGuard" unique_id=105419351 instance=ExtResource("5_3pj8s")]
 position = Vector2(240, 149)
 value = 5
@@ -268,7 +270,7 @@ metadata/_edit_lock_ = true
 [node name="Kicker" parent="NonScrollableElements" unique_id=904206852 instance=ExtResource("11_g6b73")]
 position = Vector2(0, 730)
 
-[node name="GameBoundaries" type="StaticBody2D" parent="NonScrollableElements" unique_id=207949395]
+[node name="GameBoundaries" type="StaticBody2D" parent="NonScrollableElements" unique_id=207949395 groups=["walls"]]
 visible = false
 
 [node name="Top" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=1289416659]
@@ -293,6 +295,10 @@ position = Vector2(476.99997, -134)
 rotation = -0.5235988
 scale = Vector2(-1, 1)
 flipper_direction = 1
+
+[node name="ForestBGM" type="AudioStreamPlayer" parent="." unique_id=1713255460]
+stream = ExtResource("11_kfj14")
+volume_db = -8.0
 
 [editable path="ScrollableElements/Stage1/DrainGuard/RightGuardPlatform"]
 [editable path="ScrollableElements/Stage1/DrainGuard/LeftGuardPlatform"]
