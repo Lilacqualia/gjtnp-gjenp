@@ -2,40 +2,43 @@
 
 [ext_resource type="Script" uid="uid://ds6skriho57f5" path="res://scripts/game_over.gd" id="1_xeevv"]
 [ext_resource type="AudioStream" uid="uid://csfcylo1voyap" path="res://bgm/ost_game_over-r1.wav" id="2_wqhvx"]
+[ext_resource type="FontFile" uid="uid://4lgrtbqatc2n" path="res://fonts/Doto_Rounded-SemiBold.ttf" id="3_tbwuq"]
 
 [node name="GameOver" type="Node2D" unique_id=313161322]
 script = ExtResource("1_xeevv")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=764478161]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 470.0
-offset_bottom = 790.0
-color = Color(0.35686275, 0.27058825, 0.105882354, 1)
-
-[node name="GridContainer" type="VBoxContainer" parent="." unique_id=422832907]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=445573275]
 offset_right = 480.0
 offset_bottom = 800.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-
-[node name="OhNoText" type="Label" parent="GridContainer" unique_id=956505981]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.04021522, 0.18286687, 0.18286541, 1)
-theme_override_font_sizes/font_size = 32
-text = "oh no all eggs broke :<"
-horizontal_alignment = 1
-
-[node name="ReturnToTitleText" type="Label" parent="GridContainer" unique_id=165855843]
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0.68235296, 1)
-theme_override_font_sizes/font_size = 32
-text = "press space to return to title"
-horizontal_alignment = 1
+color = Color(0.05815725, 0.07078167, 0.11423168, 1)
 
 [node name="GameOverBGM" type="AudioStreamPlayer" parent="." unique_id=431999697]
 stream = ExtResource("2_wqhvx")
 volume_db = -8.0
 autoplay = true
+
+[node name="ReturnToTitleText" type="Label" parent="." unique_id=736796694]
+offset_top = 618.0
+offset_right = 480.0
+offset_bottom = 699.0
+theme_override_colors/font_color = Color(0.7764706, 0.5058824, 0.05490196, 1)
+theme_override_fonts/font = ExtResource("3_tbwuq")
+theme_override_font_sizes/font_size = 32
+text = "Press space
+to return to title!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="OhNoText" type="Label" parent="." unique_id=429723803]
+offset_top = 115.0
+offset_right = 480.0
+offset_bottom = 532.0
+theme_override_colors/font_color = Color(0.7764706, 0.5058824, 0.05490196, 1)
+theme_override_fonts/font = ExtResource("3_tbwuq")
+theme_override_font_sizes/font_size = 32
+text = "FAREWELL
+BREAKFAST
+
+This is
+the way of egg."
+horizontal_alignment = 1

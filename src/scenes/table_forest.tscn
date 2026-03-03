@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cnifj1cn6gkee" path="res://scenes/wall.tscn" id="7_ehd0t"]
 [ext_resource type="PackedScene" uid="uid://di4kjbwd6stcp" path="res://scenes/spinner.tscn" id="9_o62vd"]
 [ext_resource type="PackedScene" uid="uid://cw0cq4b4yu3jn" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
-[ext_resource type="Script" path="res://scripts/goal_area.gd" id="10_kfj14"]
+[ext_resource type="Script" uid="uid://cygppix3bywqj" path="res://scripts/goal_area.gd" id="10_kfj14"]
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
 [ext_resource type="PackedScene" uid="uid://ii5arflhyl76" path="res://scenes/damage_kicker.tscn" id="11_g6b73"]
 [ext_resource type="AudioStream" uid="uid://cdguae702k2sf" path="res://bgm/ost_rat_grove-r1.wav" id="11_kfj14"]
@@ -21,7 +21,7 @@ ResetPosition = Vector2(240, 700)
 NextTable = 4
 
 [node name="ScrollableElements" type="Node2D" parent="." unique_id=336700636]
-position = Vector2(-150, 1554)
+position = Vector2(-150, 2638)
 
 [node name="ScrollStop" type="Marker2D" parent="ScrollableElements" unique_id=323768861]
 position = Vector2(389, -2887)
