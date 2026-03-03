@@ -30,6 +30,7 @@ func drop() -> void:
 	$Sprites.set_deferred("visible", false)
 	$CollisionShape2D.set_deferred("disabled", true)
 	$HitSound.play()
+	$DropSound.play()
 	_down = true
 
 func raise() -> void:

@@ -20,19 +20,40 @@ signal update_message(message: String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# start the bgm
+	if $ForestBGM.stream is AudioStreamWAV:
+		($ForestBGM.stream as AudioStreamWAV).loop_mode = AudioStreamWAV.LOOP_FORWARD
+		($ForestBGM.stream as AudioStreamWAV).loop_end = 2565818
+		$ForestBGM.play()
+	# set up the ball
 	ball_resetter = Timer.new()
 	ball_resetter.one_shot = true
 	ball_resetter.timeout.connect(_reset_the_ball)
 	add_child.call_deferred(ball_resetter)
 	ball_resetter.start.call_deferred(3.0)
+	# set up signals so drop target groups can generate bonus points
 	drop_target_groups = find_children("*", "DropTargetGroup")
 	for dtg in drop_target_groups:
 		if dtg is DropTargetGroup:
 			dtg.connect("generate_points", _on_generate_points)
+	# set up signals so spinners can generate points as they spin
 	spinners = find_children("*", "Spinner")
 	for spinner in spinners:
 		if spinner is Spinner:
 			spinner.connect("generate_points", _on_generate_points)
+	# set up flipper sounds so that each flipper sound plays only once on each side,
+	# no matter how many flippers there are in total
+	var flippers = find_children("*", "Flipper")
+	var left_flipper = flippers.find_custom(
+		func(f): return f.flipper_direction == Flipper.Flipper_Direction.LEFT)
+	if left_flipper > -1:
+		flippers[left_flipper].sound_on = true
+	var right_flipper = flippers.find_custom(
+		func(f): return f.flipper_direction == Flipper.Flipper_Direction.RIGHT)
+	if right_flipper > -1:
+		flippers[right_flipper].sound_on = true
+
+	
 	
 func _process(delta: float):
 	if okay_to_scroll and scroll_amount > 0.0:

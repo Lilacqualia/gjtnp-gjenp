@@ -21,15 +21,6 @@ var health = starting_health
 
 var rng = RandomNumberGenerator.new()
 
-var egg_crack_streams: Array[AudioStreamWAV]
-var egg_break_stream: AudioStreamWAV
-
-func _init() -> void:
-	for egg_idx in range(1, 10):
-		var egg_sound = AudioStreamWAV.load_from_file("res://sfx/egg_crack%d-r1.wav" % egg_idx)
-		egg_crack_streams.append(egg_sound)
-	egg_break_stream = AudioStreamWAV.load_from_file("res://sfx/egg_break-r1.wav")
-
 func _ready() -> void:
 	$RollSound.play()
 
@@ -61,6 +52,10 @@ func _on_body_entered(body: Node) -> void:
 		if velocity_shift >= min_velocity_for_thunk:
 			$Thunk.volume_linear = (minf(velocity_shift, max_velocity_for_thunk) / max_velocity_for_thunk) * 0.85
 			$Thunk.play()
+	elif body.is_in_group("thin_walls"):
+		var velocity_shift = old_velocity.distance_squared_to(linear_velocity)
+		if velocity_shift >= min_velocity_for_thunk:
+			$GentleThunk.play()
 			
 	if(body.is_in_group("damage_kicker")):
 		health -= 1
@@ -74,13 +69,10 @@ func _on_body_entered(body: Node) -> void:
 		rebound()
 		
 func play_egg_crack_sound():
-	var egg_stream = egg_crack_streams.pick_random()
-	$EggCrack.stream = egg_stream
-	$EggCrack.play()
+	$EggCrackSounds.get_children().pick_random().play()
 
 func play_egg_break_sound():
-	$EggCrack.stream = egg_break_stream
-	$EggCrack.play()
+	$EggBreak.play()
 
 func rebound() -> void:
 	rebounding = true

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cw0cq4b4yu3jn" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
 [ext_resource type="PackedScene" uid="uid://ii5arflhyl76" path="res://scenes/damage_kicker.tscn" id="11_g6b73"]
+[ext_resource type="AudioStream" uid="uid://cdguae702k2sf" path="res://bgm/ost_rat_grove-r1.wav" id="11_kfj14"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bafsl"]
 
@@ -71,6 +72,7 @@ position = Vector2(507, -88)
 value = 15
 
 [node name="Wall" parent="ScrollableElements/Stage1/DrainGuard" unique_id=55546858 instance=ExtResource("7_ehd0t")]
+z_as_relative = false
 position = Vector2(381, -184)
 polygon = PackedVector2Array(73, 64, 78, 57, 86, 54, 96, 57, 101, 70, 100, 100, 99, 126, 92, 132, 70, 142, 53, 138, 45, 126, 49, 117, 65, 104, 73, 95)
 
@@ -145,10 +147,12 @@ region_rect = Rect2(2271, 0, 473, 67)
 polygon = PackedVector2Array(-108, -66, 5.236496, -66, -1.554924, -56, -98.100494, -56)
 
 [node name="Wall" parent="ScrollableElements/Stage1/SideLog" unique_id=1426760361 instance=ExtResource("7_ehd0t")]
+z_as_relative = false
 position = Vector2(424, 31)
 polygon = PackedVector2Array(-44, -22, -34, -32, -10, -39, 25, -50, 80, -90, 113, -124, 111, 0, 109, 187, 96, 167, 82, 161, 69, 156, 60, 146, 57, 133, 59, 122, 59, 103, -20, 27, -41.367264, 26.999996, -45, 26, -46, 22.18586)
 
 [node name="Wall2" parent="ScrollableElements/Stage1/SideLog" unique_id=357906592 instance=ExtResource("7_ehd0t")]
+z_as_relative = false
 position = Vector2(266, -37)
 texture_offset = Vector2(23.535, 10.71)
 polygon = PackedVector2Array(51, 81, 50, 63, 52, 40, 54, 25, 57, 12, 60, 5, 63, 1, 66, 0, 70, 1, 72, 5, 73, 10, 73, 28, 69, 54, 68, 79, 66, 89, 61, 97, 54, 99, 50, 95)
@@ -216,6 +220,7 @@ rotation = 0.8726646
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Wall" parent="ScrollableElements/Stage1/BumperCluster" unique_id=539350452 instance=ExtResource("7_ehd0t")]
+z_as_relative = false
 position = Vector2(73, -174)
 texture_offset = Vector2(0, -39.265)
 polygon = PackedVector2Array(-29, 43, -31, -78, 51, -16, 55, -11, 54, -2, 43, 10, 37, 24, 38, 39, 42, 50, 43, 60, 13, 118, 5, 124, -7, 129, -19, 145, -24, 174, -20, 205, -12, 233, -18, 250, -27, 266, -30, 244)
@@ -261,6 +266,7 @@ position = Vector2(346, -44)
 position = Vector2(475, 30)
 
 [node name="Wall" parent="ScrollableElements/Stage2/Group1" unique_id=672624556 instance=ExtResource("7_ehd0t")]
+z_as_relative = false
 position = Vector2(517, -114)
 polygon = PackedVector2Array(-131, -70, 17, -192, 19, 291, -2, 199, -2, 151, -9, 113, -45, 103, -78, 42, -78, -4, -120, -27)
 
@@ -279,6 +285,7 @@ region_rect = Rect2(2011, 0, 733, 64)
 polygon = PackedVector2Array(-108, -66, 76.16214, -66, 63.501877, -56, -98, -56)
 
 [node name="Wall" parent="ScrollableElements/Stage2/Group2" unique_id=73553972 instance=ExtResource("7_ehd0t")]
+z_as_relative = false
 position = Vector2(-32, -259)
 polygon = PackedVector2Array(60, -53, 102, 40, 99, 117, 83, 195, 85, 229, 100, 252, 136, 270, 136, 317, 154, 346, 137.55597, 375.75095, 163, 384, 173, 391, 186, 412, 182, 419, 63, 361)
 
@@ -292,6 +299,7 @@ scale = Vector2(1, -1)
 flipper_direction = 1
 
 [node name="Wall2" parent="ScrollableElements/Stage2/Group2" unique_id=1597588539 instance=ExtResource("7_ehd0t")]
+z_as_relative = false
 position = Vector2(142, 7)
 polygon = PackedVector2Array(13, -11, 58, 18, 53, 48, 13, 45)
 
@@ -299,6 +307,7 @@ polygon = PackedVector2Array(13, -11, 58, 18, 53, 48, 13, 45)
 position = Vector2(132, 86)
 
 [node name="Wall3" parent="ScrollableElements/Stage2/Group2" unique_id=1839268283 instance=ExtResource("7_ehd0t")]
+z_as_relative = false
 position = Vector2(81, -149)
 polygon = PackedVector2Array(19, 61, 26, 39, 68, 55, 59, 74, 34, 111, 23, 116, 14, 107)
 
@@ -324,6 +333,7 @@ region_rect = Rect2(2051, 0, 693, 64)
 polygon = PackedVector2Array(-108, -66, 59, -66, 48, -56, -98, -56)
 
 [node name="Wall" parent="ScrollableElements/GoalBox" unique_id=1535936835 instance=ExtResource("7_ehd0t")]
+z_as_relative = false
 polygon = PackedVector2Array(-24, 0, 54.36432, 0, 154, 0, 153, 102, 126, 102, 90, 51, 42, 51, 6, 100, -26, 100)
 
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
@@ -332,7 +342,7 @@ metadata/_edit_lock_ = true
 [node name="Kicker" parent="NonScrollableElements" unique_id=904206852 instance=ExtResource("11_g6b73")]
 position = Vector2(0, 730)
 
-[node name="GameBoundaries" type="StaticBody2D" parent="NonScrollableElements" unique_id=207949395]
+[node name="GameBoundaries" type="StaticBody2D" parent="NonScrollableElements" unique_id=207949395 groups=["walls"]]
 visible = false
 
 [node name="Top" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=1289416659]
@@ -351,6 +361,10 @@ shape = SubResource("WorldBoundaryShape2D_bafsl")
 [node name="Bottom" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=360639053]
 position = Vector2(0, 750)
 shape = SubResource("WorldBoundaryShape2D_bafsl")
+
+[node name="ForestBGM" type="AudioStreamPlayer" parent="." unique_id=1713255460]
+stream = ExtResource("11_kfj14")
+volume_db = -8.0
 
 [editable path="ScrollableElements/Stage1/DrainGuard/RightGuardPlatform"]
 [editable path="ScrollableElements/Stage1/DrainGuard/LeftGuardPlatform"]
