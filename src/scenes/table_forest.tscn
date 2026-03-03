@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2ldm28a03gur" path="res://scenes/drop_target.tscn" id="5_3pj8s"]
 [ext_resource type="PackedScene" uid="uid://c1cyr6lkjjkbe" path="res://scenes/drop_target_group.tscn" id="5_r5rc4"]
 [ext_resource type="PackedScene" uid="uid://cnifj1cn6gkee" path="res://scenes/wall.tscn" id="7_ehd0t"]
+[ext_resource type="Script" uid="uid://cwc8gettcu2ey" path="res://scripts/drop_target_group.gd" id="9_ijlaf"]
 [ext_resource type="PackedScene" uid="uid://di4kjbwd6stcp" path="res://scenes/spinner.tscn" id="9_o62vd"]
 [ext_resource type="PackedScene" uid="uid://cw0cq4b4yu3jn" path="res://scenes/round_bumper.tscn" id="9_r5rc4"]
 [ext_resource type="Script" uid="uid://cygppix3bywqj" path="res://scripts/goal_area.gd" id="10_kfj14"]
@@ -189,6 +190,29 @@ rotation = 0.31415927
 
 [node name="DropTarget8" parent="ScrollableElements/Stage1/SideLog" unique_id=105419351 instance=ExtResource("5_3pj8s")]
 position = Vector2(290, 51)
+value = 5
+
+[node name="DropTargetGroup2" type="Node2D" parent="ScrollableElements/Stage1/SideLog" unique_id=640150116]
+position = Vector2(-50, 702)
+script = ExtResource("9_ijlaf")
+metadata/_custom_type_script = "uid://cwc8gettcu2ey"
+
+[node name="DropTarget10" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup2" unique_id=910012220 instance=ExtResource("5_3pj8s")]
+position = Vector2(553.00006, -777.00006)
+rotation = 2.3561945
+scale = Vector2(0.99999994, 0.99999994)
+value = 5
+
+[node name="DropTarget11" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup2" unique_id=146894196 instance=ExtResource("5_3pj8s")]
+position = Vector2(485, -731.00006)
+rotation = 2.8064895
+scale = Vector2(0.99999994, 0.99999994)
+value = 5
+
+[node name="DropTarget12" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup2" unique_id=960655139 instance=ExtResource("5_3pj8s")]
+position = Vector2(521, -751)
+rotation = 2.5446901
+scale = Vector2(0.99999994, 0.99999994)
 value = 5
 
 [node name="BumperCluster" type="Node2D" parent="ScrollableElements/Stage1" unique_id=1672020467]
