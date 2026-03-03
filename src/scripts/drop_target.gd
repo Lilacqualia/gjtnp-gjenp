@@ -4,7 +4,7 @@ class_name DropTarget extends StaticBody2D
 
 signal target_dropped
 
-@export var value: int
+@export var value := 15
 
 var _down := false
 
