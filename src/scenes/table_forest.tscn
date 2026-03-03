@@ -21,7 +21,7 @@ ResetPosition = Vector2(240, 700)
 NextTable = 4
 
 [node name="ScrollableElements" type="Node2D" parent="." unique_id=336700636]
-position = Vector2(-150, 2638)
+position = Vector2(-150, 800)
 
 [node name="ScrollStop" type="Marker2D" parent="ScrollableElements" unique_id=323768861]
 position = Vector2(389, -2887)
