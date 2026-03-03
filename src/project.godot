@@ -45,6 +45,7 @@ walls="outer walls and any other solid walls that don't do anything except be in
 round_bumper=""
 damage_kicker=""
 thin_walls="thin, one-way walls and platforms"
+goal_zones="get the egg here to win the game"
 
 [input]
 
@@ -75,6 +76,7 @@ thin_walls="thin, one-way walls and platforms"
 2d_physics/layer_5="roundBumper"
 2d_physics/layer_6="walls"
 2d_physics/layer_7="flippers"
+2d_physics/layer_8="GoalAreas"
 
 [physics]
 
