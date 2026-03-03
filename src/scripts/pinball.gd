@@ -66,6 +66,7 @@ func _on_body_entered(body: Node) -> void:
 			$Sprite2D.frame = int((starting_health - health) / 3)
 		else:
 			play_egg_break_sound()
+			$Sprite2D.visible = false
 			emit_signal("egg_is_broken")
 			return
 		rebound()
