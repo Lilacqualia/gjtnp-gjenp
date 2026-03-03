@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://d2ldm28a03gur"]
 
 [ext_resource type="Texture2D" uid="uid://deifbpvnbh3fk" path="res://images/target-r1.png" id="2_7fcwm"]
-[ext_resource type="Shader" uid="uid://djd2y326ds6ov" path="res://scenes/drop_target_blue.gdshader" id="2_v3ie5"]
+[ext_resource type="Texture2D" uid="uid://csgksdgbhh25e" path="res://images/target-gate-r1.png" id="3_4g07d"]
 [ext_resource type="Script" uid="uid://c3r0lx3qdvn1m" path="res://scripts/drop_target.gd" id="3_v3ie5"]
 [ext_resource type="AudioStream" uid="uid://2ex1xbi2px0c" path="res://sfx/sfx_target_hit-r1.wav" id="4_hkfpq"]
 [ext_resource type="AudioStream" uid="uid://d3foymo2v26mj" path="res://sfx/target_drop-r1.wav" id="5_rpw5q"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3ie5"]
-shader = ExtResource("2_v3ie5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fcwm"]
 size = Vector2(30, 8)
@@ -16,10 +13,16 @@ size = Vector2(30, 8)
 collision_layer = 2
 script = ExtResource("3_v3ie5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1480355114]
-material = SubResource("ShaderMaterial_v3ie5")
+[node name="Sprites" type="Node2D" parent="." unique_id=1831518853]
+
+[node name="GroupSprite" type="Sprite2D" parent="Sprites" unique_id=1480355114]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_7fcwm")
+flip_v = true
+
+[node name="SoloSprite" type="Sprite2D" parent="Sprites" unique_id=1411382159]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_4g07d")
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1944042824]
