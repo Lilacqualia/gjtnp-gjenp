@@ -30,7 +30,6 @@ buses/default_bus_layout="uid://dwq6rk1chemdm"
 
 window/size/viewport_width=540
 window/size/viewport_height=960
-window/stretch/mode="canvas_items"
 
 [global_group]
 
