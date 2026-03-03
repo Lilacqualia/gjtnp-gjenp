@@ -41,6 +41,8 @@ func _ready() -> void:
 	for spinner in spinners:
 		if spinner is Spinner:
 			spinner.connect("generate_points", _on_generate_points)
+	# set up signal for the goal zone
+	$ScrollableElements/GoalBox/Area2D.connect("goal_confirmed", ask_conductor_for_next_table)
 	# set up flipper sounds so that each flipper sound plays only once on each side,
 	# no matter how many flippers there are in total
 	var flippers = find_children("*", "Flipper")
