@@ -4,6 +4,7 @@ extends Node2D
 var TitleScreen : PackedScene = preload("res://scenes/title_screen.tscn")
 var GameOver: PackedScene = preload("res://scenes/game_over.tscn")
 var VictoryScreen: PackedScene = preload("res://scenes/victory_screen.tscn")
+var OptionsScreen: PackedScene = preload("res://scenes/options_screen.tscn")
 var ForestBoard: PackedScene = preload("res://scenes/table_forest.tscn")
 var CaveBoard: PackedScene = preload("res://scenes/table_cave.tscn")
 
@@ -33,6 +34,8 @@ func _on_go_to_scene(scene: Globals.SceneName):
 			switch_scene(GameOver)
 		Globals.SceneName.VICTORY:
 			switch_scene(VictoryScreen)
+		Globals.SceneName.OPTIONS:
+			switch_scene(OptionsScreen)
 		Globals.SceneName.FOREST:
 			switch_scene(ForestBoard)
 			current_hud.update_message("0")

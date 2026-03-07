@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dc3ehx2fq58jt"]
+
+[ext_resource type="Script" uid="uid://f1tp1osh4r0l" path="res://scripts/options_screen.gd" id="1_8c6mt"]
+[ext_resource type="Texture2D" uid="uid://cw80mxrpwc6wk" path="res://images/menu-r1.png" id="1_ffprp"]
+[ext_resource type="FontFile" uid="uid://4lgrtbqatc2n" path="res://fonts/Doto_Rounded-SemiBold.ttf" id="3_d6p5t"]
+
+[node name="OptionsScreen" type="Node2D" unique_id=258291306]
+script = ExtResource("1_8c6mt")
+
+[node name="Base" type="TextureRect" parent="." unique_id=969885806]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ffprp")
+stretch_mode = 2
+
+[node name="MasterVolume" type="HSlider" parent="." unique_id=994011414]
+offset_left = 40.0
+offset_top = 400.0
+offset_right = 440.0
+offset_bottom = 416.0
+max_value = 1.0
+step = 0.1
+editable = false
+scrollable = false
+tick_count = 10
+ticks_on_borders = true
+
+[node name="VolumeLabel" type="Label" parent="." unique_id=1317438229]
+offset_left = 40.0
+offset_top = 330.0
+offset_right = 440.0
+offset_bottom = 388.0
+theme_override_colors/font_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+theme_override_fonts/font = ExtResource("3_d6p5t")
+theme_override_font_sizes/font_size = 48
+text = "VOLUME SLIDER"
+horizontal_alignment = 1
+
+[connection signal="value_changed" from="MasterVolume" to="." method="_on_master_volume_value_changed"]

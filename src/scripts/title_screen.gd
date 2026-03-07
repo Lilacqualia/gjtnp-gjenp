@@ -3,7 +3,7 @@ extends Node2D
 signal go_to_scene(scene: Globals.SceneName)
 signal update_message(message: String)
 
-var handled_start = false
+var going_somewhere = false
 
 func _ready() -> void:
 	emit_signal("update_message", "WELCOME BREAKFAST")
@@ -13,8 +13,12 @@ func _ready() -> void:
 		$TitleBGM.play()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Start Game") and handled_start == false:
-		print("let's go!")
-		handled_start = true
-		
-		emit_signal("go_to_scene", Globals.SceneName.FOREST)
+	if not going_somewhere:
+		if event.is_action_pressed("Start Game"):
+			print("let's go!")
+			going_somewhere = true
+			emit_signal("go_to_scene", Globals.SceneName.FOREST)
+		elif event.is_action_pressed("Toggle Options"):
+			print("options time")
+			going_somewhere = true
+			emit_signal("go_to_scene", Globals.SceneName.OPTIONS)
