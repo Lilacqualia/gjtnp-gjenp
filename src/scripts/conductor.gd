@@ -54,7 +54,13 @@ func switch_scene(scene: PackedScene):
 	current_scene.disconnect("update_message", _on_update_message)
 	new_scene.connect("go_to_scene", _on_go_to_scene)
 	new_scene.connect("update_message", _on_update_message)
+	
+	var fadeOutTween = get_tree().create_tween()
+	fadeOutTween.tween_property($FadeZone, "color",Color(0.0, 0.0, 0.0, 1.0), 1.0)
+	await fadeOutTween.finished
 	$TableContainer.remove_child(current_scene)
 	$TableContainer.add_child(new_scene)
 	current_scene.queue_free()
 	current_scene = new_scene
+	var fadeInTween = get_tree().create_tween()
+	fadeInTween.tween_property($FadeZone, "color",Color(0.0, 0.0, 0.0, 0.0), 1.0)
