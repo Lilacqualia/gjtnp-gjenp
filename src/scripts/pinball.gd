@@ -31,6 +31,9 @@ func _exit_tree() -> void:
 
 func _process(_delta: float) -> void:
 	var sound_speed = minf(linear_velocity.length(), roll_sound_upper_speed) / roll_sound_upper_speed
+	# When rebounding, the egg is "flying" and not in contact with table, so no
+	# roll sound.
+	if rebounding: sound_speed = 0.0
 	$RollSound.volume_linear = sound_speed
 	# pitch scale goes from 0 to 16, 1 is baseline, 16 is max, so let's see what it sounds like
 	var busIndex = AudioServer.get_bus_index("EggRoll")

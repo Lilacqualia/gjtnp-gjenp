@@ -1,50 +1,18 @@
 [gd_scene format=3 uid="uid://cstrxii3atq50"]
 
 [ext_resource type="Script" uid="uid://bvytikldi56m5" path="res://scripts/victory_screen.gd" id="1_ujlt3"]
-[ext_resource type="FontFile" uid="uid://4lgrtbqatc2n" path="res://fonts/Doto_Rounded-SemiBold.ttf" id="2_wdgif"]
 [ext_resource type="AudioStream" uid="uid://da16rrnxnwqei" path="res://bgm/breakfast_machine-r2.wav" id="3_pfcnd"]
+[ext_resource type="Texture2D" uid="uid://bcgifbueblafo" path="res://images/escaped-breakfast-r1.png" id="3_rixwf"]
 
 [node name="VictoryScreen" type="Node2D" unique_id=990198325]
 script = ExtResource("1_ujlt3")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1005981636]
-offset_right = 480.0
-offset_bottom = 800.0
-color = Color(0.05815725, 0.07078167, 0.11423168, 1)
-
-[node name="GridContainer" type="VBoxContainer" parent="." unique_id=1170768653]
-offset_right = 480.0
-offset_bottom = 800.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-
-[node name="ReturnToTitleText" type="Label" parent="." unique_id=1387399838]
-offset_top = 618.0
-offset_right = 480.0
-offset_bottom = 699.0
-theme_override_colors/font_color = Color(0.7764706, 0.5058824, 0.05490196, 1)
-theme_override_fonts/font = ExtResource("2_wdgif")
-theme_override_font_sizes/font_size = 32
-text = "Press space
-to return to title!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="GreatDoneText" type="Label" parent="." unique_id=992412139]
-offset_top = 115.0
-offset_right = 480.0
-offset_bottom = 532.0
-theme_override_colors/font_color = Color(0.7764706, 0.5058824, 0.05490196, 1)
-theme_override_fonts/font = ExtResource("2_wdgif")
-theme_override_font_sizes/font_size = 32
-text = "BREAKFAST
-ESCAPED
-
-This, too, is
-the way of egg."
-horizontal_alignment = 1
-
 [node name="TitleBGM" type="AudioStreamPlayer" parent="." unique_id=2146096302]
 stream = ExtResource("3_pfcnd")
 volume_db = -8.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=906351285]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_rixwf")
