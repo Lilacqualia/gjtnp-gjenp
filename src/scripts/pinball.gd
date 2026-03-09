@@ -18,11 +18,13 @@ var rebounding = false;
 
 @export var starting_health = 12
 var health = starting_health
+var spriteHealthChange: float
 
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	$RollSound.play()
+	spriteHealthChange = starting_health / float($Sprite2D.hframes * $Sprite2D.vframes)
 
 func _exit_tree() -> void:
 	$RollSound.stop()
@@ -63,7 +65,7 @@ func _on_body_entered(body: Node) -> void:
 		health -= 1
 		if health > 0:
 			play_egg_crack_sound()
-			$Sprite2D.frame = int((starting_health - health) / 3)
+			$Sprite2D.frame = floor((starting_health - health) / spriteHealthChange)
 		else:
 			play_egg_break_sound()
 			$Sprite2D.visible = false

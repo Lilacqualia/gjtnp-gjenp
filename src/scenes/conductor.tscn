@@ -35,3 +35,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_q7w51")
 expand_mode = 3
+
+[node name="FadeZone" type="ColorRect" parent="." unique_id=803434350]
+z_index = 2
+offset_left = 30.0
+offset_top = 130.0
+offset_right = 510.0
+offset_bottom = 930.0
+color = Color(0, 0, 0, 0)
