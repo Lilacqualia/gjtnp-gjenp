@@ -2,43 +2,18 @@
 
 [ext_resource type="Script" uid="uid://ds6skriho57f5" path="res://scripts/game_over.gd" id="1_xeevv"]
 [ext_resource type="AudioStream" uid="uid://csfcylo1voyap" path="res://bgm/ost_game_over-r1.wav" id="2_wqhvx"]
-[ext_resource type="FontFile" uid="uid://4lgrtbqatc2n" path="res://fonts/Doto_Rounded-SemiBold.ttf" id="3_tbwuq"]
+[ext_resource type="Texture2D" uid="uid://crlhunp2v6oi0" path="res://images/farewell-breakfast-r1.png" id="3_tbwuq"]
 
 [node name="GameOver" type="Node2D" unique_id=313161322]
 script = ExtResource("1_xeevv")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=445573275]
-offset_right = 480.0
-offset_bottom = 800.0
-color = Color(0.05815725, 0.07078167, 0.11423168, 1)
 
 [node name="GameOverBGM" type="AudioStreamPlayer" parent="." unique_id=431999697]
 stream = ExtResource("2_wqhvx")
 volume_db = -8.0
 autoplay = true
 
-[node name="ReturnToTitleText" type="Label" parent="." unique_id=736796694]
-offset_top = 618.0
-offset_right = 480.0
-offset_bottom = 699.0
-theme_override_colors/font_color = Color(0.7764706, 0.5058824, 0.05490196, 1)
-theme_override_fonts/font = ExtResource("3_tbwuq")
-theme_override_font_sizes/font_size = 32
-text = "Press space
-to return to title!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="OhNoText" type="Label" parent="." unique_id=429723803]
-offset_top = 115.0
-offset_right = 480.0
-offset_bottom = 532.0
-theme_override_colors/font_color = Color(0.7764706, 0.5058824, 0.05490196, 1)
-theme_override_fonts/font = ExtResource("3_tbwuq")
-theme_override_font_sizes/font_size = 32
-text = "FAREWELL
-BREAKFAST
-
-This is
-the way of egg."
-horizontal_alignment = 1
+[node name="TextureRect" type="TextureRect" parent="." unique_id=853832849]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_tbwuq")

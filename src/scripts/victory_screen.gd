@@ -13,8 +13,6 @@ func _ready() -> void:
 		($TitleBGM.stream as AudioStreamWAV).loop_mode = AudioStreamWAV.LOOP_FORWARD
 		($TitleBGM.stream as AudioStreamWAV).loop_end = 4980706
 		$TitleBGM.play()
-	await get_tree().create_timer(3.0).timeout
-	$ReturnToTitleText.visible = true
 	connect("go_home", go_back_home)
 
 func _input(event: InputEvent) -> void:
