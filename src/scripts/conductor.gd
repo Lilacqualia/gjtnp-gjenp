@@ -64,3 +64,7 @@ func switch_scene(scene: PackedScene):
 	current_scene = new_scene
 	var fadeInTween = get_tree().create_tween()
 	fadeInTween.tween_property($FadeZone, "color",Color(0.0, 0.0, 0.0, 0.0), 0.5)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Reset to Title"):
+		switch_scene(TitleScreen)
