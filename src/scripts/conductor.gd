@@ -6,6 +6,8 @@ var GameOver: PackedScene = preload("res://scenes/game_over.tscn")
 var VictoryScreen: PackedScene = preload("res://scenes/victory_screen.tscn")
 var ForestBoard: PackedScene = preload("res://scenes/table_forest.tscn")
 var CaveBoard: PackedScene = preload("res://scenes/table_cave.tscn")
+var RulesScreen : PackedScene = preload("res://scenes/rules_screen.tscn")
+var ControlsScreen : PackedScene = preload("res://scenes/controls_screen.tscn")
 
 # hud scenes
 var ScoreDisplayHud: PackedScene = preload("res://scenes/score_display.tscn")
@@ -38,6 +40,10 @@ func _on_go_to_scene(scene: Globals.SceneName):
 			current_hud.update_message("0")
 		Globals.SceneName.CAVE:
 			switch_scene(CaveBoard)
+		Globals.SceneName.RULES:
+			switch_scene(RulesScreen)
+		Globals.SceneName.CONTROLS:
+			switch_scene(ControlsScreen)
 		_:
 			print("unexpected scene")
 			
