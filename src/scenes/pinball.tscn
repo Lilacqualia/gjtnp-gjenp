@@ -24,6 +24,7 @@ stereo = true
 
 [node name="pinball" type="RigidBody2D" unique_id=782531317 groups=["pinballs"]]
 collision_mask = 247
+can_sleep = false
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_5eq27")
