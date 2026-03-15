@@ -7,7 +7,6 @@ signal target_dropped
 @export var value := 15
 
 var _down := false
-var animation_duration = 0.2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,15 +32,17 @@ func drop() -> void:
 	$DropSound.play()
 	_down = true
 	var dropTween = get_tree().create_tween()
-	dropTween.set_trans(Tween.TRANS_LINEAR)
-	dropTween.tween_property($Sprites, "scale", Vector2(1.0, 0.0), animation_duration)
+	dropTween.set_trans(Tween.TRANS_BACK)
+	dropTween.set_ease(Tween.EASE_IN)
+	dropTween.tween_property($Sprites, "scale", Vector2(0.0, 0.0), 0.08)
 
 func raise() -> void:
 	$CollisionShape2D.set_deferred("disabled", false)
 	_down = false
 	var raiseTween = get_tree().create_tween()
-	raiseTween.set_trans(Tween.TRANS_LINEAR)
-	raiseTween.tween_property($Sprites, "scale", Vector2(1.0, 1.0), animation_duration)
+	raiseTween.set_trans(Tween.TRANS_SPRING)
+	raiseTween.set_ease(Tween.EASE_OUT)
+	raiseTween.tween_property($Sprites, "scale", Vector2(1.0, 1.0), 0.2)
 	
 # Returns true if target has been dropped.
 func is_down() -> bool:
