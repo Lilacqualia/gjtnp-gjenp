@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Start Game") and handled_start == false:
-		print("let's go!")
+		print("rules")
 		handled_start = true
 		
-		emit_signal("go_to_scene", Globals.SceneName.FOREST)
+		emit_signal("go_to_scene", Globals.SceneName.RULES)

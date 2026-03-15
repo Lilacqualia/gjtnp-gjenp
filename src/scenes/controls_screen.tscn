@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://csluviog3gkmw"]
+
+[ext_resource type="Texture2D" uid="uid://chb7157pdllqd" path="res://images/controls slide.png" id="1_bmue2"]
+[ext_resource type="Script" uid="uid://dvnxnuily7y70" path="res://scripts/controls_screen.gd" id="1_n3dy3"]
+
+[node name="controls_screen" type="Node2D" unique_id=1832351562]
+script = ExtResource("1_n3dy3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=289760413]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_bmue2")

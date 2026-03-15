@@ -4,5 +4,7 @@ enum SceneName  {
 	GAMEOVER,
 	FOREST,
 	CAVE,
-	VICTORY
+	VICTORY,
+	RULES,
+	CONTROLS
 }
