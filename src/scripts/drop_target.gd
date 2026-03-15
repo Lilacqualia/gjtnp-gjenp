@@ -27,16 +27,22 @@ func receive_hit(_speed: Vector2) -> int: #-> void: # revision 1
 	return value # revision 1
 
 func drop() -> void:
-	$Sprites.set_deferred("visible", false)
 	$CollisionShape2D.set_deferred("disabled", true)
 	$HitSound.play()
 	$DropSound.play()
 	_down = true
+	var dropTween = get_tree().create_tween()
+	dropTween.set_trans(Tween.TRANS_BACK)
+	dropTween.set_ease(Tween.EASE_IN)
+	dropTween.tween_property($Sprites, "scale", Vector2(0.0, 0.0), 0.08)
 
 func raise() -> void:
-	$Sprites.set_deferred("visible", true)
 	$CollisionShape2D.set_deferred("disabled", false)
 	_down = false
+	var raiseTween = get_tree().create_tween()
+	raiseTween.set_trans(Tween.TRANS_SPRING)
+	raiseTween.set_ease(Tween.EASE_OUT)
+	raiseTween.tween_property($Sprites, "scale", Vector2(1.0, 1.0), 0.2)
 	
 # Returns true if target has been dropped.
 func is_down() -> bool:
