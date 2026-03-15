@@ -5,6 +5,7 @@ signal egg_is_broken
 
 const rebound_nocollide_layers := [2, 3, 4, 5, 6, 7]
 const default_sprite_scale := Vector2(0.25, 0.25)
+const rebounding_sprite_scale = Vector2(0.33, 0.33)
 
 var old_velocity: Vector2
 var min_velocity_for_thunk = 200000.0
@@ -87,7 +88,10 @@ func rebound() -> void:
 	can_end_rebound = false
 	set_linear_velocity(Vector2(rng.randf_range(-750.0, 750.0), -1500))
 	set_rebound_nocollide(true)
-	$Sprite2D.scale = Vector2(0.3, 0.3)
+	var reboundScaleTween = get_tree().create_tween()
+	reboundScaleTween.set_trans(Tween.TRANS_QUAD)
+	reboundScaleTween.tween_property($Sprite2D, "scale", rebounding_sprite_scale, 0.5)
+	reboundScaleTween.tween_property($Sprite2D, "scale", default_sprite_scale, 0.5)
 	
 	await get_tree().create_timer(1.0).timeout
 	can_end_rebound = true
