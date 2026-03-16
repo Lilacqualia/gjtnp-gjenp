@@ -79,9 +79,11 @@ func _on_body_entered(body: Node) -> void:
 		
 func play_egg_crack_sound():
 	$EggCrackSounds.get_children().pick_random().play()
+	$RatCheer.play()
 
 func play_egg_break_sound():
 	$EggBreak.play()
+	$RatCheer.play()
 
 func rebound() -> void:
 	rebounding = true
