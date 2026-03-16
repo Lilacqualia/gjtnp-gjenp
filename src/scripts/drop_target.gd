@@ -7,6 +7,7 @@ signal target_dropped
 @export var value := 20
 
 var _down := false
+var tween : Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,19 +32,23 @@ func drop() -> void:
 	$HitSound.play()
 	$DropSound.play()
 	_down = true
-	var dropTween = get_tree().create_tween()
-	dropTween.set_trans(Tween.TRANS_BACK)
-	dropTween.set_ease(Tween.EASE_IN)
-	dropTween.tween_property($Sprites, "scale", Vector2(0.0, 0.0), 0.08)
+	reset_tween()
+	tween.set_trans(Tween.TRANS_BACK)
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property($Sprites, "scale", Vector2(0.0, 0.0), 0.08)
 
 func raise() -> void:
 	$CollisionShape2D.set_deferred("disabled", false)
 	_down = false
-	var raiseTween = get_tree().create_tween()
-	raiseTween.set_trans(Tween.TRANS_SPRING)
-	raiseTween.set_ease(Tween.EASE_OUT)
-	raiseTween.tween_property($Sprites, "scale", Vector2(1.0, 1.0), 0.2)
+	reset_tween()
+	tween.set_trans(Tween.TRANS_SPRING)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property($Sprites, "scale", Vector2(1.0, 1.0), 0.2)
 	
 # Returns true if target has been dropped.
 func is_down() -> bool:
 	return _down
+	
+func reset_tween() -> void:
+	if tween: tween.kill()
+	tween = get_tree().create_tween()
