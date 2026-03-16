@@ -98,7 +98,6 @@ flipper_direction = 1
 position = Vector2(482.00003, -147.99997)
 rotation = 2.3561945
 scale = Vector2(0.99999994, 0.99999994)
-value = 5
 
 [node name="SideLog" type="Node2D" parent="ScrollableElements/Stage1" unique_id=469660202]
 position = Vector2(50, -702)
@@ -173,13 +172,11 @@ polygon = PackedVector2Array(-108, -66, 5.236496, -66, -1.554924, -56, -98.10049
 
 [node name="DropTarget6" parent="ScrollableElements/Stage1/SideLog" unique_id=1692251351 instance=ExtResource("5_3pj8s")]
 position = Vector2(357, 51)
-value = 5
 
 [node name="DropTarget7" parent="ScrollableElements/Stage1/SideLog" unique_id=713690145 instance=ExtResource("5_3pj8s")]
 position = Vector2(513, 261.00003)
 rotation = 2.3561945
 scale = Vector2(0.99999994, 0.99999994)
-value = 5
 
 [node name="Flipper2" parent="ScrollableElements/Stage1/SideLog" unique_id=792689300 instance=ExtResource("2_cwxmj")]
 position = Vector2(335.00003, -27)
@@ -187,7 +184,6 @@ rotation = 0.31415927
 
 [node name="DropTarget8" parent="ScrollableElements/Stage1/SideLog" unique_id=105419351 instance=ExtResource("5_3pj8s")]
 position = Vector2(290, 51)
-value = 5
 
 [node name="DropTargetGroup3" parent="ScrollableElements/Stage1/SideLog" unique_id=1780319321 instance=ExtResource("5_r5rc4")]
 
@@ -195,26 +191,22 @@ value = 5
 position = Vector2(503.00006, -75.00006)
 rotation = 2.3561945
 scale = Vector2(0.9999999, 0.9999999)
-value = 5
 
 [node name="DropTarget11" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup3" unique_id=146894196 instance=ExtResource("5_3pj8s")]
 position = Vector2(435, -29.000061)
 rotation = 2.8064895
 scale = Vector2(0.99999994, 0.99999994)
-value = 5
 
 [node name="DropTarget12" parent="ScrollableElements/Stage1/SideLog/DropTargetGroup3" unique_id=960655139 instance=ExtResource("5_3pj8s")]
 position = Vector2(471, -49)
 rotation = 2.5446901
 scale = Vector2(0.9999999, 0.9999999)
-value = 5
 
 [node name="BumperCluster" type="Node2D" parent="ScrollableElements/Stage1" unique_id=1672020467]
 position = Vector2(50, -609)
 
 [node name="round_bumper" parent="ScrollableElements/Stage1/BumperCluster" unique_id=1626577286 instance=ExtResource("9_r5rc4")]
 position = Vector2(149, -143)
-value = 20
 
 [node name="round_bumper2" parent="ScrollableElements/Stage1/BumperCluster" unique_id=1952794474 instance=ExtResource("9_r5rc4")]
 position = Vector2(89, -12)
@@ -248,22 +240,18 @@ polygon = PackedVector2Array(-29, 43, -31, -78, 51, -16, 55, -11, 54, -2, 43, 10
 position = Vector2(181, 14)
 rotation = -0.2617994
 scale = Vector2(0.99999994, 0.99999994)
-value = 5
 
 [node name="DropTarget2" parent="ScrollableElements/Stage1/BumperCluster" unique_id=1927431590 instance=ExtResource("5_3pj8s")]
 position = Vector2(135, 19)
-value = 5
 
 [node name="DropTarget3" parent="ScrollableElements/Stage1/BumperCluster" unique_id=173629061 instance=ExtResource("5_3pj8s")]
 position = Vector2(204, -115)
 rotation = -2.3561945
 scale = Vector2(0.99999994, 0.99999994)
-value = 5
 
 [node name="DropTarget4" parent="ScrollableElements/Stage1/BumperCluster" unique_id=1155096017 instance=ExtResource("5_3pj8s")]
 position = Vector2(230, -79)
 rotation = -2.0943952
-value = 5
 
 [node name="Stage2" type="Node2D" parent="ScrollableElements" unique_id=794293070]
 position = Vector2(50, -800)
@@ -273,7 +261,6 @@ position = Vector2(50, -339)
 
 [node name="round_bumper" parent="ScrollableElements/Stage2/Group1" unique_id=400834405 instance=ExtResource("9_r5rc4")]
 position = Vector2(400, -95)
-value = 20
 
 [node name="round_bumper2" parent="ScrollableElements/Stage2/Group1" unique_id=779606738 instance=ExtResource("9_r5rc4")]
 position = Vector2(326, 24)
@@ -293,19 +280,16 @@ polygon = PackedVector2Array(-63, -51, -63, -93, -39, -118, -39, -179, -13, -205
 position = Vector2(455.00003, -233)
 rotation = 2.3561945
 scale = Vector2(0.99999994, 0.99999994)
-value = 5
 
 [node name="DropTarget11" parent="ScrollableElements/Stage2/Group1" unique_id=387975597 instance=ExtResource("5_3pj8s")]
 position = Vector2(480, -321)
 rotation = 2.3561945
 scale = Vector2(0.99999994, 0.99999994)
-value = 5
 
 [node name="DropTarget12" parent="ScrollableElements/Stage2/Group1" unique_id=899044549 instance=ExtResource("5_3pj8s")]
 position = Vector2(508.00006, -410)
 rotation = 2.3561945
 scale = Vector2(0.99999994, 0.99999994)
-value = 5
 
 [node name="DropTargetGroup" parent="ScrollableElements/Stage2/Group1" unique_id=1318636734 instance=ExtResource("5_r5rc4")]
 
@@ -356,11 +340,9 @@ position = Vector2(403, 19)
 
 [node name="DropTarget8" parent="ScrollableElements/Stage2/Group1" unique_id=1801079846 instance=ExtResource("5_3pj8s")]
 position = Vector2(376, 48)
-value = 5
 
 [node name="DropTarget10" parent="ScrollableElements/Stage2/Group1" unique_id=899952978 instance=ExtResource("5_3pj8s")]
 position = Vector2(425, 49)
-value = 5
 
 [node name="Group2" type="Node2D" parent="ScrollableElements/Stage2" unique_id=1982035145]
 position = Vector2(50, -245)
@@ -415,44 +397,35 @@ rotation = 0.5235988
 position = Vector2(189, 89)
 rotation = -1.3089969
 scale = Vector2(0.99999994, 0.99999994)
-value = 5
 
 [node name="DropTarget2" parent="ScrollableElements/Stage2/Group2" unique_id=574325415 instance=ExtResource("5_3pj8s")]
 position = Vector2(166, 126)
 rotation = -0.7853982
-value = 5
 
 [node name="spinner2" parent="ScrollableElements/Stage2/Group2" unique_id=2095172409 instance=ExtResource("9_o62vd")]
 position = Vector2(76, -79)
 
 [node name="round_bumper2" parent="ScrollableElements/Stage2/Group2" unique_id=667104284 instance=ExtResource("9_r5rc4")]
 position = Vector2(248, -262)
-value = 20
 
 [node name="DropTarget8" parent="ScrollableElements/Stage2/Group2" unique_id=1570830078 instance=ExtResource("5_3pj8s")]
 position = Vector2(232, -46)
-value = 5
 
 [node name="DropTarget9" parent="ScrollableElements/Stage2/Group2" unique_id=1089681692 instance=ExtResource("5_3pj8s")]
 position = Vector2(275, -47)
-value = 5
 
 [node name="DropTarget10" parent="ScrollableElements/Stage2/Group2" unique_id=1465285313 instance=ExtResource("5_3pj8s")]
 position = Vector2(360, 234)
-value = 5
 
 [node name="DropTarget11" parent="ScrollableElements/Stage2/Group2" unique_id=1961369025 instance=ExtResource("5_3pj8s")]
 position = Vector2(405, 232)
-value = 5
 
 [node name="DropTarget13" parent="ScrollableElements/Stage2/Group2" unique_id=1275900764 instance=ExtResource("5_3pj8s")]
 position = Vector2(449, 215)
-value = 5
 
 [node name="DropTarget12" parent="ScrollableElements/Stage2/Group2" unique_id=532851316 instance=ExtResource("5_3pj8s")]
 position = Vector2(90, -127)
 rotation = -2.6179938
-value = 5
 
 [node name="Group3" type="Node2D" parent="ScrollableElements/Stage2" unique_id=1902964560]
 position = Vector2(50, -741)
@@ -475,7 +448,6 @@ scale = Vector2(0.99999994, 0.99999994)
 
 [node name="round_bumper" parent="ScrollableElements/Stage2/Group3" unique_id=2062118185 instance=ExtResource("9_r5rc4")]
 position = Vector2(93, 198)
-value = 20
 
 [node name="spinner2" parent="ScrollableElements/Stage2/Group3" unique_id=825275472 instance=ExtResource("9_o62vd")]
 position = Vector2(72, 35)
@@ -514,39 +486,30 @@ one_shot = true
 
 [node name="round_bumper" parent="ScrollableElements/GoalBox" unique_id=2144127181 instance=ExtResource("9_r5rc4")]
 position = Vector2(-25, 94)
-value = 20
 
 [node name="round_bumper" parent="ScrollableElements/GoalBox/round_bumper" unique_id=1981516806 instance=ExtResource("9_r5rc4")]
 position = Vector2(91, 110)
-value = 20
 
 [node name="round_bumper2" parent="ScrollableElements/GoalBox" unique_id=1674489776 instance=ExtResource("9_r5rc4")]
 position = Vector2(66, -81)
-value = 20
 
 [node name="round_bumper3" parent="ScrollableElements/GoalBox" unique_id=1151264725 instance=ExtResource("9_r5rc4")]
 position = Vector2(156, 96)
-value = 20
 
 [node name="DropTarget8" parent="ScrollableElements/GoalBox" unique_id=331675405 instance=ExtResource("5_3pj8s")]
 position = Vector2(105, 113)
-value = 5
 
 [node name="DropTarget9" parent="ScrollableElements/GoalBox" unique_id=1819451075 instance=ExtResource("5_3pj8s")]
 position = Vector2(63, 114)
-value = 5
 
 [node name="DropTarget10" parent="ScrollableElements/GoalBox" unique_id=955654395 instance=ExtResource("5_3pj8s")]
 position = Vector2(23, 113)
-value = 5
 
 [node name="DropTarget11" parent="ScrollableElements/GoalBox" unique_id=728160849 instance=ExtResource("5_3pj8s")]
 position = Vector2(86, 137)
-value = 5
 
 [node name="DropTarget12" parent="ScrollableElements/GoalBox" unique_id=685413459 instance=ExtResource("5_3pj8s")]
 position = Vector2(43, 136)
-value = 5
 
 [node name="NonScrollableElements" type="Node2D" parent="." unique_id=878511998]
 metadata/_edit_lock_ = true
