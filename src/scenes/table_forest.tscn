@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
 [ext_resource type="PackedScene" uid="uid://ii5arflhyl76" path="res://scenes/damage_kicker.tscn" id="11_g6b73"]
 [ext_resource type="AudioStream" uid="uid://cdguae702k2sf" path="res://bgm/ost_rat_grove-r1.wav" id="11_kfj14"]
+[ext_resource type="Script" uid="uid://cux2wtd276xbj" path="res://scripts/top.gd" id="12_ijlaf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bafsl"]
 
@@ -213,15 +214,11 @@ position = Vector2(345, 51)
 position = Vector2(508, 152)
 
 [node name="DropTarget3" parent="ScrollableElements/Stage1/SideLog" unique_id=1228208340 instance=ExtResource("5_3pj8s")]
-position = Vector2(508, 142)
+position = Vector2(508, 136)
 
 [node name="DropTarget16" parent="ScrollableElements/Stage1/SideLog" unique_id=947728904 instance=ExtResource("5_3pj8s")]
 position = Vector2(508, 119)
-rotation = 3.1415925
-
-[node name="DropTarget4" parent="ScrollableElements/Stage1/SideLog" unique_id=424188433 instance=ExtResource("5_3pj8s")]
-position = Vector2(508, 130)
-rotation = -3.1415927
+rotation = 6.2831855
 
 [node name="OneWayPlatform4" parent="ScrollableElements/Stage1/SideLog" unique_id=585967027 instance=ExtResource("10_o62vd")]
 position = Vector2(356, -68.00001)
@@ -907,11 +904,17 @@ metadata/_edit_lock_ = true
 position = Vector2(0, 730)
 
 [node name="GameBoundaries" type="StaticBody2D" parent="NonScrollableElements" unique_id=207949395 groups=["walls"]]
-visible = false
 
 [node name="Top" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=1289416659]
 rotation = -3.1415925
 shape = SubResource("WorldBoundaryShape2D_bafsl")
+script = ExtResource("12_ijlaf")
+
+[node name="ColorRect" type="ColorRect" parent="NonScrollableElements/GameBoundaries/Top" unique_id=318846503]
+offset_left = -491.89532
+offset_top = -5.9999256
+offset_right = 32.0
+offset_bottom = 34.000076
 
 [node name="Left" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=1649108349]
 rotation = 1.5707964
