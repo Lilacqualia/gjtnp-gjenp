@@ -7,7 +7,7 @@ func _on_countdown_timeout() -> void:
 
 func _on_goal_area_entered(body: Node2D) -> void:
 	if body is Pinball:
-		$Countdown.start(3)
+		$Countdown.start(2)
 
 func _on_goal_area_exited(body: Node2D) -> void:
 	if body is Pinball:
