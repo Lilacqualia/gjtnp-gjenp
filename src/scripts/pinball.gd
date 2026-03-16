@@ -69,9 +69,11 @@ func _on_body_entered(body: Node) -> void:
 		health -= 1
 		if health > 0:
 			play_egg_crack_sound()
+			play_rat_cheer_sound()
 			$Sprite2D.frame = floor((starting_health - health) / spriteHealthChange)
 		else:
 			play_egg_break_sound()
+			play_rat_cheer_sound()
 			$Sprite2D.visible = false
 			emit_signal("egg_is_broken")
 			return
@@ -79,11 +81,14 @@ func _on_body_entered(body: Node) -> void:
 		
 func play_egg_crack_sound():
 	$EggCrackSounds.get_children().pick_random().play()
-	$RatCheer.play()
 
 func play_egg_break_sound():
 	$EggBreak.play()
+	
+func play_rat_cheer_sound():
+	$RatCheer.pitch_scale = rng.randf_range(0.95, 1.2)
 	$RatCheer.play()
+
 
 func rebound() -> void:
 	rebounding = true
