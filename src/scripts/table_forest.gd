@@ -115,5 +115,5 @@ func ask_conductor_for_next_table():
 	print("go to next table")
 	ball.set_deferred("freeze", true)
 	ball.set_deferred("linear_velocity", Vector2.ZERO)
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	emit_signal("go_to_scene", NextTable)
