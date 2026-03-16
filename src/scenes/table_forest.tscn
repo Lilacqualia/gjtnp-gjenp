@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
 [ext_resource type="PackedScene" uid="uid://ii5arflhyl76" path="res://scenes/damage_kicker.tscn" id="11_g6b73"]
 [ext_resource type="AudioStream" uid="uid://cdguae702k2sf" path="res://bgm/ost_rat_grove-r1.wav" id="11_kfj14"]
-[ext_resource type="Script" uid="uid://cux2wtd276xbj" path="res://scripts/top.gd" id="12_ijlaf"]
+[ext_resource type="Script" path="res://scripts/top.gd" id="12_ijlaf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bafsl"]
 
@@ -661,6 +661,17 @@ region_rect = Rect2(2011, 0, 733, 64)
 [node name="CollisionPolygon2D" parent="ScrollableElements/Stage2/Group2/OneWayPlatform" index="1" unique_id=974076052]
 polygon = PackedVector2Array(-108, -66, 71.23393, -66, 63.501877, -56, -98, -56)
 
+[node name="OneWayPlatform2" parent="ScrollableElements/Stage2/Group2" unique_id=1711251988 instance=ExtResource("10_o62vd")]
+position = Vector2(360, -130)
+rotation = -2.6179938
+scale = Vector2(0.99999994, -0.99999994)
+
+[node name="Sprite2D" parent="ScrollableElements/Stage2/Group2/OneWayPlatform2" index="0" unique_id=965759894]
+region_rect = Rect2(2011, 0, 733, 64)
+
+[node name="CollisionPolygon2D" parent="ScrollableElements/Stage2/Group2/OneWayPlatform2" index="1" unique_id=974076052]
+polygon = PackedVector2Array(-108, -66, 71.23393, -66, 63.501877, -56, -98, -56)
+
 [node name="Wall" parent="ScrollableElements/Stage2/Group2" unique_id=73553972 instance=ExtResource("7_ehd0t")]
 z_as_relative = false
 position = Vector2(-19, -270)
@@ -978,5 +989,6 @@ volume_db = -8.0
 [editable path="ScrollableElements/Stage2/Group2/OneWayPlatform6"]
 [editable path="ScrollableElements/Stage2/Group2/OneWayPlatform5"]
 [editable path="ScrollableElements/Stage2/Group2/OneWayPlatform"]
+[editable path="ScrollableElements/Stage2/Group2/OneWayPlatform2"]
 [editable path="ScrollableElements/Stage2/Group3/OneWayPlatform4"]
 [editable path="ScrollableElements/GoalBox/OneWayPlatform"]
