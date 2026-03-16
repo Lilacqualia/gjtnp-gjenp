@@ -5,15 +5,11 @@
 [ext_resource type="AudioStream" uid="uid://ch45qs7euxoj5" path="res://sfx/flipper_activate-r1.wav" id="5_kstob"]
 [ext_resource type="AudioStream" uid="uid://yxxmxtyd3ac4" path="res://sfx/flipper_deactivate-r1.wav" id="6_wjvfb"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cdoxy"]
-bounce = 0.1
-
 [node name="Flipper" type="Node2D" unique_id=1506876985]
 script = ExtResource("1_cdoxy")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1926957834]
 collision_layer = 64
-physics_material_override = SubResource("PhysicsMaterial_cdoxy")
 sync_to_physics = false
 metadata/_edit_lock_ = true
 
