@@ -1,7 +1,7 @@
 class_name Spinner extends Area2D
 
 ## point value per spin
-@export var value := 10
+@export var value := 5
 
 signal generate_points(points: int)
 

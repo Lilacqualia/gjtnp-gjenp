@@ -16,7 +16,7 @@ signal update_message(message: String)
 @export var ResetPosition: Vector2 = Vector2(0.0, 0.0)
 @export var NextTable : Globals.SceneName
 @export var ScrollRate: float = 50.0
-@export var ScrollRatio: float = 0.08
+@export var ScrollRatio: float = 0.16
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
