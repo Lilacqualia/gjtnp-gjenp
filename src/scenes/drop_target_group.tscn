@@ -16,5 +16,6 @@ stream = ExtResource("2_pgkjc")
 
 [node name="AllTargetsDown" type="AudioStreamPlayer" parent="." unique_id=2096408413]
 stream = ExtResource("3_e8ox2")
+volume_db = -3.0
 
 [connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]
