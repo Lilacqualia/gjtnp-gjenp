@@ -910,12 +910,6 @@ rotation = -3.1415925
 shape = SubResource("WorldBoundaryShape2D_bafsl")
 script = ExtResource("12_ijlaf")
 
-[node name="ColorRect" type="ColorRect" parent="NonScrollableElements/GameBoundaries/Top" unique_id=318846503]
-offset_left = -491.89532
-offset_top = -5.9999256
-offset_right = 32.0
-offset_bottom = 34.000076
-
 [node name="Left" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=1649108349]
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_bafsl")
