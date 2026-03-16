@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 #point value awarded when ball strikes this bumper
-var value: int = 10
+var value: int = 20
 
 #how hard the bumper kicks the ball on contact. unlike flat bumpers, this shouldn't be affected as strongly by the bumper's scale
 var kick_strength: int = 20

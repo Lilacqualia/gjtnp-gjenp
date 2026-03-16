@@ -70,7 +70,6 @@ polygon = PackedVector2Array(-108, -66, 55.84163, -66, 49.84163, -56, -97.509674
 
 [node name="spinner" parent="ScrollableElements/Stage1/DrainGuard" unique_id=1432479668 instance=ExtResource("9_o62vd")]
 position = Vector2(507, -88)
-value = 15
 
 [node name="Wall" parent="ScrollableElements/Stage1/DrainGuard" unique_id=55546858 instance=ExtResource("7_ehd0t")]
 z_as_relative = false
@@ -160,7 +159,6 @@ polygon = PackedVector2Array(51, 81, 50, 63, 52, 40, 54, 25, 57, 12, 60, 5, 63, 
 
 [node name="spinner" parent="ScrollableElements/Stage1/SideLog" unique_id=1531310458 instance=ExtResource("9_o62vd")]
 position = Vector2(358, 25)
-value = 15
 
 [node name="OneWayPlatform4" parent="ScrollableElements/Stage1/SideLog" unique_id=430941784 instance=ExtResource("10_o62vd")]
 position = Vector2(252, 50)
@@ -355,7 +353,6 @@ flipper_direction = 1
 
 [node name="spinner2" parent="ScrollableElements/Stage2/Group1" unique_id=928888113 instance=ExtResource("9_o62vd")]
 position = Vector2(403, 19)
-value = 15
 
 [node name="DropTarget8" parent="ScrollableElements/Stage2/Group1" unique_id=1801079846 instance=ExtResource("5_3pj8s")]
 position = Vector2(376, 48)
@@ -427,7 +424,6 @@ value = 5
 
 [node name="spinner2" parent="ScrollableElements/Stage2/Group2" unique_id=2095172409 instance=ExtResource("9_o62vd")]
 position = Vector2(76, -79)
-value = 15
 
 [node name="round_bumper2" parent="ScrollableElements/Stage2/Group2" unique_id=667104284 instance=ExtResource("9_r5rc4")]
 position = Vector2(248, -262)
@@ -483,7 +479,6 @@ value = 20
 
 [node name="spinner2" parent="ScrollableElements/Stage2/Group3" unique_id=825275472 instance=ExtResource("9_o62vd")]
 position = Vector2(72, 35)
-value = 15
 
 [node name="Wall" parent="ScrollableElements/Stage2/Group3" unique_id=1889791248 instance=ExtResource("7_ehd0t")]
 position = Vector2(101, -26)
