@@ -90,19 +90,19 @@ func play_rat_cheer_sound():
 	$RatCheer.play()
 
 
-func rebound() -> void:
+func rebound(speed := 1500.0, duration := 1.0) -> void:
 	rebounding = true
 	can_end_rebound = false
-	set_linear_velocity(Vector2(rng.randf_range(-750.0, 750.0), -1500))
+	set_linear_velocity(Vector2(rng.randf_range(speed / -2, speed / 2), -speed))
 	set_rebound_nocollide(true)
 	var reboundScaleTween = get_tree().create_tween()
 	reboundScaleTween.set_trans(Tween.TRANS_QUAD)
 	reboundScaleTween.set_ease(Tween.EASE_OUT)
-	reboundScaleTween.tween_property($Sprite2D, "scale", rebounding_sprite_scale, 0.5)
+	reboundScaleTween.tween_property($Sprite2D, "scale", rebounding_sprite_scale, duration / 2)
 	reboundScaleTween.set_ease(Tween.EASE_IN)
-	reboundScaleTween.tween_property($Sprite2D, "scale", default_sprite_scale, 0.5)
+	reboundScaleTween.tween_property($Sprite2D, "scale", default_sprite_scale, duration / 2)
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(duration).timeout
 	can_end_rebound = true
 
 func end_rebound() -> void:

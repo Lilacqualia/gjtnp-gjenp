@@ -16,7 +16,7 @@ signal update_message(message: String)
 @export var ResetPosition: Vector2 = Vector2(0.0, 0.0)
 @export var NextTable : Globals.SceneName
 @export var ScrollRate: float = 50.0
-@export var ScrollRatio: float = 0.08
+@export var ScrollRatio: float = 0.16
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -88,7 +88,7 @@ func _reset_the_ball():
 		ball.connect("egg_is_broken", _on_egg_is_broken)
 		add_child.call_deferred(ball)
 		ball.set_deferred("position", ResetPosition)
-		ball.call_deferred("rebound")
+		ball.call_deferred("rebound", 1250.0, 0.7)
 
 func _on_pinball_hit(hit_object: Node) -> void:
 	var value = hit_object.receive_hit(ball.linear_velocity)
@@ -115,5 +115,4 @@ func ask_conductor_for_next_table():
 	print("go to next table")
 	ball.set_deferred("freeze", true)
 	ball.set_deferred("linear_velocity", Vector2.ZERO)
-	await get_tree().create_timer(3.0).timeout
 	emit_signal("go_to_scene", NextTable)

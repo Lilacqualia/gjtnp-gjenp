@@ -1,7 +1,7 @@
 class_name Spinner extends Area2D
 
 ## point value per spin
-@export var value := 10
+@export var value := 5
 
 signal generate_points(points: int)
 
@@ -61,6 +61,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 # scoring logic
 func receive_hit(velocity: Vector2) -> int:
-	speed = velocity.length() / 40
+	# Speed gets a minimum so it will always rotate at least once.
+	speed = max(velocity.length() / 40, 6)
 	print("speed: " + str(speed) + " mph")
 	return 0
