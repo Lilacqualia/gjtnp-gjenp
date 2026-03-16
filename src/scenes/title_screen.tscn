@@ -27,12 +27,15 @@ stretch_mode = 2
 stream = ExtResource("4_mgrm8")
 volume_db = -8.0
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=464824552]
+[node name="Credits" type="Node2D" parent="." unique_id=84853104]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Credits" unique_id=464824552]
 offset_right = 480.0
 offset_bottom = 800.0
 color = Color(0, 0, 0, 0.6509804)
 
-[node name="Credits" type="RichTextLabel" parent="." unique_id=1747174682]
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits" unique_id=1747174682]
 clip_contents = false
 offset_left = 44.0
 offset_top = 53.0
@@ -59,7 +62,7 @@ Fonts used:
 Doto by Óliver Lalan"
 scroll_active = false
 
-[node name="Button" type="Button" parent="." unique_id=962960710]
+[node name="CreditsButton" type="Button" parent="." unique_id=962960710]
 offset_left = 11.0
 offset_top = 739.0
 offset_right = 188.0
