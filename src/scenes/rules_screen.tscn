@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://7wgfon3arp22"]
 
-[ext_resource type="Script" uid="uid://cftk7rgf54j4n" path="res://scripts/rules_screen.gd" id="1_gqwd5"]
+[ext_resource type="Script" path="res://scripts/rules_screen.gd" id="1_gqwd5"]
 [ext_resource type="Texture2D" uid="uid://bycqij4txrm46" path="res://images/rules slide.png" id="2_vna0x"]
 
 [node name="rules_screen" type="Node2D" unique_id=764796200]
