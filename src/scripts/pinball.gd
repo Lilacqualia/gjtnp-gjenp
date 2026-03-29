@@ -75,15 +75,19 @@ func _on_body_entered(body: Node) -> void:
 			$Sprite2D.visible = false
 			emit_signal("egg_is_broken")
 			return
-		rebound()
+		rebound(1.0)
 		
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Emergency Rebound"):
+		rebound(0.2)
+
 func play_egg_crack_sound():
 	$EggCrackSounds.get_children().pick_random().play()
 
 func play_egg_break_sound():
 	$EggBreak.play()
 
-func rebound() -> void:
+func rebound(rebound_time: int) -> void:
 	rebounding = true
 	can_end_rebound = false
 	set_linear_velocity(Vector2(rng.randf_range(-750.0, 750.0), -1500))
@@ -95,7 +99,7 @@ func rebound() -> void:
 	reboundScaleTween.set_ease(Tween.EASE_IN)
 	reboundScaleTween.tween_property($Sprite2D, "scale", default_sprite_scale, 0.5)
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(rebound_time).timeout
 	can_end_rebound = true
 
 func end_rebound() -> void:
