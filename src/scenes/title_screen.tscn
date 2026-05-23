@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cw80mxrpwc6wk" path="res://images/menu-r1.png" id="2_sa3yf"]
 [ext_resource type="Texture2D" uid="uid://bt7tpjftyhy7x" path="res://images/menusign-r1.png" id="3_s4lrb"]
 [ext_resource type="AudioStream" uid="uid://da16rrnxnwqei" path="res://bgm/breakfast_machine-r2.wav" id="4_mgrm8"]
+[ext_resource type="FontFile" uid="uid://4lgrtbqatc2n" path="res://fonts/Doto_Rounded-SemiBold.ttf" id="5_dc4i4"]
 
 [node name="title_screen" type="Node2D" unique_id=1666565836]
 script = ExtResource("1_fgkus")
@@ -25,3 +26,47 @@ stretch_mode = 2
 [node name="TitleBGM" type="AudioStreamPlayer" parent="." unique_id=1891273058]
 stream = ExtResource("4_mgrm8")
 volume_db = -8.0
+
+[node name="Credits" type="Node2D" parent="." unique_id=84853104]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Credits" unique_id=464824552]
+offset_right = 480.0
+offset_bottom = 800.0
+color = Color(0, 0, 0, 0.6509804)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits" unique_id=1747174682]
+clip_contents = false
+offset_left = 40.0
+offset_top = 55.0
+offset_right = 440.0
+offset_bottom = 715.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Created for the [url=https://itch.io/jam/byogamejam2026]PIGSquad Build Your Own Game Jam 2026[/url] by Animal Shapes:
+[ul][url=https://ashleaf2727.itch.io/]Ashleaf[/url]: Artist[/ul]
+[ul][url=https://tomorrows-jelly.itch.io//]Haley M.[/url]: Developer[/ul]
+[ul][url=https://lilacqualia.itch.io/]Lilacqualia[/url]: Lead Developer[/ul]
+[ul][url=https://skulls.itch.io/]medibot[/url]: Developer[/ul]
+[ul][url=https://bsky.app/profile/kissesfingers.bsky.social]Robin R.[/url]: Sound Designer[/ul]
+
+Audio samples used:
+[ul]\"Slide rule\" by robindouglasjohnson[/ul]
+[ul]\"GUN_asmr_3_glock_slide_lock_back_and_release_10312024\" by Artninja[/ul]
+[ul]\"Foley 5\" rcantu175[/ul]
+[ul]\"Bell ringing\" by giddster[/ul]
+
+Fonts used:
+[ul]Doto by Óliver Lalan[/ul]"
+scroll_active = false
+
+[node name="CreditsButton" type="Button" parent="." unique_id=962960710]
+offset_left = 11.0
+offset_top = 739.0
+offset_right = 188.0
+offset_bottom = 786.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_dc4i4")
+theme_override_font_sizes/font_size = 32
+text = "CREDITS"

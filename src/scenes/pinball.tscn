@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://foo148cff0bh" path="res://sfx/egg_crack7-r1.wav" id="10_yf0xa"]
 [ext_resource type="AudioStream" uid="uid://ukvn6hrrjomw" path="res://sfx/egg_crack8-r1.wav" id="11_kq21y"]
 [ext_resource type="AudioStream" uid="uid://cid620tqfofk2" path="res://sfx/egg_crack9-r1.wav" id="12_xtbs1"]
+[ext_resource type="AudioStream" uid="uid://d48n6d4j8nqk" path="res://sfx/rat_cheer-r2.wav" id="15_x6rjl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_crkxl"]
 bounce = 0.1
@@ -100,5 +101,8 @@ stream = ExtResource("11_kq21y")
 
 [node name="EggCrack9" type="AudioStreamPlayer" parent="EggCrackSounds" unique_id=1255174263]
 stream = ExtResource("12_xtbs1")
+
+[node name="RatCheer" type="AudioStreamPlayer" parent="." unique_id=1062091434]
+stream = ExtResource("15_x6rjl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
