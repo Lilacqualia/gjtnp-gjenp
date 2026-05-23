@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cm6hvch6j73dc" path="res://scenes/one_way_platform.tscn" id="10_o62vd"]
 [ext_resource type="PackedScene" uid="uid://ii5arflhyl76" path="res://scenes/damage_kicker.tscn" id="11_g6b73"]
 [ext_resource type="AudioStream" uid="uid://cdguae702k2sf" path="res://bgm/ost_rat_grove-r1.wav" id="11_kfj14"]
-[ext_resource type="Script" path="res://scripts/top.gd" id="12_ijlaf"]
+[ext_resource type="Script" uid="uid://cux2wtd276xbj" path="res://scripts/top.gd" id="12_ijlaf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bafsl"]
 
@@ -965,6 +965,9 @@ shape = SubResource("WorldBoundaryShape2D_bafsl")
 [node name="Bottom" type="CollisionShape2D" parent="NonScrollableElements/GameBoundaries" unique_id=360639053]
 position = Vector2(0, 750)
 shape = SubResource("WorldBoundaryShape2D_bafsl")
+
+[node name="NightDarkness" type="CanvasModulate" parent="." unique_id=259019042]
+color = Color(0.2621074, 0.48819506, 0.833854, 1)
 
 [node name="ForestBGM" type="AudioStreamPlayer" parent="." unique_id=1713255460]
 stream = ExtResource("11_kfj14")
