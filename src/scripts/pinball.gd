@@ -6,6 +6,10 @@ signal egg_is_broken
 const rebound_nocollide_layers := [2, 3, 4, 5, 6, 7]
 const default_sprite_scale := Vector2(0.25, 0.25)
 const rebounding_sprite_scale = Vector2(0.40, 0.40)
+const default_pointlight_scale = 1.0
+const rebounding_pointlight_scale = 0.6
+const default_pointlight_energy = 1.0
+const rebounding_pointlight_energy = 0.25
 
 var old_velocity: Vector2
 var min_velocity_for_thunk = 200000.0
@@ -91,6 +95,7 @@ func play_rat_cheer_sound():
 
 
 func rebound(speed := 1500.0, duration := 1.0) -> void:
+	var half_duration = duration / 2
 	rebounding = true
 	can_end_rebound = false
 	set_linear_velocity(Vector2(rng.randf_range(speed / -2, speed / 2), -speed))
@@ -98,9 +103,15 @@ func rebound(speed := 1500.0, duration := 1.0) -> void:
 	var reboundScaleTween = get_tree().create_tween()
 	reboundScaleTween.set_trans(Tween.TRANS_QUAD)
 	reboundScaleTween.set_ease(Tween.EASE_OUT)
-	reboundScaleTween.tween_property($Sprite2D, "scale", rebounding_sprite_scale, duration / 2)
+	reboundScaleTween.tween_property($Sprite2D, "scale", rebounding_sprite_scale, half_duration)
+	reboundScaleTween.parallel().tween_property($PointLight2D, "texture_scale", rebounding_pointlight_scale, half_duration)
+	reboundScaleTween.parallel().tween_property($PointLight2D, "energy", rebounding_pointlight_energy, half_duration)
 	reboundScaleTween.set_ease(Tween.EASE_IN)
-	reboundScaleTween.tween_property($Sprite2D, "scale", default_sprite_scale, duration / 2)
+	reboundScaleTween.tween_property($Sprite2D, "scale", default_sprite_scale, half_duration)
+	reboundScaleTween.parallel().tween_property($PointLight2D, "texture_scale", default_pointlight_scale, half_duration)
+	reboundScaleTween.parallel().tween_property($PointLight2D, "energy", default_pointlight_energy, half_duration)
+
+
 	
 	await get_tree().create_timer(duration).timeout
 	can_end_rebound = true

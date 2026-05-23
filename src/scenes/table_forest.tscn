@@ -22,7 +22,7 @@ ResetPosition = Vector2(240, 700)
 NextTable = 4
 
 [node name="ScrollableElements" type="Node2D" parent="." unique_id=336700636]
-position = Vector2(-150, 800)
+position = Vector2(-150, 1729)
 
 [node name="ForestTexture" type="TextureRect" parent="ScrollableElements" unique_id=1978545029]
 z_as_relative = false
