@@ -17,10 +17,10 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Start Game") and handled_start == false:
-		print("rules")
+		print("controls")
 		handled_start = true
 		
-		emit_signal("go_to_scene", Globals.SceneName.RULES)
+		emit_signal("go_to_scene", Globals.SceneName.CONTROLS)
 
 func _on_credits_meta_clicked(meta: Variant) -> void:
 	OS.shell_open(str(meta))
