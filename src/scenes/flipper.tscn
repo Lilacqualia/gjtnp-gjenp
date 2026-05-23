@@ -29,6 +29,8 @@ one_way_collision_margin = 8.0
 
 [node name="ActivationSound" type="AudioStreamPlayer" parent="." unique_id=1399324722]
 stream = ExtResource("5_kstob")
+volume_db = -4.0
 
 [node name="DeactivationSound" type="AudioStreamPlayer" parent="." unique_id=608280481]
 stream = ExtResource("6_wjvfb")
+volume_db = -1.5

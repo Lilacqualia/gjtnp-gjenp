@@ -24,3 +24,4 @@ texture = ExtResource("3_iy20v")
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="StaticBody2D" unique_id=87807206]
 stream = ExtResource("4_p22yd")
+volume_db = 2.5

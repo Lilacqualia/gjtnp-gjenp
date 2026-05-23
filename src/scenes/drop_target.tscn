@@ -30,6 +30,7 @@ shape = SubResource("RectangleShape2D_7fcwm")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=713977156]
 stream = ExtResource("4_hkfpq")
+volume_db = -2.5
 
 [node name="DropSound" type="AudioStreamPlayer" parent="." unique_id=1563323030]
 stream = ExtResource("5_rpw5q")
