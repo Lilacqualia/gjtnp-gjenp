@@ -19,7 +19,7 @@ var score = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_hud = ScoreDisplayHud.instantiate()
-	$HudContainer.add_child(current_hud)
+	$HudLayer/HudContainer.add_child(current_hud)
 	current_scene = TitleScreen.instantiate()
 	current_scene.connect("go_to_scene", _on_go_to_scene)
 	current_scene.connect("update_message", _on_update_message)
