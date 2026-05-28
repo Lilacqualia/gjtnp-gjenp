@@ -967,7 +967,7 @@ position = Vector2(0, 750)
 shape = SubResource("WorldBoundaryShape2D_bafsl")
 
 [node name="NightDarkness" type="CanvasModulate" parent="." unique_id=259019042]
-color = Color(0.2621074, 0.48819506, 0.833854, 1)
+color = Color(0.3882353, 0.58431375, 0.8352941, 1)
 
 [node name="ForestBGM" type="AudioStreamPlayer" parent="." unique_id=1713255460]
 stream = ExtResource("11_kfj14")
